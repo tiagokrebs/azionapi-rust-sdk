@@ -36,7 +36,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
