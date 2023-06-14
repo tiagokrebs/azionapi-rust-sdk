@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_domains
 
-> crate::models::DomainResponseWithResults get_domains(accept)
+> crate::models::DomainResponseWithResults get_domains(page, page_size, sort, order_by, accept)
 /domains
 
 It returns the list of domains of an account.
@@ -119,6 +119,10 @@ It returns the list of domains of an account.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**page** | Option<**i64**> |  |  |
+**page_size** | Option<**i64**> |  |  |
+**sort** | Option<**String**> |  |  |
+**order_by** | Option<**String**> |  |  |
 **accept** | Option<**String**> |  |  |
 
 ### Return type
