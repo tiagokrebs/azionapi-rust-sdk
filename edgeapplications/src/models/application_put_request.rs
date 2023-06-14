@@ -17,10 +17,10 @@ pub struct ApplicationPutRequest {
     pub name: String,
     #[serde(rename = "delivery_protocol", skip_serializing_if = "Option::is_none")]
     pub delivery_protocol: Option<String>,
-    #[serde(rename = "http_port", skip_serializing_if = "Option::is_none")]
-    pub http_port: Option<crate::models::InterfaceLeftCurlyBracketRightCurlyBracket>,
-    #[serde(rename = "https_port", skip_serializing_if = "Option::is_none")]
-    pub https_port: Option<crate::models::InterfaceLeftCurlyBracketRightCurlyBracket>,
+    #[serde(rename = "http_port", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub http_port: Option<Option<serde_json::Value>>,
+    #[serde(rename = "https_port", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub https_port: Option<Option<serde_json::Value>>,
     #[serde(rename = "minimum_tls_version", skip_serializing_if = "Option::is_none")]
     pub minimum_tls_version: Option<String>,
     #[serde(rename = "active", skip_serializing_if = "Option::is_none")]

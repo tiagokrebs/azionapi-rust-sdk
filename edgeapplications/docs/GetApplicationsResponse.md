@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **total_pages** | **i64** |  | 
 **schema_version** | **i64** |  | 
 **links** | [**crate::models::ApplicationLinks**](ApplicationLinks.md) |  | 
-**results** | [**Vec<crate::models::ApplicationResults>**](ApplicationResults.md) |  | 
+**results** | [**Vec<crate::models::ApplicationsResults>**](ApplicationsResults.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
