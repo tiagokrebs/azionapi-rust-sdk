@@ -22,11 +22,11 @@ pub struct GetApplicationsResponse {
     #[serde(rename = "links")]
     pub links: Box<crate::models::ApplicationLinks>,
     #[serde(rename = "results")]
-    pub results: Vec<crate::models::ApplicationResults>,
+    pub results: Vec<crate::models::ApplicationsResults>,
 }
 
 impl GetApplicationsResponse {
-    pub fn new(count: i64, total_pages: i64, schema_version: i64, links: crate::models::ApplicationLinks, results: Vec<crate::models::ApplicationResults>) -> GetApplicationsResponse {
+    pub fn new(count: i64, total_pages: i64, schema_version: i64, links: crate::models::ApplicationLinks, results: Vec<crate::models::ApplicationsResults>) -> GetApplicationsResponse {
         GetApplicationsResponse {
             count,
             total_pages,

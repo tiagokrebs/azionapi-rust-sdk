@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **active** | **bool** |  | 
 **delivery_protocol** | **String** |  | 
-**http_port** | [**crate::models::InterfaceLeftCurlyBracketRightCurlyBracket**](interface{}.md) |  | 
-**https_port** | [**crate::models::InterfaceLeftCurlyBracketRightCurlyBracket**](interface{}.md) |  | 
+**http_port** | Option<[**serde_json::Value**](.md)> |  | 
+**https_port** | Option<[**serde_json::Value**](.md)> |  | 
 **minimum_tls_version** | **String** |  | 
 **application_acceleration** | **bool** |  | 
 **caching** | **bool** |  | 

@@ -23,10 +23,10 @@ pub struct ApplicationResults {
     pub active: bool,
     #[serde(rename = "delivery_protocol")]
     pub delivery_protocol: String,
-    #[serde(rename = "http_port")]
-    pub http_port: crate::models::InterfaceLeftCurlyBracketRightCurlyBracket,
-    #[serde(rename = "https_port")]
-    pub https_port: crate::models::InterfaceLeftCurlyBracketRightCurlyBracket,
+    #[serde(rename = "http_port", deserialize_with = "Option::deserialize")]
+    pub http_port: Option<serde_json::Value>,
+    #[serde(rename = "https_port", deserialize_with = "Option::deserialize")]
+    pub https_port: Option<serde_json::Value>,
     #[serde(rename = "minimum_tls_version")]
     pub minimum_tls_version: String,
     #[serde(rename = "application_acceleration")]
@@ -52,7 +52,7 @@ pub struct ApplicationResults {
 }
 
 impl ApplicationResults {
-    pub fn new(id: i64, name: String, active: bool, delivery_protocol: String, http_port: crate::models::InterfaceLeftCurlyBracketRightCurlyBracket, https_port: crate::models::InterfaceLeftCurlyBracketRightCurlyBracket, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
+    pub fn new(id: i64, name: String, active: bool, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
         ApplicationResults {
             id,
             name,

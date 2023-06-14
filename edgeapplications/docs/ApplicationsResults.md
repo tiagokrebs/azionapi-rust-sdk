@@ -5,9 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | Option<**i64**> |  | [optional]
-**next** | **String** |  | 
+**name** | Option<**String**> |  | [optional]
+**debug_rules** | Option<**String**> |  | [optional]
+**last_editor** | Option<**String**> |  | [optional]
+**last_modified** | Option<**String**> |  | [optional]
 **active** | Option<**bool**> |  | [optional]
-**links** | Option<[**crate::models::ApplicationOrigins**](ApplicationOrigins.md)> |  | [optional]
+**origins** | Option<[**Vec<crate::models::ApplicationOrigins>**](ApplicationOrigins.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
