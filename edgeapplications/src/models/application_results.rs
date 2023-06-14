@@ -17,10 +17,12 @@ pub struct ApplicationResults {
     pub id: i64,
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "next", skip_serializing_if = "Option::is_none")]
-    pub next: Option<String>,
     #[serde(rename = "active")]
     pub active: bool,
+    #[serde(rename = "debug_rules")]
+    pub debug_rules: bool,
+    #[serde(rename = "http3")]
+    pub http3: bool,
     #[serde(rename = "delivery_protocol")]
     pub delivery_protocol: String,
     #[serde(rename = "http_port", deserialize_with = "Option::deserialize")]
@@ -52,12 +54,13 @@ pub struct ApplicationResults {
 }
 
 impl ApplicationResults {
-    pub fn new(id: i64, name: String, active: bool, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
+    pub fn new(id: i64, name: String, active: bool, debug_rules: bool, http3: bool, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
         ApplicationResults {
             id,
             name,
-            next: None,
             active,
+            debug_rules,
+            http3,
             delivery_protocol,
             http_port,
             https_port,

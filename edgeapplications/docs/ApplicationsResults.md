@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | Option<**i64**> |  | [optional]
 **name** | Option<**String**> |  | [optional]
-**debug_rules** | Option<**String**> |  | [optional]
+**debug_rules** | Option<**bool**> |  | [optional]
 **last_editor** | Option<**String**> |  | [optional]
 **last_modified** | Option<**String**> |  | [optional]
 **active** | Option<**bool**> |  | [optional]
