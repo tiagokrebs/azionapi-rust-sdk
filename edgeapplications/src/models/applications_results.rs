@@ -18,7 +18,7 @@ pub struct ApplicationsResults {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "debug_rules", skip_serializing_if = "Option::is_none")]
-    pub debug_rules: Option<String>,
+    pub debug_rules: Option<bool>,
     #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
     pub last_editor: Option<String>,
     #[serde(rename = "last_modified", skip_serializing_if = "Option::is_none")]

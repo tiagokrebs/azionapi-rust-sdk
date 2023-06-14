@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **i64** |  | 
 **name** | **String** |  | 
-**next** | Option<**String**> |  | [optional]
 **active** | **bool** |  | 
+**debug_rules** | **bool** |  | 
+**http3** | **bool** |  | 
 **delivery_protocol** | **String** |  | 
 **http_port** | Option<[**serde_json::Value**](.md)> |  | 
 **https_port** | Option<[**serde_json::Value**](.md)> |  | 
