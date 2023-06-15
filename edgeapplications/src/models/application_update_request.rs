@@ -25,6 +25,8 @@ pub struct ApplicationUpdateRequest {
     pub minimum_tls_version: Option<String>,
     #[serde(rename = "active", skip_serializing_if = "Option::is_none")]
     pub active: Option<bool>,
+    #[serde(rename = "debug_rules", skip_serializing_if = "Option::is_none")]
+    pub debug_rules: Option<bool>,
     #[serde(rename = "application_acceleration", skip_serializing_if = "Option::is_none")]
     pub application_acceleration: Option<bool>,
     #[serde(rename = "caching", skip_serializing_if = "Option::is_none")]
@@ -56,6 +58,7 @@ impl ApplicationUpdateRequest {
             https_port: None,
             minimum_tls_version: None,
             active: None,
+            debug_rules: None,
             application_acceleration: None,
             caching: None,
             device_detection: None,
