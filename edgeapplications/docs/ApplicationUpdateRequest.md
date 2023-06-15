@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **https_port** | Option<[**serde_json::Value**](.md)> |  | [optional]
 **minimum_tls_version** | Option<**String**> |  | [optional]
 **active** | Option<**bool**> |  | [optional]
+**debug_rules** | Option<**bool**> |  | [optional]
 **application_acceleration** | Option<**bool**> |  | [optional]
 **caching** | Option<**bool**> |  | [optional]
 **device_detection** | Option<**bool**> |  | [optional]

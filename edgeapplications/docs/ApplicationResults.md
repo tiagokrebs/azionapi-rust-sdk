@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | 
 **debug_rules** | **bool** |  | 
 **http3** | **bool** |  | 
+**supported_ciphers** | **String** |  | 
 **delivery_protocol** | **String** |  | 
 **http_port** | Option<[**serde_json::Value**](.md)> |  | 
 **https_port** | Option<[**serde_json::Value**](.md)> |  | 

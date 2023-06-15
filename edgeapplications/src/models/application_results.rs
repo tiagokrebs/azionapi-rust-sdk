@@ -23,6 +23,8 @@ pub struct ApplicationResults {
     pub debug_rules: bool,
     #[serde(rename = "http3")]
     pub http3: bool,
+    #[serde(rename = "supported_ciphers")]
+    pub supported_ciphers: String,
     #[serde(rename = "delivery_protocol")]
     pub delivery_protocol: String,
     #[serde(rename = "http_port", deserialize_with = "Option::deserialize")]
@@ -54,13 +56,14 @@ pub struct ApplicationResults {
 }
 
 impl ApplicationResults {
-    pub fn new(id: i64, name: String, active: bool, debug_rules: bool, http3: bool, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
+    pub fn new(id: i64, name: String, active: bool, debug_rules: bool, http3: bool, supported_ciphers: String, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationResults {
         ApplicationResults {
             id,
             name,
             active,
             debug_rules,
             http3,
+            supported_ciphers,
             delivery_protocol,
             http_port,
             https_port,

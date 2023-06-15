@@ -27,6 +27,12 @@ pub struct ApplicationUpdateResults {
     pub minimum_tls_version: String,
     #[serde(rename = "active")]
     pub active: bool,
+    #[serde(rename = "debug_rules")]
+    pub debug_rules: bool,
+    #[serde(rename = "http3")]
+    pub http3: bool,
+    #[serde(rename = "supported_ciphers")]
+    pub supported_ciphers: String,
     #[serde(rename = "application_acceleration")]
     pub application_acceleration: bool,
     #[serde(rename = "caching")]
@@ -50,7 +56,7 @@ pub struct ApplicationUpdateResults {
 }
 
 impl ApplicationUpdateResults {
-    pub fn new(id: i64, name: String, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, active: bool, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationUpdateResults {
+    pub fn new(id: i64, name: String, delivery_protocol: String, http_port: Option<serde_json::Value>, https_port: Option<serde_json::Value>, minimum_tls_version: String, active: bool, debug_rules: bool, http3: bool, supported_ciphers: String, application_acceleration: bool, caching: bool, device_detection: bool, edge_firewall: bool, edge_functions: bool, image_optimization: bool, l2_caching: bool, load_balancer: bool, raw_logs: bool, web_application_firewall: bool) -> ApplicationUpdateResults {
         ApplicationUpdateResults {
             id,
             name,
@@ -59,6 +65,9 @@ impl ApplicationUpdateResults {
             https_port,
             minimum_tls_version,
             active,
+            debug_rules,
+            http3,
+            supported_ciphers,
             application_acceleration,
             caching,
             device_detection,

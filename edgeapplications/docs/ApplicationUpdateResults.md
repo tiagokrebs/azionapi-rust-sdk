@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **https_port** | Option<[**serde_json::Value**](.md)> |  | 
 **minimum_tls_version** | **String** |  | 
 **active** | **bool** |  | 
+**debug_rules** | **bool** |  | 
+**http3** | **bool** |  | 
+**supported_ciphers** | **String** |  | 
 **application_acceleration** | **bool** |  | 
 **caching** | **bool** |  | 
 **device_detection** | **bool** |  | 
