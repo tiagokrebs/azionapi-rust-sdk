@@ -25,7 +25,6 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*VariablesApi* | [**api_schema_retrieve**](docs/VariablesApi.md#api_schema_retrieve) | **GET** /api/schema | 
 *VariablesApi* | [**api_variables_create**](docs/VariablesApi.md#api_variables_create) | **POST** /api/variables | 
 *VariablesApi* | [**api_variables_destroy**](docs/VariablesApi.md#api_variables_destroy) | **DELETE** /api/variables/{uuid} | 
 *VariablesApi* | [**api_variables_list**](docs/VariablesApi.md#api_variables_list) | **GET** /api/variables | 
