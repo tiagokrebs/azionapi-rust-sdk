@@ -4,44 +4,12 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_schema_retrieve**](VariablesApi.md#api_schema_retrieve) | **GET** /api/schema | 
 [**api_variables_create**](VariablesApi.md#api_variables_create) | **POST** /api/variables | 
 [**api_variables_destroy**](VariablesApi.md#api_variables_destroy) | **DELETE** /api/variables/{uuid} | 
 [**api_variables_list**](VariablesApi.md#api_variables_list) | **GET** /api/variables | 
 [**api_variables_retrieve**](VariablesApi.md#api_variables_retrieve) | **GET** /api/variables/{uuid} | 
 [**api_variables_update**](VariablesApi.md#api_variables_update) | **PUT** /api/variables/{uuid} | 
 
-
-
-## api_schema_retrieve
-
-> ::std::collections::HashMap<String, serde_json::Value> api_schema_retrieve(format, lang)
-
-
-OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**format** | Option<**String**> |  |  |
-**lang** | Option<**String**> |  |  |
-
-### Return type
-
-[**::std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.oai.openapi, application/yaml, application/vnd.oai.openapi+json, application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## api_variables_create
