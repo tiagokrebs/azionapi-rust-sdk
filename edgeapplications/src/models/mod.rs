@@ -76,8 +76,6 @@ pub mod device_groups_result_response;
 pub use self::device_groups_result_response::DeviceGroupsResultResponse;
 pub mod get_application_response;
 pub use self::get_application_response::GetApplicationResponse;
-pub mod get_applications_response;
-pub use self::get_applications_response::GetApplicationsResponse;
 pub mod origins_id_response;
 pub use self::origins_id_response::OriginsIdResponse;
 pub mod origins_response;

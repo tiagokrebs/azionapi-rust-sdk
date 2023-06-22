@@ -4,8 +4,6 @@ pub mod create_network_lists_request;
 pub use self::create_network_lists_request::CreateNetworkListsRequest;
 pub mod error_model;
 pub use self::error_model::ErrorModel;
-pub mod error_response;
-pub use self::error_response::ErrorResponse;
 pub mod links;
 pub use self::links::Links;
 pub mod list_network_lists_response;

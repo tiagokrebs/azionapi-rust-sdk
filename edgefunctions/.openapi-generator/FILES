@@ -6,7 +6,6 @@ docs/BadRequestResponse.md
 docs/CreateEdgeFunctionRequest.md
 docs/EdgeFunctionResponse.md
 docs/EdgeFunctionsApi.md
-docs/ErrorModel.md
 docs/ErrorResponse.md
 docs/Links.md
 docs/ListEdgeFunctionResponse.md
@@ -21,7 +20,6 @@ src/lib.rs
 src/models/bad_request_response.rs
 src/models/create_edge_function_request.rs
 src/models/edge_function_response.rs
-src/models/error_model.rs
 src/models/error_response.rs
 src/models/links.rs
 src/models/list_edge_function_response.rs
