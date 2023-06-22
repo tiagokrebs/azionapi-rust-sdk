@@ -1,6 +1,6 @@
 # \DefaultApi
 
-All URIs are relative to *http://localhost:3002*
+All URIs are relative to *http://bff.azion.net:3002*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**get_resource**](DefaultApi.md#get_resource) | **GET** /edge_services/{serviceId}/resources/{resourceId} | Return Service Resource by ID
 [**get_resources**](DefaultApi.md#get_resources) | **GET** /edge_services/{serviceId}/resources | Return Service Resources by page
 [**get_service**](DefaultApi.md#get_service) | **GET** /edge_services/{id} | Return Service by ID
-[**get_services**](DefaultApi.md#get_services) | **GET** /edge_services/ | Return Services by page
-[**new_service**](DefaultApi.md#new_service) | **POST** /edge_services/ | Create Service
+[**get_services**](DefaultApi.md#get_services) | **GET** /edge_services | Return Services by page
+[**new_service**](DefaultApi.md#new_service) | **POST** /edge_services | Create Service
 [**patch_service**](DefaultApi.md#patch_service) | **PATCH** /edge_services/{id} | Update Service by ID
 [**patch_service_resource**](DefaultApi.md#patch_service_resource) | **PATCH** /edge_services/{serviceId}/resources/{resourceId} | Update Service Resource by ID
 [**post_resource**](DefaultApi.md#post_resource) | **POST** /edge_services/{serviceId}/resources | Create Service Resource
@@ -105,7 +105,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_resources
 
-> crate::models::ResourceResponseWithTotal get_resources(service_id, page, page_size, filter, order_by, sort)
+> serde_json::Value get_resources(service_id, page, page_size, filter, order_by, sort)
 Return Service Resources by page
 
 ### Parameters
@@ -122,7 +122,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ResourceResponseWithTotal**](ResourceResponseWithTotal.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 

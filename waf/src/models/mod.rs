@@ -1,0 +1,10 @@
+pub mod waf_domains200;
+pub use self::waf_domains200::WafDomains200;
+pub mod waf_events200;
+pub use self::waf_events200::WafEvents200;
+pub mod waf_events400;
+pub use self::waf_events400::WafEvents400;
+pub mod waf_events401;
+pub use self::waf_events401::WafEvents401;
+pub mod waf_events404;
+pub use self::waf_events404::WafEvents404;

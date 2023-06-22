@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **last_editor** | Option<**String**> |  | [optional]
 **modified** | Option<**String**> |  | [optional]
 **reference_count** | Option<**i64**> |  | [optional]
+**is_proprietary_code** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

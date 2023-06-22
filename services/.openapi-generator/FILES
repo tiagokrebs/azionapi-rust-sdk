@@ -7,7 +7,6 @@ docs/CreateServiceRequest.md
 docs/DefaultApi.md
 docs/ResourceDetail.md
 docs/ResourceResponse.md
-docs/ResourceResponseWithTotal.md
 docs/ServiceResponse.md
 docs/ServiceResponseWithTotals.md
 docs/UpdateResourceRequest.md
@@ -23,7 +22,6 @@ src/models/create_service_request.rs
 src/models/mod.rs
 src/models/resource_detail.rs
 src/models/resource_response.rs
-src/models/resource_response_with_total.rs
 src/models/service_response.rs
 src/models/service_response_with_totals.rs
 src/models/update_resource_request.rs

@@ -4,8 +4,6 @@ pub mod create_edge_function_request;
 pub use self::create_edge_function_request::CreateEdgeFunctionRequest;
 pub mod edge_function_response;
 pub use self::edge_function_response::EdgeFunctionResponse;
-pub mod error_model;
-pub use self::error_model::ErrorModel;
 pub mod error_response;
 pub use self::error_response::ErrorResponse;
 pub mod links;

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 Cargo.toml
 README.md
@@ -7,7 +6,6 @@ docs/BadRequestResponse.md
 docs/CreateNetworkListsRequest.md
 docs/DefaultApi.md
 docs/ErrorModel.md
-docs/ErrorResponse.md
 docs/Links.md
 docs/ListNetworkListsResponse.md
 docs/NetworkLists.md
@@ -21,7 +19,6 @@ src/lib.rs
 src/models/bad_request_response.rs
 src/models/create_network_lists_request.rs
 src/models/error_model.rs
-src/models/error_response.rs
 src/models/links.rs
 src/models/list_network_lists_response.rs
 src/models/mod.rs

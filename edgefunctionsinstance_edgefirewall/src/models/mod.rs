@@ -1,0 +1,10 @@
+pub mod create_edge_functions_instances_request;
+pub use self::create_edge_functions_instances_request::CreateEdgeFunctionsInstancesRequest;
+pub mod edge_functions_instance;
+pub use self::edge_functions_instance::EdgeFunctionsInstance;
+pub mod edge_functions_instance_response;
+pub use self::edge_functions_instance_response::EdgeFunctionsInstanceResponse;
+pub mod links;
+pub use self::links::Links;
+pub mod list_edge_functions_instances_response;
+pub use self::list_edge_functions_instances_response::ListEdgeFunctionsInstancesResponse;

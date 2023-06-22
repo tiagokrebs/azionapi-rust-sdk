@@ -6,8 +6,6 @@ pub mod resource_detail;
 pub use self::resource_detail::ResourceDetail;
 pub mod resource_response;
 pub use self::resource_response::ResourceResponse;
-pub mod resource_response_with_total;
-pub use self::resource_response_with_total::ResourceResponseWithTotal;
 pub mod service_response;
 pub use self::service_response::ServiceResponse;
 pub mod service_response_with_totals;
