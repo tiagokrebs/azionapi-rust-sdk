@@ -67,7 +67,7 @@ pub async fn delete_version(configuration: &configuration::Configuration, versio
 }
 
 /// Upload file and transfer to remote storage
-pub async fn storage_version_id_post(configuration: &configuration::Configuration, x_azion_static_path: &str, version_id: &str, body: Option<std::path::PathBuf>) -> Result<serde_json::Value, Error<StorageVersionIdPostError>> {
+pub async fn storage_version_id_post(configuration: &configuration::Configuration, x_azion_static_path: &str, version_id: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<serde_json::Value, Error<StorageVersionIdPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -77,6 +77,9 @@ pub async fn storage_version_id_post(configuration: &configuration::Configuratio
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(local_var_param_value) = content_type {
+        local_var_req_builder = local_var_req_builder.header("Content-Type", local_var_param_value.to_string());
     }
     local_var_req_builder = local_var_req_builder.header("X-Azion-Static-Path", x_azion_static_path.to_string());
     if let Some(ref local_var_apikey) = local_var_configuration.api_key {
