@@ -4,15 +4,15 @@ All URIs are relative to *https://storage-api.azion.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_version**](DefaultApi.md#delete_version) | **DELETE** /storage/{version_id}/delete | 
-[**storage_version_id_post**](DefaultApi.md#storage_version_id_post) | **POST** /storage/{version_id} | 
+[**delete_version**](DefaultApi.md#delete_version) | **DELETE** /storage/{version_id}/delete | /storage/:version_id/delete
+[**storage_version_id_post**](DefaultApi.md#storage_version_id_post) | **POST** /storage/{version_id} | /storage/:version_id
 
 
 
 ## delete_version
 
 > delete_version(version_id)
-
+/storage/:version_id/delete
 
 Delete a version. A version is just um path prefix/sub-namespace for a set of files.
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Required | Notes
 ## storage_version_id_post
 
 > serde_json::Value storage_version_id_post(x_azion_static_path, version_id, content_type, body)
-
+/storage/:version_id
 
 Upload file and transfer to remote storage
 
