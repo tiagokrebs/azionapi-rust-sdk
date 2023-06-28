@@ -88,7 +88,7 @@ pub enum EdgeApplicationsPostError {
 }
 
 
-pub async fn edge_applications_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<serde_json::Value, Error<EdgeApplicationsGetError>> {
+pub async fn edge_applications_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::GetApplicationsResponse, Error<EdgeApplicationsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
