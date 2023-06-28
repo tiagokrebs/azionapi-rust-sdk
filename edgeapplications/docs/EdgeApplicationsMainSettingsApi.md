@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## edge_applications_get
 
-> serde_json::Value edge_applications_get(page, page_size, filter, order_by, sort, accept)
+> crate::models::GetApplicationsResponse edge_applications_get(page, page_size, filter, order_by, sort, accept)
 /edge_applications
 
 ### Parameters
@@ -32,7 +32,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**crate::models::GetApplicationsResponse**](GetApplicationsResponse.md)
 
 ### Authorization
 
