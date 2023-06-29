@@ -13,32 +13,32 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ApplicationsResults {
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<i64>,
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    #[serde(rename = "debug_rules", skip_serializing_if = "Option::is_none")]
-    pub debug_rules: Option<bool>,
-    #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
-    pub last_editor: Option<String>,
-    #[serde(rename = "last_modified", skip_serializing_if = "Option::is_none")]
-    pub last_modified: Option<String>,
-    #[serde(rename = "active", skip_serializing_if = "Option::is_none")]
-    pub active: Option<bool>,
-    #[serde(rename = "origins", skip_serializing_if = "Option::is_none")]
-    pub origins: Option<Vec<crate::models::ApplicationOrigins>>,
+    #[serde(rename = "id")]
+    pub id: i64,
+    #[serde(rename = "name")]
+    pub name: String,
+    #[serde(rename = "debug_rules")]
+    pub debug_rules: bool,
+    #[serde(rename = "last_editor")]
+    pub last_editor: String,
+    #[serde(rename = "last_modified")]
+    pub last_modified: String,
+    #[serde(rename = "active")]
+    pub active: bool,
+    #[serde(rename = "origins")]
+    pub origins: Vec<crate::models::ApplicationOrigins>,
 }
 
 impl ApplicationsResults {
-    pub fn new() -> ApplicationsResults {
+    pub fn new(id: i64, name: String, debug_rules: bool, last_editor: String, last_modified: String, active: bool, origins: Vec<crate::models::ApplicationOrigins>) -> ApplicationsResults {
         ApplicationsResults {
-            id: None,
-            name: None,
-            debug_rules: None,
-            last_editor: None,
-            last_modified: None,
-            active: None,
-            origins: None,
+            id,
+            name,
+            debug_rules,
+            last_editor,
+            last_modified,
+            active,
+            origins,
         }
     }
 }
