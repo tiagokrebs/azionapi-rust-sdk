@@ -1,21 +1,21 @@
 # \VariablesApi
 
-All URIs are relative to *https://stage-variables.azion.com*
+All URIs are relative to *https://stage-api.azion.net/variables*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_variables_create**](VariablesApi.md#api_variables_create) | **POST** /api/variables | /api/variables
-[**api_variables_destroy**](VariablesApi.md#api_variables_destroy) | **DELETE** /api/variables/{uuid} | /api/variables/:uuid
-[**api_variables_list**](VariablesApi.md#api_variables_list) | **GET** /api/variables | /api/variables
-[**api_variables_retrieve**](VariablesApi.md#api_variables_retrieve) | **GET** /api/variables/{uuid} | /api/variables/:uuid
-[**api_variables_update**](VariablesApi.md#api_variables_update) | **PUT** /api/variables/{uuid} | /api/variables/:uuid
+[**api_variables_create**](VariablesApi.md#api_variables_create) | **POST** /variables | /variables
+[**api_variables_destroy**](VariablesApi.md#api_variables_destroy) | **DELETE** /variables/{uuid} | /variables/:uuid
+[**api_variables_list**](VariablesApi.md#api_variables_list) | **GET** /variables | /variables
+[**api_variables_retrieve**](VariablesApi.md#api_variables_retrieve) | **GET** /variables/{uuid} | /variables/:uuid
+[**api_variables_update**](VariablesApi.md#api_variables_update) | **PUT** /variables/{uuid} | /variables/:uuid
 
 
 
 ## api_variables_create
 
 > crate::models::VariableGet api_variables_create(variable_create)
-/api/variables
+/variables
 
 Create a new Variable. <br><ul><li>If the attribute \"secret\" is informed with value \"true\" in request payload the Variable value will be secret and no longer viewable after creation.</li><li>If the attribute \"secret\" is not informed the Variable value will be considered as not secret by default.</li></ul>
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Required | Notes
 ## api_variables_destroy
 
 > api_variables_destroy(uuid)
-/api/variables/:uuid
+/variables/:uuid
 
 Delete a Variable by it's UUID
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Required | Notes
 ## api_variables_list
 
 > Vec<crate::models::Variable> api_variables_list()
-/api/variables
+/variables
 
 List all user's Variables.
 
@@ -102,7 +102,7 @@ This endpoint does not need any parameter.
 ## api_variables_retrieve
 
 > crate::models::Variable api_variables_retrieve(uuid)
-/api/variables/:uuid
+/variables/:uuid
 
 Retrieve all data for a Variable by it's UUID
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Required | Notes
 ## api_variables_update
 
 > crate::models::VariableGet api_variables_update(uuid, variable_create)
-/api/variables/:uuid
+/variables/:uuid
 
 Update variable attributes by it's UUID. Keep the Variable UUID but overwrite all editable attributes.
 
