@@ -41,6 +41,7 @@ pub enum ApiVariablesDestroyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiVariablesListError {
+    Status404(),
     UnknownValue(serde_json::Value),
 }
 
@@ -73,7 +74,7 @@ pub async fn api_variables_create(configuration: &configuration::Configuration, 
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/variables", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/variables", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -110,7 +111,7 @@ pub async fn api_variables_destroy(configuration: &configuration::Configuration,
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
+    let local_var_uri_str = format!("{}/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -146,7 +147,7 @@ pub async fn api_variables_list(configuration: &configuration::Configuration, ) 
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/variables", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/variables", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -182,7 +183,7 @@ pub async fn api_variables_retrieve(configuration: &configuration::Configuration
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
+    let local_var_uri_str = format!("{}/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -218,7 +219,7 @@ pub async fn api_variables_update(configuration: &configuration::Configuration, 
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
+    let local_var_uri_str = format!("{}/variables/{uuid}", local_var_configuration.base_path, uuid=crate::apis::urlencode(uuid));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
