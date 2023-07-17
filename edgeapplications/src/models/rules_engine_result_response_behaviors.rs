@@ -15,8 +15,8 @@
 pub struct RulesEngineResultResponseBehaviors {
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "target", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub target: Option<Option<serde_json::Value>>,
+    #[serde(rename = "target", skip_serializing_if = "Option::is_none")]
+    pub target: Option<String>,
 }
 
 impl RulesEngineResultResponseBehaviors {
