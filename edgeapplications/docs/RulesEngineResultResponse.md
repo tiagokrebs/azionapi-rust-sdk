@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **i64** |  | 
 **name** | **String** |  | 
+**description** | Option<**String**> |  | [optional]
 **phase** | **String** |  | 
 **behaviors** | Option<[**Vec<crate::models::RulesEngineResultResponseBehaviors>**](RulesEngineResultResponse_behaviors.md)> |  | [optional]
 **criteria** | [**Vec<Vec<crate::models::RulesEngineCriteria>>**](array.md) |  | 

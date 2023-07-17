@@ -15,6 +15,8 @@
 pub struct UpdateRulesEngineRequest {
     #[serde(rename = "name")]
     pub name: String,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
     #[serde(rename = "criteria")]
     pub criteria: Vec<Vec<crate::models::RulesEngineCriteria>>,
     #[serde(rename = "behaviors")]
@@ -25,6 +27,7 @@ impl UpdateRulesEngineRequest {
     pub fn new(name: String, criteria: Vec<Vec<crate::models::RulesEngineCriteria>>, behaviors: Vec<crate::models::RulesEngineBehavior>) -> UpdateRulesEngineRequest {
         UpdateRulesEngineRequest {
             name,
+            description: None,
             criteria,
             behaviors,
         }
