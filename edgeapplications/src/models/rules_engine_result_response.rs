@@ -17,6 +17,8 @@ pub struct RulesEngineResultResponse {
     pub id: i64,
     #[serde(rename = "name")]
     pub name: String,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
     #[serde(rename = "phase")]
     pub phase: String,
     #[serde(rename = "behaviors", skip_serializing_if = "Option::is_none")]
@@ -34,6 +36,7 @@ impl RulesEngineResultResponse {
         RulesEngineResultResponse {
             id,
             name,
+            description: None,
             phase,
             behaviors: None,
             criteria,
