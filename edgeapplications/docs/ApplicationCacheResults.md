@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **device_group** | **Vec<String>** |  | 
 **enable_caching_for_post** | **bool** |  | 
 **l2_caching_enabled** | **bool** |  | 
+**enable_caching_for_options** | **bool** |  | 
+**enable_stale_cache** | **bool** |  | 
+**l2_region** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
