@@ -43,10 +43,16 @@ pub struct ApplicationCacheResults {
     pub enable_caching_for_post: bool,
     #[serde(rename = "l2_caching_enabled")]
     pub l2_caching_enabled: bool,
+    #[serde(rename = "enable_caching_for_options")]
+    pub enable_caching_for_options: bool,
+    #[serde(rename = "enable_stale_cache")]
+    pub enable_stale_cache: bool,
+    #[serde(rename = "l2_region")]
+    pub l2_region: String,
 }
 
 impl ApplicationCacheResults {
-    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<String>, enable_caching_for_post: bool, l2_caching_enabled: bool) -> ApplicationCacheResults {
+    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<String>, enable_caching_for_post: bool, l2_caching_enabled: bool, enable_caching_for_options: bool, enable_stale_cache: bool, l2_region: String) -> ApplicationCacheResults {
         ApplicationCacheResults {
             id,
             name,
@@ -63,6 +69,9 @@ impl ApplicationCacheResults {
             device_group,
             enable_caching_for_post,
             l2_caching_enabled,
+            enable_caching_for_options,
+            enable_stale_cache,
+            l2_region,
         }
     }
 }
