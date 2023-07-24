@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
+**description** | Option<**String**> |  | [optional]
 **criteria** | Option<[**Vec<Vec<crate::models::RulesEngineCriteria>>**](array.md)> |  | [optional]
 **behaviors** | Option<[**Vec<crate::models::RulesEngineBehavior>**](RulesEngineBehavior.md)> |  | [optional]
 
