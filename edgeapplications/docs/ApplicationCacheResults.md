@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 **device_group** | **Vec<String>** |  | 
 **enable_caching_for_post** | **bool** |  | 
 **l2_caching_enabled** | **bool** |  | 
+**is_slice_configuration_enabled** | Option<**bool**> |  | [optional]
+**is_slice_edge_caching_enabled** | Option<**bool**> |  | [optional]
+**is_slice_l2_caching_enabled** | Option<**bool**> |  | [optional]
+**slice_configuration_range** | Option<**bool**> |  | [optional]
 **enable_caching_for_options** | **bool** |  | 
 **enable_stale_cache** | **bool** |  | 
 **l2_region** | **String** |  | 

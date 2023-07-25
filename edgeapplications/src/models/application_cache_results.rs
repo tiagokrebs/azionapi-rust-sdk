@@ -43,6 +43,14 @@ pub struct ApplicationCacheResults {
     pub enable_caching_for_post: bool,
     #[serde(rename = "l2_caching_enabled")]
     pub l2_caching_enabled: bool,
+    #[serde(rename = "is_slice_configuration_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_configuration_enabled: Option<bool>,
+    #[serde(rename = "is_slice_edge_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_edge_caching_enabled: Option<bool>,
+    #[serde(rename = "is_slice_l2_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_l2_caching_enabled: Option<bool>,
+    #[serde(rename = "slice_configuration_range", skip_serializing_if = "Option::is_none")]
+    pub slice_configuration_range: Option<bool>,
     #[serde(rename = "enable_caching_for_options")]
     pub enable_caching_for_options: bool,
     #[serde(rename = "enable_stale_cache")]
@@ -69,6 +77,10 @@ impl ApplicationCacheResults {
             device_group,
             enable_caching_for_post,
             l2_caching_enabled,
+            is_slice_configuration_enabled: None,
+            is_slice_edge_caching_enabled: None,
+            is_slice_l2_caching_enabled: None,
+            slice_configuration_range: None,
             enable_caching_for_options,
             enable_stale_cache,
             l2_region,

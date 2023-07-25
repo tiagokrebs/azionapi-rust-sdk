@@ -15,6 +15,8 @@
 pub struct PatchRulesEngineRequest {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
     #[serde(rename = "criteria", skip_serializing_if = "Option::is_none")]
     pub criteria: Option<Vec<Vec<crate::models::RulesEngineCriteria>>>,
     #[serde(rename = "behaviors", skip_serializing_if = "Option::is_none")]
@@ -25,6 +27,7 @@ impl PatchRulesEngineRequest {
     pub fn new() -> PatchRulesEngineRequest {
         PatchRulesEngineRequest {
             name: None,
+            description: None,
             criteria: None,
             behaviors: None,
         }
