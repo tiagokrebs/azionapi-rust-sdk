@@ -19,14 +19,22 @@ pub struct SingleResult {
     pub name: Option<String>,
     #[serde(rename = "subject_name", skip_serializing_if = "Option::is_none")]
     pub subject_name: Option<Vec<String>>,
-    #[serde(rename = "validity", skip_serializing_if = "Option::is_none")]
-    pub validity: Option<String>,
+    #[serde(rename = "issuer", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub issuer: Option<Option<String>>,
+    #[serde(rename = "validity", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub validity: Option<Option<String>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
     #[serde(rename = "certificate_type", skip_serializing_if = "Option::is_none")]
     pub certificate_type: Option<CertificateType>,
     #[serde(rename = "managed", skip_serializing_if = "Option::is_none")]
     pub managed: Option<bool>,
+    #[serde(rename = "csr", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub csr: Option<Option<String>>,
+    #[serde(rename = "certificate_content", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub certificate_content: Option<Option<String>>,
+    #[serde(rename = "azion_information", skip_serializing_if = "Option::is_none")]
+    pub azion_information: Option<String>,
 }
 
 impl SingleResult {
@@ -35,10 +43,14 @@ impl SingleResult {
             id: None,
             name: None,
             subject_name: None,
+            issuer: None,
             validity: None,
             status: None,
             certificate_type: None,
             managed: None,
+            csr: None,
+            certificate_content: None,
+            azion_information: None,
         }
     }
 }

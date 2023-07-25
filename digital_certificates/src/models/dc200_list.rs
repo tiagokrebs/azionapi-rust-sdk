@@ -22,7 +22,7 @@ pub struct Dc200List {
     #[serde(rename = "links", skip_serializing_if = "Option::is_none")]
     pub links: Option<Box<crate::models::Dc200ListLinks>>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<Vec<crate::models::ResultsInner>>>,
+    pub results: Option<Vec<crate::models::ResultsInner>>,
 }
 
 impl Dc200List {
