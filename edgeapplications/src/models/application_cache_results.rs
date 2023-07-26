@@ -38,7 +38,7 @@ pub struct ApplicationCacheResults {
     #[serde(rename = "adaptive_delivery_action")]
     pub adaptive_delivery_action: String,
     #[serde(rename = "device_group")]
-    pub device_group: Vec<String>,
+    pub device_group: Vec<i32>,
     #[serde(rename = "enable_caching_for_post")]
     pub enable_caching_for_post: bool,
     #[serde(rename = "l2_caching_enabled")]
@@ -50,7 +50,7 @@ pub struct ApplicationCacheResults {
     #[serde(rename = "is_slice_l2_caching_enabled", skip_serializing_if = "Option::is_none")]
     pub is_slice_l2_caching_enabled: Option<bool>,
     #[serde(rename = "slice_configuration_range", skip_serializing_if = "Option::is_none")]
-    pub slice_configuration_range: Option<bool>,
+    pub slice_configuration_range: Option<i64>,
     #[serde(rename = "enable_caching_for_options")]
     pub enable_caching_for_options: bool,
     #[serde(rename = "enable_stale_cache")]
@@ -60,7 +60,7 @@ pub struct ApplicationCacheResults {
 }
 
 impl ApplicationCacheResults {
-    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<String>, enable_caching_for_post: bool, l2_caching_enabled: bool, enable_caching_for_options: bool, enable_stale_cache: bool, l2_region: String) -> ApplicationCacheResults {
+    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<i32>, enable_caching_for_post: bool, l2_caching_enabled: bool, enable_caching_for_options: bool, enable_stale_cache: bool, l2_region: String) -> ApplicationCacheResults {
         ApplicationCacheResults {
             id,
             name,

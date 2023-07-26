@@ -38,7 +38,7 @@ pub struct ApplicationCacheCreateResults {
     #[serde(rename = "adaptive_delivery_action")]
     pub adaptive_delivery_action: String,
     #[serde(rename = "device_group")]
-    pub device_group: Vec<String>,
+    pub device_group: Vec<i32>,
     #[serde(rename = "enable_caching_for_post")]
     pub enable_caching_for_post: bool,
     #[serde(rename = "l2_caching_enabled")]
@@ -60,7 +60,7 @@ pub struct ApplicationCacheCreateResults {
 }
 
 impl ApplicationCacheCreateResults {
-    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<String>, enable_caching_for_post: bool, l2_caching_enabled: bool) -> ApplicationCacheCreateResults {
+    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<i32>, enable_caching_for_post: bool, l2_caching_enabled: bool) -> ApplicationCacheCreateResults {
         ApplicationCacheCreateResults {
             id,
             name,

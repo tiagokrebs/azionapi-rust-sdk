@@ -38,7 +38,7 @@ pub struct ApplicationCacheResponseDetails {
     #[serde(rename = "adaptive_delivery_action", skip_serializing_if = "Option::is_none")]
     pub adaptive_delivery_action: Option<String>,
     #[serde(rename = "device_group", skip_serializing_if = "Option::is_none")]
-    pub device_group: Option<Vec<String>>,
+    pub device_group: Option<Vec<i32>>,
     #[serde(rename = "enable_caching_for_post")]
     pub enable_caching_for_post: bool,
     #[serde(rename = "enable_caching_for_options", skip_serializing_if = "Option::is_none")]
