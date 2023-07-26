@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## create_certificate
 
-> crate::models::Dc201 create_certificate(create_certificate_request)
+> crate::models::Dc200 create_certificate(create_certificate_request)
 Create a new digital certificate
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Dc201**](DC201.md)
+[**crate::models::Dc200**](DC200.md)
 
 ### Authorization
 

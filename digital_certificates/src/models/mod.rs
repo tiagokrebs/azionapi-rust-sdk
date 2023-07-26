@@ -8,8 +8,6 @@ pub mod dc200_list;
 pub use self::dc200_list::Dc200List;
 pub mod dc200_list_links;
 pub use self::dc200_list_links::Dc200ListLinks;
-pub mod dc201;
-pub use self::dc201::Dc201;
 pub mod dc400;
 pub use self::dc400::Dc400;
 pub mod dc401;

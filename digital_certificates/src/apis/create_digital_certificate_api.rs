@@ -25,7 +25,7 @@ pub enum CreateCertificateError {
 }
 
 
-pub async fn create_certificate(configuration: &configuration::Configuration, create_certificate_request: crate::models::CreateCertificateRequest) -> Result<crate::models::Dc201, Error<CreateCertificateError>> {
+pub async fn create_certificate(configuration: &configuration::Configuration, create_certificate_request: crate::models::CreateCertificateRequest) -> Result<crate::models::Dc200, Error<CreateCertificateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

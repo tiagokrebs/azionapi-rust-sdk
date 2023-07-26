@@ -25,7 +25,7 @@ pub enum CreateCsrError {
 }
 
 
-pub async fn create_csr(configuration: &configuration::Configuration, create_csr_request: crate::models::CreateCsrRequest) -> Result<crate::models::Dc201, Error<CreateCsrError>> {
+pub async fn create_csr(configuration: &configuration::Configuration, create_csr_request: crate::models::CreateCsrRequest) -> Result<crate::models::Dc200, Error<CreateCsrError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

@@ -15,15 +15,15 @@
 pub struct Dc200 {
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
     pub schema_version: Option<i32>,
-    #[serde(rename = "result", skip_serializing_if = "Option::is_none")]
-    pub result: Option<Box<crate::models::SingleResult>>,
+    #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
+    pub results: Option<Box<crate::models::SingleResult>>,
 }
 
 impl Dc200 {
     pub fn new() -> Dc200 {
         Dc200 {
             schema_version: None,
-            result: None,
+            results: None,
         }
     }
 }
