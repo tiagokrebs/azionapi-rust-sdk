@@ -45,6 +45,18 @@ pub struct ApplicationCacheResponseDetails {
     pub enable_caching_for_options: Option<bool>,
     #[serde(rename = "l2_caching_enabled")]
     pub l2_caching_enabled: bool,
+    #[serde(rename = "is_slice_configuration_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_configuration_enabled: Option<bool>,
+    #[serde(rename = "is_slice_edge_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_edge_caching_enabled: Option<bool>,
+    #[serde(rename = "is_slice_l2_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_l2_caching_enabled: Option<bool>,
+    #[serde(rename = "slice_configuration_range", skip_serializing_if = "Option::is_none")]
+    pub slice_configuration_range: Option<i64>,
+    #[serde(rename = "enable_stale_cache", skip_serializing_if = "Option::is_none")]
+    pub enable_stale_cache: Option<bool>,
+    #[serde(rename = "l2_region", skip_serializing_if = "Option::is_none")]
+    pub l2_region: Option<String>,
 }
 
 impl ApplicationCacheResponseDetails {
@@ -66,6 +78,12 @@ impl ApplicationCacheResponseDetails {
             enable_caching_for_post,
             enable_caching_for_options: None,
             l2_caching_enabled,
+            is_slice_configuration_enabled: None,
+            is_slice_edge_caching_enabled: None,
+            is_slice_l2_caching_enabled: None,
+            slice_configuration_range: None,
+            enable_stale_cache: None,
+            l2_region: None,
         }
     }
 }
