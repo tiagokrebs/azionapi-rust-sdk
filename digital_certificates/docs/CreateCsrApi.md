@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## create_csr
 
-> crate::models::Dc201 create_csr(create_csr_request)
+> crate::models::Dc200 create_csr(create_csr_request)
 Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Dc201**](DC201.md)
+[**crate::models::Dc200**](DC200.md)
 
 ### Authorization
 

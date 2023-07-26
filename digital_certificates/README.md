@@ -41,7 +41,6 @@ Class | Method | HTTP request | Description
  - [Dc200](docs/Dc200.md)
  - [Dc200List](docs/Dc200List.md)
  - [Dc200ListLinks](docs/Dc200ListLinks.md)
- - [Dc201](docs/Dc201.md)
  - [Dc400](docs/Dc400.md)
  - [Dc401](docs/Dc401.md)
  - [Dc403](docs/Dc403.md)
