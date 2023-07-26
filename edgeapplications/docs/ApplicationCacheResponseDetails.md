@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **cache_by_cookies** | **String** |  | 
 **cookie_names** | Option<**Vec<String>**> |  | 
 **adaptive_delivery_action** | Option<**String**> |  | [optional]
-**device_group** | Option<**Vec<String>**> |  | [optional]
+**device_group** | Option<**Vec<i32>**> |  | [optional]
 **enable_caching_for_post** | **bool** |  | 
 **enable_caching_for_options** | Option<**bool**> |  | [optional]
 **l2_caching_enabled** | **bool** |  | 
