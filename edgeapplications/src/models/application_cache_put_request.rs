@@ -33,6 +33,10 @@ pub struct ApplicationCachePutRequest {
     pub cache_by_cookies: Option<String>,
     #[serde(rename = "cookie_names", skip_serializing_if = "Option::is_none")]
     pub cookie_names: Option<Vec<String>>,
+    #[serde(rename = "adaptive_delivery_action", skip_serializing_if = "Option::is_none")]
+    pub adaptive_delivery_action: Option<String>,
+    #[serde(rename = "device_group", skip_serializing_if = "Option::is_none")]
+    pub device_group: Option<Vec<i32>>,
     #[serde(rename = "enable_caching_for_post", skip_serializing_if = "Option::is_none")]
     pub enable_caching_for_post: Option<bool>,
     #[serde(rename = "l2_caching_enabled", skip_serializing_if = "Option::is_none")]
@@ -45,6 +49,12 @@ pub struct ApplicationCachePutRequest {
     pub is_slice_l2_caching_enabled: Option<bool>,
     #[serde(rename = "slice_configuration_range", skip_serializing_if = "Option::is_none")]
     pub slice_configuration_range: Option<i64>,
+    #[serde(rename = "enable_caching_for_options", skip_serializing_if = "Option::is_none")]
+    pub enable_caching_for_options: Option<bool>,
+    #[serde(rename = "enable_stale_cache", skip_serializing_if = "Option::is_none")]
+    pub enable_stale_cache: Option<bool>,
+    #[serde(rename = "l2_region", skip_serializing_if = "Option::is_none")]
+    pub l2_region: Option<String>,
 }
 
 impl ApplicationCachePutRequest {
@@ -60,12 +70,17 @@ impl ApplicationCachePutRequest {
             enable_query_string_sort: None,
             cache_by_cookies: None,
             cookie_names: None,
+            adaptive_delivery_action: None,
+            device_group: None,
             enable_caching_for_post: None,
             l2_caching_enabled: None,
             is_slice_configuration_enabled: None,
             is_slice_edge_caching_enabled: None,
             is_slice_l2_caching_enabled: None,
             slice_configuration_range: None,
+            enable_caching_for_options: None,
+            enable_stale_cache: None,
+            l2_region: None,
         }
     }
 }
