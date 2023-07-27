@@ -57,6 +57,8 @@ docs/PatchDeviceGroupsRequest.md
 docs/PatchOriginsRequest.md
 docs/PatchRulesEngineRequest.md
 docs/RulesEngineBehavior.md
+docs/RulesEngineBehaviorTarget.md
+docs/RulesEngineBehaviorTargetOneOf.md
 docs/RulesEngineCriteria.md
 docs/RulesEngineIdResponse.md
 docs/RulesEngineResponse.md
@@ -125,6 +127,8 @@ src/models/patch_device_groups_request.rs
 src/models/patch_origins_request.rs
 src/models/patch_rules_engine_request.rs
 src/models/rules_engine_behavior.rs
+src/models/rules_engine_behavior_target.rs
+src/models/rules_engine_behavior_target_one_of.rs
 src/models/rules_engine_criteria.rs
 src/models/rules_engine_id_response.rs
 src/models/rules_engine_response.rs

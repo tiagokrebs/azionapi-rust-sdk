@@ -16,7 +16,7 @@ pub struct RulesEngineBehavior {
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "target", skip_serializing_if = "Option::is_none")]
-    pub target: Option<String>,
+    pub target: Option<Box<crate::models::RulesEngineBehaviorTarget>>,
 }
 
 impl RulesEngineBehavior {
