@@ -25,18 +25,36 @@ pub struct ApplicationCacheCreateRequest {
     pub cdn_cache_settings_maximum_ttl: Option<i64>,
     #[serde(rename = "cache_by_query_string", skip_serializing_if = "Option::is_none")]
     pub cache_by_query_string: Option<String>,
-    #[serde(rename = "query_string_fields", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub query_string_fields: Option<Option<Vec<String>>>,
+    #[serde(rename = "query_string_fields", skip_serializing_if = "Option::is_none")]
+    pub query_string_fields: Option<Vec<String>>,
     #[serde(rename = "enable_query_string_sort", skip_serializing_if = "Option::is_none")]
     pub enable_query_string_sort: Option<bool>,
     #[serde(rename = "cache_by_cookies", skip_serializing_if = "Option::is_none")]
     pub cache_by_cookies: Option<String>,
-    #[serde(rename = "cookie_names", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub cookie_names: Option<Option<Vec<String>>>,
-    #[serde(rename = "user_email", skip_serializing_if = "Option::is_none")]
-    pub user_email: Option<String>,
+    #[serde(rename = "cookie_names", skip_serializing_if = "Option::is_none")]
+    pub cookie_names: Option<Vec<String>>,
+    #[serde(rename = "adaptive_delivery_action", skip_serializing_if = "Option::is_none")]
+    pub adaptive_delivery_action: Option<String>,
+    #[serde(rename = "device_group", skip_serializing_if = "Option::is_none")]
+    pub device_group: Option<Vec<i32>>,
+    #[serde(rename = "enable_caching_for_post", skip_serializing_if = "Option::is_none")]
+    pub enable_caching_for_post: Option<bool>,
     #[serde(rename = "l2_caching_enabled", skip_serializing_if = "Option::is_none")]
     pub l2_caching_enabled: Option<bool>,
+    #[serde(rename = "is_slice_configuration_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_configuration_enabled: Option<bool>,
+    #[serde(rename = "is_slice_edge_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_edge_caching_enabled: Option<bool>,
+    #[serde(rename = "is_slice_l2_caching_enabled", skip_serializing_if = "Option::is_none")]
+    pub is_slice_l2_caching_enabled: Option<bool>,
+    #[serde(rename = "slice_configuration_range", skip_serializing_if = "Option::is_none")]
+    pub slice_configuration_range: Option<i64>,
+    #[serde(rename = "enable_caching_for_options", skip_serializing_if = "Option::is_none")]
+    pub enable_caching_for_options: Option<bool>,
+    #[serde(rename = "enable_stale_cache", skip_serializing_if = "Option::is_none")]
+    pub enable_stale_cache: Option<bool>,
+    #[serde(rename = "l2_region", skip_serializing_if = "Option::is_none")]
+    pub l2_region: Option<String>,
 }
 
 impl ApplicationCacheCreateRequest {
@@ -52,8 +70,17 @@ impl ApplicationCacheCreateRequest {
             enable_query_string_sort: None,
             cache_by_cookies: None,
             cookie_names: None,
-            user_email: None,
+            adaptive_delivery_action: None,
+            device_group: None,
+            enable_caching_for_post: None,
             l2_caching_enabled: None,
+            is_slice_configuration_enabled: None,
+            is_slice_edge_caching_enabled: None,
+            is_slice_l2_caching_enabled: None,
+            slice_configuration_range: None,
+            enable_caching_for_options: None,
+            enable_stale_cache: None,
+            l2_region: None,
         }
     }
 }
