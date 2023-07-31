@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFunctionsGetError {
+    Status404(crate::models::ErrorResponse),
     DefaultResponse(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -35,6 +36,7 @@ pub enum EdgeFunctionsIdDeleteError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFunctionsIdGetError {
+    Status404(crate::models::ErrorResponse),
     DefaultResponse(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
