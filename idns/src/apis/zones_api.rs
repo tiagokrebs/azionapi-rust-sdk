@@ -44,6 +44,7 @@ pub enum GetZonesError {
 #[serde(untagged)]
 pub enum PostZoneError {
     Status400(crate::models::ErrorsResponse),
+    Status404(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 

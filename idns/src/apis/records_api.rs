@@ -28,6 +28,7 @@ pub enum DeleteZoneRecordError {
 #[serde(untagged)]
 pub enum GetZoneRecordsError {
     Status400(crate::models::ErrorsResponse),
+    Status404(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -36,6 +37,7 @@ pub enum GetZoneRecordsError {
 #[serde(untagged)]
 pub enum PostZoneRecordError {
     Status400(crate::models::ErrorsResponse),
+    Status404(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -44,6 +46,7 @@ pub enum PostZoneRecordError {
 #[serde(untagged)]
 pub enum PutZoneRecordError {
     Status400(crate::models::ErrorsResponse),
+    Status404(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
