@@ -51,6 +51,8 @@ pub struct ApplicationResultsCreate {
     pub raw_logs: bool,
     #[serde(rename = "web_application_firewall")]
     pub web_application_firewall: bool,
+    #[serde(rename = "l2_caching", skip_serializing_if = "Option::is_none")]
+    pub l2_caching: Option<bool>,
 }
 
 impl ApplicationResultsCreate {
@@ -75,6 +77,7 @@ impl ApplicationResultsCreate {
             load_balancer,
             raw_logs,
             web_application_firewall,
+            l2_caching: None,
         }
     }
 }

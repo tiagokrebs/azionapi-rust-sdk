@@ -15,6 +15,12 @@ Name | Type | Description | Notes
 **cdn_cache_settings** | Option<**String**> |  | [optional]
 **browser_cache_settings_maximum_ttl** | Option<**i64**> |  | [optional]
 **cdn_cache_settings_maximum_ttl** | Option<**i64**> |  | [optional]
+**debug_rules** | Option<**bool**> |  | [optional]
+**supported_ciphers** | Option<**String**> |  | [optional]
+**http_port** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**https_port** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**l2_caching** | Option<**bool**> |  | [optional]
+**http3** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
