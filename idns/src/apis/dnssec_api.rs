@@ -21,6 +21,7 @@ use super::{Error, configuration};
 pub enum GetZoneDnsSecError {
     Status400(crate::models::ErrorsResponse),
     Status404(crate::models::ErrorResponse),
+    Status500(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -29,6 +30,7 @@ pub enum GetZoneDnsSecError {
 #[serde(untagged)]
 pub enum PutZoneDnsSecError {
     Status400(crate::models::ErrorsResponse),
+    Status404(crate::models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
