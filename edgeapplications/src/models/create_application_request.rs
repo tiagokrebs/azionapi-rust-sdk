@@ -35,6 +35,18 @@ pub struct CreateApplicationRequest {
     pub browser_cache_settings_maximum_ttl: Option<i64>,
     #[serde(rename = "cdn_cache_settings_maximum_ttl", skip_serializing_if = "Option::is_none")]
     pub cdn_cache_settings_maximum_ttl: Option<i64>,
+    #[serde(rename = "debug_rules", skip_serializing_if = "Option::is_none")]
+    pub debug_rules: Option<bool>,
+    #[serde(rename = "supported_ciphers", skip_serializing_if = "Option::is_none")]
+    pub supported_ciphers: Option<String>,
+    #[serde(rename = "http_port", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub http_port: Option<Option<serde_json::Value>>,
+    #[serde(rename = "https_port", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub https_port: Option<Option<serde_json::Value>>,
+    #[serde(rename = "l2_caching", skip_serializing_if = "Option::is_none")]
+    pub l2_caching: Option<bool>,
+    #[serde(rename = "http3", skip_serializing_if = "Option::is_none")]
+    pub http3: Option<bool>,
 }
 
 impl CreateApplicationRequest {
@@ -51,6 +63,12 @@ impl CreateApplicationRequest {
             cdn_cache_settings: None,
             browser_cache_settings_maximum_ttl: None,
             cdn_cache_settings_maximum_ttl: None,
+            debug_rules: None,
+            supported_ciphers: None,
+            http_port: None,
+            https_port: None,
+            l2_caching: None,
+            http3: None,
         }
     }
 }
