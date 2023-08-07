@@ -27,14 +27,14 @@ pub struct ApplicationCacheResults {
     pub cdn_cache_settings_maximum_ttl: i64,
     #[serde(rename = "cache_by_query_string")]
     pub cache_by_query_string: String,
-    #[serde(rename = "query_string_fields")]
-    pub query_string_fields: Vec<String>,
+    #[serde(rename = "query_string_fields", deserialize_with = "Option::deserialize")]
+    pub query_string_fields: Option<Vec<String>>,
     #[serde(rename = "enable_query_string_sort")]
     pub enable_query_string_sort: bool,
     #[serde(rename = "cache_by_cookies")]
     pub cache_by_cookies: String,
-    #[serde(rename = "cookie_names")]
-    pub cookie_names: Vec<String>,
+    #[serde(rename = "cookie_names", deserialize_with = "Option::deserialize")]
+    pub cookie_names: Option<Vec<String>>,
     #[serde(rename = "adaptive_delivery_action")]
     pub adaptive_delivery_action: String,
     #[serde(rename = "device_group")]
@@ -55,12 +55,12 @@ pub struct ApplicationCacheResults {
     pub enable_caching_for_options: bool,
     #[serde(rename = "enable_stale_cache")]
     pub enable_stale_cache: bool,
-    #[serde(rename = "l2_region")]
-    pub l2_region: String,
+    #[serde(rename = "l2_region", deserialize_with = "Option::deserialize")]
+    pub l2_region: Option<String>,
 }
 
 impl ApplicationCacheResults {
-    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Vec<String>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Vec<String>, adaptive_delivery_action: String, device_group: Vec<i32>, enable_caching_for_post: bool, l2_caching_enabled: bool, enable_caching_for_options: bool, enable_stale_cache: bool, l2_region: String) -> ApplicationCacheResults {
+    pub fn new(id: i64, name: String, browser_cache_settings: String, browser_cache_settings_maximum_ttl: i64, cdn_cache_settings: String, cdn_cache_settings_maximum_ttl: i64, cache_by_query_string: String, query_string_fields: Option<Vec<String>>, enable_query_string_sort: bool, cache_by_cookies: String, cookie_names: Option<Vec<String>>, adaptive_delivery_action: String, device_group: Vec<i32>, enable_caching_for_post: bool, l2_caching_enabled: bool, enable_caching_for_options: bool, enable_stale_cache: bool, l2_region: Option<String>) -> ApplicationCacheResults {
         ApplicationCacheResults {
             id,
             name,

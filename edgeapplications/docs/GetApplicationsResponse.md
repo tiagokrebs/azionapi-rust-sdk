@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **schema_version** | **i64** |  | 
 **links** | [**crate::models::ApplicationLinks**](ApplicationLinks.md) |  | 
 **results** | [**Vec<crate::models::ApplicationsResults>**](ApplicationsResults.md) |  | 
+**next** | Option<**String**> |  | [optional]
+**previous** | Option<**String**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -55,8 +55,8 @@ pub struct ApplicationCacheResponseDetails {
     pub slice_configuration_range: Option<i64>,
     #[serde(rename = "enable_stale_cache", skip_serializing_if = "Option::is_none")]
     pub enable_stale_cache: Option<bool>,
-    #[serde(rename = "l2_region", skip_serializing_if = "Option::is_none")]
-    pub l2_region: Option<String>,
+    #[serde(rename = "l2_region", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub l2_region: Option<Option<String>>,
 }
 
 impl ApplicationCacheResponseDetails {
