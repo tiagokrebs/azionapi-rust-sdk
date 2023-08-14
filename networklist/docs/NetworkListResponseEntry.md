@@ -1,4 +1,4 @@
-# NetworkLists
+# NetworkListResponseEntry
 
 ## Properties
 
@@ -9,8 +9,7 @@ Name | Type | Description | Notes
 **last_modified** | Option<**String**> |  | [optional]
 **list_type** | Option<**String**> |  | [optional]
 **name** | Option<**String**> |  | [optional]
-**country_list** | Option<**Vec<String>**> |  | [optional]
-**ip_list** | Option<**Vec<String>**> |  | [optional]
+**items_values** | Option<**Vec<String>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

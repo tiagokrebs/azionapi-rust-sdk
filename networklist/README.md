@@ -38,9 +38,11 @@ Class | Method | HTTP request | Description
  - [ErrorModel](docs/ErrorModel.md)
  - [Links](docs/Links.md)
  - [ListNetworkListsResponse](docs/ListNetworkListsResponse.md)
+ - [NetworkListResponseEntry](docs/NetworkListResponseEntry.md)
+ - [NetworkListUuidResponse](docs/NetworkListUuidResponse.md)
+ - [NetworkListUuidResponseEntry](docs/NetworkListUuidResponseEntry.md)
  - [NetworkLists](docs/NetworkLists.md)
  - [NetworkListsResponse](docs/NetworkListsResponse.md)
- - [UpdateNetworkListsRequest](docs/UpdateNetworkListsRequest.md)
 
 
 To get access to the crate's generated documentation, use:

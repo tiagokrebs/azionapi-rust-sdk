@@ -18,7 +18,7 @@ pub struct CreateNetworkListsRequest {
     #[serde(rename = "items_values", skip_serializing_if = "Option::is_none")]
     pub items_values: Option<Vec<String>>,
     #[serde(rename = "list_type", skip_serializing_if = "Option::is_none")]
-    pub list_type: Option<String>,
+    pub list_type: Option<ListType>,
 }
 
 impl CreateNetworkListsRequest {
@@ -31,4 +31,20 @@ impl CreateNetworkListsRequest {
     }
 }
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum ListType {
+    #[serde(rename = "ip_cidr")]
+    IpCidr,
+    #[serde(rename = "asn")]
+    Asn,
+    #[serde(rename = "countries")]
+    Countries,
+}
+
+impl Default for ListType {
+    fn default() -> ListType {
+        Self::IpCidr
+    }
+}
 

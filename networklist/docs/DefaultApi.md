@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## network_lists_get
 
-> crate::models::ListNetworkListsResponse network_lists_get(page)
+> crate::models::ListNetworkListsResponse network_lists_get(page, page_size, sort, order_by)
 List all user Network Lists
 
 ### Parameters
@@ -22,6 +22,9 @@ List all user Network Lists
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **page** | Option<**i32**> |  |  |
+**page_size** | Option<**i32**> |  |  |
+**sort** | Option<**String**> |  |  |
+**order_by** | Option<**String**> |  |  |
 
 ### Return type
 
@@ -41,7 +44,7 @@ Name | Type | Description  | Required | Notes
 
 ## network_lists_post
 
-> network_lists_post(create_network_lists_request)
+> crate::models::NetworkListsResponse network_lists_post(create_network_lists_request)
 Create a Network Lists
 
 ### Parameters
@@ -53,7 +56,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 
@@ -69,7 +72,7 @@ Name | Type | Description  | Required | Notes
 
 ## network_lists_uuid_get
 
-> crate::models::NetworkListsResponse network_lists_uuid_get(uuid)
+> crate::models::NetworkListUuidResponse network_lists_uuid_get(uuid)
 Retrieve a Network Lists set by uuid
 
 ### Parameters
@@ -81,7 +84,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::NetworkListsResponse**](NetworkListsResponse.md)
+[**crate::models::NetworkListUuidResponse**](NetworkListUuidResponse.md)
 
 ### Authorization
 
@@ -97,7 +100,7 @@ Name | Type | Description  | Required | Notes
 
 ## network_lists_uuid_put
 
-> crate::models::ListNetworkListsResponse network_lists_uuid_put(uuid, update_network_lists_request)
+> crate::models::NetworkListsResponse network_lists_uuid_put(uuid, create_network_lists_request)
 Overwrite some Network Lists attributes
 
 ### Parameters
@@ -106,11 +109,11 @@ Overwrite some Network Lists attributes
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **uuid** | **String** |  | [required] |
-**update_network_lists_request** | [**UpdateNetworkListsRequest**](UpdateNetworkListsRequest.md) |  | [required] |
+**create_network_lists_request** | [**CreateNetworkListsRequest**](CreateNetworkListsRequest.md) |  | [required] |
 
 ### Return type
 
-[**crate::models::ListNetworkListsResponse**](ListNetworkListsResponse.md)
+[**crate::models::NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 

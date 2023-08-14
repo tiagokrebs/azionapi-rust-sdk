@@ -8,9 +8,11 @@ docs/DefaultApi.md
 docs/ErrorModel.md
 docs/Links.md
 docs/ListNetworkListsResponse.md
+docs/NetworkListResponseEntry.md
+docs/NetworkListUuidResponse.md
+docs/NetworkListUuidResponseEntry.md
 docs/NetworkLists.md
 docs/NetworkListsResponse.md
-docs/UpdateNetworkListsRequest.md
 git_push.sh
 src/apis/configuration.rs
 src/apis/default_api.rs
@@ -22,6 +24,8 @@ src/models/error_model.rs
 src/models/links.rs
 src/models/list_network_lists_response.rs
 src/models/mod.rs
+src/models/network_list_response_entry.rs
+src/models/network_list_uuid_response.rs
+src/models/network_list_uuid_response_entry.rs
 src/models/network_lists.rs
 src/models/network_lists_response.rs
-src/models/update_network_lists_request.rs
