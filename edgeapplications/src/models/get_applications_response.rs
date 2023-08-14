@@ -23,6 +23,10 @@ pub struct GetApplicationsResponse {
     pub links: Box<crate::models::ApplicationLinks>,
     #[serde(rename = "results")]
     pub results: Vec<crate::models::ApplicationsResults>,
+    #[serde(rename = "next", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub next: Option<Option<String>>,
+    #[serde(rename = "previous", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub previous: Option<Option<String>>,
 }
 
 impl GetApplicationsResponse {
@@ -33,6 +37,8 @@ impl GetApplicationsResponse {
             schema_version,
             links: Box::new(links),
             results,
+            next: None,
+            previous: None,
         }
     }
 }

@@ -82,6 +82,7 @@ pub enum EdgeApplicationsEdgeApplicationIdDeviceGroupsPostError {
     Status400(),
     Status403(),
     Status404(),
+    Status415(),
     Status422(),
     Status500(),
     UnknownValue(serde_json::Value),
