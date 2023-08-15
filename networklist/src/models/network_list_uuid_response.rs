@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct NetworkListsResponse {
+pub struct NetworkListUuidResponse {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Box<crate::models::NetworkListResponseEntry>>,
+    pub results: Option<Box<crate::models::NetworkListUuidResponseEntry>>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
-    pub schema_version: Option<f32>,
+    pub schema_version: Option<i64>,
 }
 
-impl NetworkListsResponse {
-    pub fn new() -> NetworkListsResponse {
-        NetworkListsResponse {
+impl NetworkListUuidResponse {
+    pub fn new() -> NetworkListUuidResponse {
+        NetworkListUuidResponse {
             results: None,
             schema_version: None,
         }

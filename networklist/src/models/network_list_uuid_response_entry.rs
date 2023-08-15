@@ -12,9 +12,7 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct NetworkLists {
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<i64>,
+pub struct NetworkListUuidResponseEntry {
     #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
     pub last_editor: Option<String>,
     #[serde(rename = "last_modified", skip_serializing_if = "Option::is_none")]
@@ -23,22 +21,18 @@ pub struct NetworkLists {
     pub list_type: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "country_list", skip_serializing_if = "Option::is_none")]
-    pub country_list: Option<Vec<String>>,
-    #[serde(rename = "ip_list", skip_serializing_if = "Option::is_none")]
-    pub ip_list: Option<Vec<String>>,
+    #[serde(rename = "items_values", skip_serializing_if = "Option::is_none")]
+    pub items_values: Option<Vec<String>>,
 }
 
-impl NetworkLists {
-    pub fn new() -> NetworkLists {
-        NetworkLists {
-            id: None,
+impl NetworkListUuidResponseEntry {
+    pub fn new() -> NetworkListUuidResponseEntry {
+        NetworkListUuidResponseEntry {
             last_editor: None,
             last_modified: None,
             list_type: None,
             name: None,
-            country_list: None,
-            ip_list: None,
+            items_values: None,
         }
     }
 }

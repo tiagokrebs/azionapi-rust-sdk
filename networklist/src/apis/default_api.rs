@@ -53,7 +53,7 @@ pub enum NetworkListsUuidPutError {
 }
 
 
-pub async fn network_lists_get(configuration: &configuration::Configuration, page: Option<i32>) -> Result<crate::models::ListNetworkListsResponse, Error<NetworkListsGetError>> {
+pub async fn network_lists_get(configuration: &configuration::Configuration, page: Option<i32>, page_size: Option<i32>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::ListNetworkListsResponse, Error<NetworkListsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -63,6 +63,15 @@ pub async fn network_lists_get(configuration: &configuration::Configuration, pag
 
     if let Some(ref local_var_str) = page {
         local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = sort {
+        local_var_req_builder = local_var_req_builder.query(&[("sort", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = order_by {
+        local_var_req_builder = local_var_req_builder.query(&[("order_by", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -91,7 +100,7 @@ pub async fn network_lists_get(configuration: &configuration::Configuration, pag
     }
 }
 
-pub async fn network_lists_post(configuration: &configuration::Configuration, create_network_lists_request: crate::models::CreateNetworkListsRequest) -> Result<(), Error<NetworkListsPostError>> {
+pub async fn network_lists_post(configuration: &configuration::Configuration, create_network_lists_request: crate::models::CreateNetworkListsRequest) -> Result<crate::models::NetworkListsResponse, Error<NetworkListsPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -119,7 +128,7 @@ pub async fn network_lists_post(configuration: &configuration::Configuration, cr
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<NetworkListsPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -127,7 +136,7 @@ pub async fn network_lists_post(configuration: &configuration::Configuration, cr
     }
 }
 
-pub async fn network_lists_uuid_get(configuration: &configuration::Configuration, uuid: &str) -> Result<crate::models::NetworkListsResponse, Error<NetworkListsUuidGetError>> {
+pub async fn network_lists_uuid_get(configuration: &configuration::Configuration, uuid: &str) -> Result<crate::models::NetworkListUuidResponse, Error<NetworkListsUuidGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -162,7 +171,7 @@ pub async fn network_lists_uuid_get(configuration: &configuration::Configuration
     }
 }
 
-pub async fn network_lists_uuid_put(configuration: &configuration::Configuration, uuid: &str, update_network_lists_request: crate::models::UpdateNetworkListsRequest) -> Result<crate::models::ListNetworkListsResponse, Error<NetworkListsUuidPutError>> {
+pub async fn network_lists_uuid_put(configuration: &configuration::Configuration, uuid: &str, create_network_lists_request: crate::models::CreateNetworkListsRequest) -> Result<crate::models::NetworkListsResponse, Error<NetworkListsUuidPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -181,7 +190,7 @@ pub async fn network_lists_uuid_put(configuration: &configuration::Configuration
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&update_network_lists_request);
+    local_var_req_builder = local_var_req_builder.json(&create_network_lists_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
