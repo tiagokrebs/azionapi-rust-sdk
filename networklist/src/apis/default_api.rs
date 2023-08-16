@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum NetworkListsGetError {
+    Status400(crate::models::BadRequestResponse),
     Status404(),
     UnknownValue(serde_json::Value),
 }

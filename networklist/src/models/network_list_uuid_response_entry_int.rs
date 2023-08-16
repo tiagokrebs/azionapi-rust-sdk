@@ -12,7 +12,7 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct NetworkListUuidResponseEntry {
+pub struct NetworkListUuidResponseEntryInt {
     #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
     pub last_editor: Option<String>,
     #[serde(rename = "last_modified", skip_serializing_if = "Option::is_none")]
@@ -25,9 +25,9 @@ pub struct NetworkListUuidResponseEntry {
     pub items_values: Option<Vec<i32>>,
 }
 
-impl NetworkListUuidResponseEntry {
-    pub fn new() -> NetworkListUuidResponseEntry {
-        NetworkListUuidResponseEntry {
+impl NetworkListUuidResponseEntryInt {
+    pub fn new() -> NetworkListUuidResponseEntryInt {
+        NetworkListUuidResponseEntryInt {
             last_editor: None,
             last_modified: None,
             list_type: None,
