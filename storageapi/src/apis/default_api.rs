@@ -19,6 +19,8 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteVersionError {
+    Status400(),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -26,6 +28,8 @@ pub enum DeleteVersionError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum StorageVersionIdPostError {
+    Status400(),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
