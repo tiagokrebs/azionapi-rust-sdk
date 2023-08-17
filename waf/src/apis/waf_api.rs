@@ -19,6 +19,8 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetWafDomainsError {
+    Status400(crate::models::WafEvents400),
+    Status404(crate::models::WafEvents404),
     UnknownValue(serde_json::Value),
 }
 
@@ -27,8 +29,9 @@ pub enum GetWafDomainsError {
 #[serde(untagged)]
 pub enum GetWafEventsError {
     Status400(crate::models::WafEvents400),
-    Status404(crate::models::WafEvents404),
     Status401(crate::models::WafEvents401),
+    Status404(crate::models::WafEvents404),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
