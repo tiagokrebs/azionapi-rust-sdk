@@ -16,7 +16,7 @@ pub struct NetworkListsResponse {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
     pub results: Option<Box<crate::models::NetworkListResponseEntry>>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
-    pub schema_version: Option<f32>,
+    pub schema_version: Option<i64>,
 }
 
 impl NetworkListsResponse {
