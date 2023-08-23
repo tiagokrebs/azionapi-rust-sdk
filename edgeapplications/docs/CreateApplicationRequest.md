@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **https_port** | Option<[**serde_json::Value**](.md)> |  | [optional]
 **l2_caching** | Option<**bool**> |  | [optional]
 **http3** | Option<**bool**> |  | [optional]
+**websocket** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

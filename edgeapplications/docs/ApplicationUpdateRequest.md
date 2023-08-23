@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **load_balancer** | Option<**bool**> |  | [optional]
 **raw_logs** | Option<**bool**> |  | [optional]
 **web_application_firewall** | Option<**bool**> |  | [optional]
+**websocket** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

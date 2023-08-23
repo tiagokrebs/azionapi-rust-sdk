@@ -47,6 +47,8 @@ pub struct CreateApplicationRequest {
     pub l2_caching: Option<bool>,
     #[serde(rename = "http3", skip_serializing_if = "Option::is_none")]
     pub http3: Option<bool>,
+    #[serde(rename = "websocket", skip_serializing_if = "Option::is_none")]
+    pub websocket: Option<bool>,
 }
 
 impl CreateApplicationRequest {
@@ -69,6 +71,7 @@ impl CreateApplicationRequest {
             https_port: None,
             l2_caching: None,
             http3: None,
+            websocket: None,
         }
     }
 }

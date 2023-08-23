@@ -49,6 +49,8 @@ pub struct ApplicationPutRequest {
     pub debug_rules: Option<bool>,
     #[serde(rename = "http3", skip_serializing_if = "Option::is_none")]
     pub http3: Option<bool>,
+    #[serde(rename = "websocket", skip_serializing_if = "Option::is_none")]
+    pub websocket: Option<bool>,
     #[serde(rename = "supported_ciphers", skip_serializing_if = "Option::is_none")]
     pub supported_ciphers: Option<String>,
 }
@@ -74,6 +76,7 @@ impl ApplicationPutRequest {
             web_application_firewall: None,
             debug_rules: None,
             http3: None,
+            websocket: None,
             supported_ciphers: None,
         }
     }
