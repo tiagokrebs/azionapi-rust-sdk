@@ -47,6 +47,8 @@ pub struct ApplicationUpdateRequest {
     pub raw_logs: Option<bool>,
     #[serde(rename = "web_application_firewall", skip_serializing_if = "Option::is_none")]
     pub web_application_firewall: Option<bool>,
+    #[serde(rename = "websocket", skip_serializing_if = "Option::is_none")]
+    pub websocket: Option<bool>,
 }
 
 impl ApplicationUpdateRequest {
@@ -69,6 +71,7 @@ impl ApplicationUpdateRequest {
             load_balancer: None,
             raw_logs: None,
             web_application_firewall: None,
+            websocket: None,
         }
     }
 }
