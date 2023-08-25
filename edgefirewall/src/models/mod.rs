@@ -8,3 +8,5 @@ pub mod links;
 pub use self::links::Links;
 pub mod list_edge_firewall_response;
 pub use self::list_edge_firewall_response::ListEdgeFirewallResponse;
+pub mod update_edge_firewall_request;
+pub use self::update_edge_firewall_request::UpdateEdgeFirewallRequest;

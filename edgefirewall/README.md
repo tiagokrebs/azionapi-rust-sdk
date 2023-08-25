@@ -40,6 +40,7 @@ Class | Method | HTTP request | Description
  - [EdgeFirewallResponse](docs/EdgeFirewallResponse.md)
  - [Links](docs/Links.md)
  - [ListEdgeFirewallResponse](docs/ListEdgeFirewallResponse.md)
+ - [UpdateEdgeFirewallRequest](docs/UpdateEdgeFirewallRequest.md)
 
 
 To get access to the crate's generated documentation, use:

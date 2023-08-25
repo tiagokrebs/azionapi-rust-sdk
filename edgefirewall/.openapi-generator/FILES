@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 Cargo.toml
 README.md
@@ -9,6 +8,7 @@ docs/EdgeFirewall.md
 docs/EdgeFirewallResponse.md
 docs/Links.md
 docs/ListEdgeFirewallResponse.md
+docs/UpdateEdgeFirewallRequest.md
 git_push.sh
 src/apis/configuration.rs
 src/apis/default_api.rs
@@ -20,3 +20,4 @@ src/models/edge_firewall_response.rs
 src/models/links.rs
 src/models/list_edge_firewall_response.rs
 src/models/mod.rs
+src/models/update_edge_firewall_request.rs

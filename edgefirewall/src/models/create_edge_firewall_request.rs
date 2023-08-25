@@ -16,7 +16,7 @@ pub struct CreateEdgeFirewallRequest {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "domains", skip_serializing_if = "Option::is_none")]
-    pub domains: Option<Vec<i32>>,
+    pub domains: Option<Vec<i64>>,
     #[serde(rename = "is_active", skip_serializing_if = "Option::is_none")]
     pub is_active: Option<bool>,
     #[serde(rename = "edge_functions_enabled", skip_serializing_if = "Option::is_none")]
