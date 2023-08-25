@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFirewallGetError {
+    Status404(),
     UnknownValue(serde_json::Value),
 }
 
@@ -35,6 +36,8 @@ pub enum EdgeFirewallPostError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFirewallUuidDeleteError {
+    Status400(),
+    Status404(),
     UnknownValue(serde_json::Value),
 }
 
@@ -42,6 +45,8 @@ pub enum EdgeFirewallUuidDeleteError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFirewallUuidGetError {
+    Status400(),
+    Status404(),
     UnknownValue(serde_json::Value),
 }
 
@@ -50,6 +55,7 @@ pub enum EdgeFirewallUuidGetError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidPatchError {
     Status400(),
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
@@ -59,12 +65,13 @@ pub enum EdgeFirewallUuidPatchError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidPutError {
     Status400(),
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn edge_firewall_get(configuration: &configuration::Configuration, page: Option<i32>, page_size: Option<i32>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::ListEdgeFirewallResponse, Error<EdgeFirewallGetError>> {
+pub async fn edge_firewall_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::ListEdgeFirewallResponse, Error<EdgeFirewallGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -111,7 +118,7 @@ pub async fn edge_firewall_get(configuration: &configuration::Configuration, pag
     }
 }
 
-pub async fn edge_firewall_post(configuration: &configuration::Configuration, create_edge_firewall_request: crate::models::CreateEdgeFirewallRequest) -> Result<(), Error<EdgeFirewallPostError>> {
+pub async fn edge_firewall_post(configuration: &configuration::Configuration, create_edge_firewall_request: crate::models::CreateEdgeFirewallRequest) -> Result<crate::models::EdgeFirewallResponse, Error<EdgeFirewallPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -139,7 +146,7 @@ pub async fn edge_firewall_post(configuration: &configuration::Configuration, cr
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<EdgeFirewallPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -217,7 +224,7 @@ pub async fn edge_firewall_uuid_get(configuration: &configuration::Configuration
     }
 }
 
-pub async fn edge_firewall_uuid_patch(configuration: &configuration::Configuration, uuid: &str, body: crate::models::ListEdgeFirewallResponse) -> Result<crate::models::ListEdgeFirewallResponse, Error<EdgeFirewallUuidPatchError>> {
+pub async fn edge_firewall_uuid_patch(configuration: &configuration::Configuration, uuid: &str, update_edge_firewall_request: crate::models::UpdateEdgeFirewallRequest) -> Result<crate::models::EdgeFirewallResponse, Error<EdgeFirewallUuidPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -236,7 +243,7 @@ pub async fn edge_firewall_uuid_patch(configuration: &configuration::Configurati
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&body);
+    local_var_req_builder = local_var_req_builder.json(&update_edge_firewall_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -253,7 +260,7 @@ pub async fn edge_firewall_uuid_patch(configuration: &configuration::Configurati
     }
 }
 
-pub async fn edge_firewall_uuid_put(configuration: &configuration::Configuration, uuid: &str, body: crate::models::ListEdgeFirewallResponse) -> Result<crate::models::ListEdgeFirewallResponse, Error<EdgeFirewallUuidPutError>> {
+pub async fn edge_firewall_uuid_put(configuration: &configuration::Configuration, uuid: &str, update_edge_firewall_request: crate::models::UpdateEdgeFirewallRequest) -> Result<crate::models::EdgeFirewallResponse, Error<EdgeFirewallUuidPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -272,7 +279,7 @@ pub async fn edge_firewall_uuid_put(configuration: &configuration::Configuration
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&body);
+    local_var_req_builder = local_var_req_builder.json(&update_edge_firewall_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;

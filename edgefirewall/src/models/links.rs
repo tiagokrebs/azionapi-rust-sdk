@@ -13,10 +13,10 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Links {
-    #[serde(rename = "previous", skip_serializing_if = "Option::is_none")]
-    pub previous: Option<String>,
-    #[serde(rename = "next", skip_serializing_if = "Option::is_none")]
-    pub next: Option<String>,
+    #[serde(rename = "previous", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub previous: Option<Option<String>>,
+    #[serde(rename = "next", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub next: Option<Option<String>>,
 }
 
 impl Links {

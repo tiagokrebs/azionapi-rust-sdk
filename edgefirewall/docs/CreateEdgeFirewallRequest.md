@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**domains** | Option<**Vec<i32>**> |  | [optional]
+**domains** | Option<**Vec<i64>**> |  | [optional]
 **is_active** | Option<**bool**> |  | [optional]
 **edge_functions_enabled** | Option<**bool**> |  | [optional]
 **network_protection_enabled** | Option<**bool**> |  | [optional]
