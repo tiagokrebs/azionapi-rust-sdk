@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DataStreamingEndpointTypeStandardHeadersExample {
     #[serde(rename = "header-name-1", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub header_name_1: Option<Option<String>>,

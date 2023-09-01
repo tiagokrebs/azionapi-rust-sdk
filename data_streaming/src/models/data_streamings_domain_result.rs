@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DataStreamingsDomainResult {
     #[serde(rename = "domain_id", skip_serializing_if = "Option::is_none")]
     pub domain_id: Option<i32>,
