@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApplicationLinks {
     #[serde(rename = "previous", deserialize_with = "Option::deserialize")]
     pub previous: Option<String>,

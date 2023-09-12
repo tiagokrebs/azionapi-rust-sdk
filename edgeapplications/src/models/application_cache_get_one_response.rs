@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ApplicationCacheGetOneResponse {
     #[serde(rename = "results")]
     pub results: Box<crate::models::ApplicationCacheResults>,
