@@ -101,7 +101,7 @@ pub enum OverwriteDataStreamingByIdError {
 }
 
 
-/// 
+/// Create a new data streaming.
 pub async fn create_new_data_streaming(configuration: &configuration::Configuration, create_new_data_streaming_request: crate::models::CreateNewDataStreamingRequest) -> Result<crate::models::CreateNewDataStreaming201Response, Error<CreateNewDataStreamingError>> {
     let local_var_configuration = configuration;
 

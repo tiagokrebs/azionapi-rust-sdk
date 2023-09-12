@@ -18,7 +18,7 @@ Method | HTTP request | Description
 > crate::models::CreateNewDataStreaming201Response create_new_data_streaming(create_new_data_streaming_request)
 Create a new data streaming
 
-
+Create a new data streaming.
 
 ### Parameters
 
