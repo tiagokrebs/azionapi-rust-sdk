@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateApplicationRequest {
     #[serde(rename = "name")]
     pub name: String,
@@ -23,6 +23,8 @@ pub struct CreateApplicationRequest {
     pub origin_type: Option<String>,
     #[serde(rename = "address", skip_serializing_if = "Option::is_none")]
     pub address: Option<String>,
+    #[serde(rename = "minimum_tls_version", skip_serializing_if = "Option::is_none")]
+    pub minimum_tls_version: Option<String>,
     #[serde(rename = "origin_protocol_policy", skip_serializing_if = "Option::is_none")]
     pub origin_protocol_policy: Option<String>,
     #[serde(rename = "host_header", skip_serializing_if = "Option::is_none")]
@@ -59,6 +61,7 @@ impl CreateApplicationRequest {
             delivery_protocol: None,
             origin_type: None,
             address: None,
+            minimum_tls_version: None,
             origin_protocol_policy: None,
             host_header: None,
             browser_cache_settings: None,

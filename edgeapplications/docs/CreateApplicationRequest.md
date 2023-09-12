@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **delivery_protocol** | Option<**String**> |  | [optional]
 **origin_type** | Option<**String**> |  | [optional]
 **address** | Option<**String**> |  | [optional]
+**minimum_tls_version** | Option<**String**> |  | [optional]
 **origin_protocol_policy** | Option<**String**> |  | [optional]
 **host_header** | Option<**String**> |  | [optional]
 **browser_cache_settings** | Option<**String**> |  | [optional]
