@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **description** | Option<**String**> |  | [optional]
 **phase** | **String** |  | 
-**behaviors** | Option<[**Vec<crate::models::RulesEngineResultResponseBehaviors>**](RulesEngineResultResponse_behaviors.md)> |  | [optional]
+**behaviors** | Option<[**Vec<crate::models::RulesEngineBehaviorEntry>**](RulesEngineBehaviorEntry.md)> |  | [optional]
 **criteria** | [**Vec<Vec<crate::models::RulesEngineCriteria>>**](array.md) |  | 
 **is_active** | **bool** |  | 
 **order** | **i64** |  | 

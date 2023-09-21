@@ -22,7 +22,7 @@ pub struct RulesEngineResultResponse {
     #[serde(rename = "phase")]
     pub phase: String,
     #[serde(rename = "behaviors", skip_serializing_if = "Option::is_none")]
-    pub behaviors: Option<Vec<crate::models::RulesEngineResultResponseBehaviors>>,
+    pub behaviors: Option<Vec<crate::models::RulesEngineBehaviorEntry>>,
     #[serde(rename = "criteria")]
     pub criteria: Vec<Vec<crate::models::RulesEngineCriteria>>,
     #[serde(rename = "is_active")]

@@ -20,11 +20,11 @@ pub struct UpdateRulesEngineRequest {
     #[serde(rename = "criteria")]
     pub criteria: Vec<Vec<crate::models::RulesEngineCriteria>>,
     #[serde(rename = "behaviors")]
-    pub behaviors: Vec<crate::models::RulesEngineBehavior>,
+    pub behaviors: Vec<crate::models::RulesEngineBehaviorEntry>,
 }
 
 impl UpdateRulesEngineRequest {
-    pub fn new(name: String, criteria: Vec<Vec<crate::models::RulesEngineCriteria>>, behaviors: Vec<crate::models::RulesEngineBehavior>) -> UpdateRulesEngineRequest {
+    pub fn new(name: String, criteria: Vec<Vec<crate::models::RulesEngineCriteria>>, behaviors: Vec<crate::models::RulesEngineBehaviorEntry>) -> UpdateRulesEngineRequest {
         UpdateRulesEngineRequest {
             name,
             description: None,
