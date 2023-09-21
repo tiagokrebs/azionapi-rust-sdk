@@ -20,7 +20,7 @@ pub struct PatchRulesEngineRequest {
     #[serde(rename = "criteria", skip_serializing_if = "Option::is_none")]
     pub criteria: Option<Vec<Vec<crate::models::RulesEngineCriteria>>>,
     #[serde(rename = "behaviors", skip_serializing_if = "Option::is_none")]
-    pub behaviors: Option<Vec<crate::models::RulesEngineBehavior>>,
+    pub behaviors: Option<Vec<crate::models::RulesEngineBehaviorEntry>>,
 }
 
 impl PatchRulesEngineRequest {
