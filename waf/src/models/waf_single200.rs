@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WafDomains200 {
+pub struct WafSingle200 {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<serde_json::Value>>,
+    pub results: Option<Box<crate::models::SingleWaf>>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
     pub schema_version: Option<i64>,
 }
 
-impl WafDomains200 {
-    pub fn new() -> WafDomains200 {
-        WafDomains200 {
+impl WafSingle200 {
+    pub fn new() -> WafSingle200 {
+        WafSingle200 {
             results: None,
             schema_version: None,
         }
