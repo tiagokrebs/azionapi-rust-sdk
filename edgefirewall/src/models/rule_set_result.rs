@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct EdgeFirewallResponse {
+pub struct RuleSetResult {
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Box<crate::models::EdgeFirewall>>,
+    pub results: Option<Box<crate::models::RuleSetResultResults>>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
-    pub schema_version: Option<f32>,
+    pub schema_version: Option<i32>,
 }
 
-impl EdgeFirewallResponse {
-    pub fn new() -> EdgeFirewallResponse {
-        EdgeFirewallResponse {
+impl RuleSetResult {
+    pub fn new() -> RuleSetResult {
+        RuleSetResult {
             results: None,
             schema_version: None,
         }

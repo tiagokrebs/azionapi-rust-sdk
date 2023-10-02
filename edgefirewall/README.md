@@ -25,6 +25,12 @@ All URIs are relative to *https://api.azionapi.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_get**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_get) | **GET** /edge_firewall/{edge_firewall_id}/rules_engine | List all rule sets.
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_post**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_post) | **POST** /edge_firewall/{edge_firewall_id}/rules_engine | Create rule set.
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_rule_set_id_delete**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_rule_set_id_delete) | **DELETE** /edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id} | Delete rule set.
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_rule_set_id_get**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_rule_set_id_get) | **GET** /edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id} | Retrieve rule set by ID.
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_rule_set_id_patch**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_rule_set_id_patch) | **PATCH** /edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id} | Edit rule set.
+*DefaultApi* | [**edge_firewall_edge_firewall_id_rules_engine_rule_set_id_put**](docs/DefaultApi.md#edge_firewall_edge_firewall_id_rules_engine_rule_set_id_put) | **PUT** /edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id} | Overwrite rule set
 *DefaultApi* | [**edge_firewall_get**](docs/DefaultApi.md#edge_firewall_get) | **GET** /edge_firewall | List all user edge firewall
 *DefaultApi* | [**edge_firewall_post**](docs/DefaultApi.md#edge_firewall_post) | **POST** /edge_firewall | Create a edge firewall
 *DefaultApi* | [**edge_firewall_uuid_delete**](docs/DefaultApi.md#edge_firewall_uuid_delete) | **DELETE** /edge_firewall/{uuid} | Delete an edge firewall by uuid
@@ -35,12 +41,24 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Behaviors](docs/Behaviors.md)
+ - [Conditionals](docs/Conditionals.md)
  - [CreateEdgeFirewallRequest](docs/CreateEdgeFirewallRequest.md)
+ - [CreateRuleSetRequest](docs/CreateRuleSetRequest.md)
  - [EdgeFirewall](docs/EdgeFirewall.md)
  - [EdgeFirewallResponse](docs/EdgeFirewallResponse.md)
  - [Links](docs/Links.md)
  - [ListEdgeFirewallResponse](docs/ListEdgeFirewallResponse.md)
+ - [RuleSetResponse](docs/RuleSetResponse.md)
+ - [RuleSetResponseAll](docs/RuleSetResponseAll.md)
+ - [RuleSetResult](docs/RuleSetResult.md)
+ - [RuleSetResultAll](docs/RuleSetResultAll.md)
+ - [RuleSetResultResults](docs/RuleSetResultResults.md)
+ - [SslVerificationStatusArguments](docs/SslVerificationStatusArguments.md)
+ - [SslVerificationStatusCriteria](docs/SslVerificationStatusCriteria.md)
+ - [SslVerificationStatusOperators](docs/SslVerificationStatusOperators.md)
  - [UpdateEdgeFirewallRequest](docs/UpdateEdgeFirewallRequest.md)
+ - [Variables](docs/Variables.md)
 
 
 To get access to the crate's generated documentation, use:
