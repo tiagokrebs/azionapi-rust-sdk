@@ -1,3 +1,7 @@
+pub mod create_new_waf_ruleset_request;
+pub use self::create_new_waf_ruleset_request::CreateNewWafRulesetRequest;
+pub mod single_waf;
+pub use self::single_waf::SingleWaf;
 pub mod waf_domains200;
 pub use self::waf_domains200::WafDomains200;
 pub mod waf_events200;
@@ -8,3 +12,9 @@ pub mod waf_events401;
 pub use self::waf_events401::WafEvents401;
 pub mod waf_events404;
 pub use self::waf_events404::WafEvents404;
+pub mod waf_list200;
+pub use self::waf_list200::WafList200;
+pub mod waf_sensitivity_choices;
+pub use self::waf_sensitivity_choices::WafSensitivityChoices;
+pub mod waf_single200;
+pub use self::waf_single200::WafSingle200;

@@ -25,17 +25,28 @@ All URIs are relative to *https://api.azionapi.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*WafApi* | [**get_waf_domains**](docs/WafApi.md#get_waf_domains) | **GET** /waf/{wafId}/domains | Find domains attached to a WAF
+*WafApi* | [**create_new_waf_ruleset**](docs/WafApi.md#create_new_waf_ruleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account.
+*WafApi* | [**delete_waf_ruleset**](docs/WafApi.md#delete_waf_ruleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+*WafApi* | [**get_waf_domains**](docs/WafApi.md#get_waf_domains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
 *WafApi* | [**get_waf_events**](docs/WafApi.md#get_waf_events) | **GET** /waf/{wafId}/waf_events | Find WAF log events
+*WafApi* | [**get_waf_ruleset**](docs/WafApi.md#get_waf_ruleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+*WafApi* | [**list_all_waf**](docs/WafApi.md#list_all_waf) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account
+*WafApi* | [**list_all_waf_rulesets**](docs/WafApi.md#list_all_waf_rulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+*WafApi* | [**update_waf_ruleset**](docs/WafApi.md#update_waf_ruleset) | **PATCH** /waf/rulesets/{waf_rule_set_id} | Change only select settings of a WAF Rule Set
 
 
 ## Documentation For Models
 
+ - [CreateNewWafRulesetRequest](docs/CreateNewWafRulesetRequest.md)
+ - [SingleWaf](docs/SingleWaf.md)
  - [WafDomains200](docs/WafDomains200.md)
  - [WafEvents200](docs/WafEvents200.md)
  - [WafEvents400](docs/WafEvents400.md)
  - [WafEvents401](docs/WafEvents401.md)
  - [WafEvents404](docs/WafEvents404.md)
+ - [WafList200](docs/WafList200.md)
+ - [WafSensitivityChoices](docs/WafSensitivityChoices.md)
+ - [WafSingle200](docs/WafSingle200.md)
 
 
 To get access to the crate's generated documentation, use:
