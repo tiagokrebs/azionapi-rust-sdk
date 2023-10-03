@@ -12,22 +12,22 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ListEdgeFirewallResponse {
+pub struct RuleSetResponseAll {
     #[serde(rename = "count", skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
     #[serde(rename = "total_pages", skip_serializing_if = "Option::is_none")]
     pub total_pages: Option<i64>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
-    pub schema_version: Option<i64>,
+    pub schema_version: Option<i32>,
     #[serde(rename = "links", skip_serializing_if = "Option::is_none")]
     pub links: Option<Box<crate::models::Links>>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<crate::models::EdgeFirewall>>,
+    pub results: Option<Vec<crate::models::RuleSetResultAll>>,
 }
 
-impl ListEdgeFirewallResponse {
-    pub fn new() -> ListEdgeFirewallResponse {
-        ListEdgeFirewallResponse {
+impl RuleSetResponseAll {
+    pub fn new() -> RuleSetResponseAll {
+        RuleSetResponseAll {
             count: None,
             total_pages: None,
             schema_version: None,
