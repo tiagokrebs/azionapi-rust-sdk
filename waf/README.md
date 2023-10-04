@@ -38,6 +38,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CreateNewWafRulesetRequest](docs/CreateNewWafRulesetRequest.md)
+ - [Links](docs/Links.md)
  - [SingleWaf](docs/SingleWaf.md)
  - [WafDomains200](docs/WafDomains200.md)
  - [WafEvents200](docs/WafEvents200.md)
