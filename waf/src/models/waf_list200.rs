@@ -18,7 +18,9 @@ pub struct WafList200 {
     #[serde(rename = "total_pages", skip_serializing_if = "Option::is_none")]
     pub total_pages: Option<i64>,
     #[serde(rename = "links", skip_serializing_if = "Option::is_none")]
-    pub links: Option<Box<crate::models::SingleWaf>>,
+    pub links: Option<Box<crate::models::Links>>,
+    #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
+    pub results: Option<Vec<crate::models::SingleWaf>>,
     #[serde(rename = "schema_version", skip_serializing_if = "Option::is_none")]
     pub schema_version: Option<i64>,
 }
@@ -29,6 +31,7 @@ impl WafList200 {
             count: None,
             total_pages: None,
             links: None,
+            results: None,
             schema_version: None,
         }
     }

@@ -3,6 +3,7 @@
 Cargo.toml
 README.md
 docs/CreateNewWafRulesetRequest.md
+docs/Links.md
 docs/SingleWaf.md
 docs/WafApi.md
 docs/WafDomains200.md
@@ -19,6 +20,7 @@ src/apis/mod.rs
 src/apis/waf_api.rs
 src/lib.rs
 src/models/create_new_waf_ruleset_request.rs
+src/models/links.rs
 src/models/mod.rs
 src/models/single_waf.rs
 src/models/waf_domains200.rs

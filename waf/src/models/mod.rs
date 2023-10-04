@@ -1,5 +1,7 @@
 pub mod create_new_waf_ruleset_request;
 pub use self::create_new_waf_ruleset_request::CreateNewWafRulesetRequest;
+pub mod links;
+pub use self::links::Links;
 pub mod single_waf;
 pub use self::single_waf::SingleWaf;
 pub mod waf_domains200;
