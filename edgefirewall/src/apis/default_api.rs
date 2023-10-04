@@ -42,6 +42,7 @@ pub enum EdgeFirewallEdgeFirewallIdRulesEnginePostError {
 pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteError {
     Status400(),
     Status403(),
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
@@ -63,6 +64,7 @@ pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetError {
 pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchError {
     Status400(),
     Status403(),
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
@@ -73,6 +75,7 @@ pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchError {
 pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutError {
     Status400(),
     Status403(),
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
