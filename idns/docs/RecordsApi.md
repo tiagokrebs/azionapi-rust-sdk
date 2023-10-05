@@ -42,7 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_zone_records
 
-> crate::models::GetRecordsResponse get_zone_records(zone_id)
+> crate::models::GetRecordsResponse get_zone_records(zone_id, page, page_size)
 Get a collection of Intelligent DNS zone records
 
 ### Parameters
@@ -51,6 +51,8 @@ Get a collection of Intelligent DNS zone records
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **zone_id** | **i32** | The hosted zone id | [required] |
+**page** | Option<**i64**> | Identifies which page should be returned, if the return is paginated. |  |[default to 1]
+**page_size** | Option<**i64**> | Identifies how many items should be returned per page. |  |[default to 10]
 
 ### Return type
 
