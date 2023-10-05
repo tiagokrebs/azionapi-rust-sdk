@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DnsSecDelegationSigner {
     #[serde(rename = "digest_type", skip_serializing_if = "Option::is_none")]
     pub digest_type: Option<Box<crate::models::DnsSecDelegationSignerDigestType>>,

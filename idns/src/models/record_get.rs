@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RecordGet {
     #[serde(rename = "record_id", skip_serializing_if = "Option::is_none")]
     pub record_id: Option<i32>,
