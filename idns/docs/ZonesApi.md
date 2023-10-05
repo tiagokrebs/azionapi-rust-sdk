@@ -70,12 +70,18 @@ Name | Type | Description  | Required | Notes
 
 ## get_zones
 
-> crate::models::GetZonesResponse get_zones()
+> crate::models::GetZonesResponse get_zones(order_by, sort, page, page_size)
 Get a collection of Intelligent DNS zones
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**order_by** | Option<**String**> | Identifies which property the return should be sorted by. |  |[default to name]
+**sort** | Option<**String**> | Defines whether objects are shown in ascending or descending order depending on the value set in order_by. |  |[default to asc]
+**page** | Option<**i64**> | Identifies which page should be returned, if the return is paginated. |  |[default to 1]
+**page_size** | Option<**i64**> | Identifies how many items should be returned per page. |  |[default to 10]
 
 ### Return type
 
