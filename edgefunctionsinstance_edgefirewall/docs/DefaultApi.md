@@ -23,8 +23,8 @@ List all user Edge Functions Instances
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**page** | Option<**i32**> |  |  |
-**page_size** | Option<**i32**> |  |  |
+**page** | Option<**i64**> |  |  |
+**page_size** | Option<**i64**> |  |  |
 **sort** | Option<**String**> |  |  |
 **order_by** | Option<**String**> |  |  |
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_firewall_edge_firewall_id_functions_instances_post
 
-> edge_firewall_edge_firewall_id_functions_instances_post(create_edge_functions_instances_request)
+> crate::models::EdgeFunctionsInstanceResponse edge_firewall_edge_firewall_id_functions_instances_post(create_edge_functions_instances_request)
 Create an Edge Functions Instance
 
 ### Parameters
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_firewall_edge_firewall_id_functions_instances_uuid_patch
 
-> crate::models::ListEdgeFunctionsInstancesResponse edge_firewall_edge_firewall_id_functions_instances_uuid_patch(uuid, body)
+> crate::models::EdgeFunctionsInstanceResponse edge_firewall_edge_firewall_id_functions_instances_uuid_patch(uuid, body)
 Update some Edge Functions Instance attributes
 
 ### Parameters
@@ -143,7 +143,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**crate::models::EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_firewall_edge_firewall_id_functions_instances_uuid_put
 
-> crate::models::ListEdgeFunctionsInstancesResponse edge_firewall_edge_firewall_id_functions_instances_uuid_put(uuid, body)
+> crate::models::EdgeFunctionsInstanceResponse edge_firewall_edge_firewall_id_functions_instances_uuid_put(uuid, body)
 Overwrite some Edge Functions Instance attributes
 
 ### Parameters
@@ -172,7 +172,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**crate::models::EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 

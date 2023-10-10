@@ -11,14 +11,14 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateEdgeFunctionsInstancesRequest {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "edge_function", skip_serializing_if = "Option::is_none")]
-    pub edge_function: Option<i32>,
-    #[serde(rename = "json_args", skip_serializing_if = "Option::is_none")]
-    pub json_args: Option<serde_json::Value>,
+    pub edge_function: Option<i64>,
+    #[serde(rename = "json_args", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub json_args: Option<Option<serde_json::Value>>,
 }
 
 impl CreateEdgeFunctionsInstancesRequest {
