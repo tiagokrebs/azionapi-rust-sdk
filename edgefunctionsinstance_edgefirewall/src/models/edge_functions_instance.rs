@@ -11,16 +11,20 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct EdgeFunctionsInstance {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<i32>,
+    pub id: Option<i64>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "json_args", skip_serializing_if = "Option::is_none")]
-    pub json_args: Option<serde_json::Value>,
+    #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
+    pub last_editor: Option<String>,
+    #[serde(rename = "last_modified", skip_serializing_if = "Option::is_none")]
+    pub last_modified: Option<String>,
+    #[serde(rename = "json_args", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub json_args: Option<Option<serde_json::Value>>,
     #[serde(rename = "edge_function", skip_serializing_if = "Option::is_none")]
-    pub edge_function: Option<i32>,
+    pub edge_function: Option<i64>,
 }
 
 impl EdgeFunctionsInstance {
@@ -28,6 +32,8 @@ impl EdgeFunctionsInstance {
         EdgeFunctionsInstance {
             id: None,
             name: None,
+            last_editor: None,
+            last_modified: None,
             json_args: None,
             edge_function: None,
         }

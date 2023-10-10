@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesGetError {
+    Status400(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -72,7 +73,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutError {
 }
 
 
-pub async fn edge_firewall_edge_firewall_id_functions_instances_get(configuration: &configuration::Configuration, page: Option<i32>, page_size: Option<i32>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::ListEdgeFunctionsInstancesResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesGetError>> {
+pub async fn edge_firewall_edge_firewall_id_functions_instances_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::ListEdgeFunctionsInstancesResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -119,7 +120,7 @@ pub async fn edge_firewall_edge_firewall_id_functions_instances_get(configuratio
     }
 }
 
-pub async fn edge_firewall_edge_firewall_id_functions_instances_post(configuration: &configuration::Configuration, create_edge_functions_instances_request: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<(), Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesPostError>> {
+pub async fn edge_firewall_edge_firewall_id_functions_instances_post(configuration: &configuration::Configuration, create_edge_functions_instances_request: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<crate::models::EdgeFunctionsInstanceResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -147,7 +148,7 @@ pub async fn edge_firewall_edge_firewall_id_functions_instances_post(configurati
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<EdgeFirewallEdgeFirewallIdFunctionsInstancesPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -225,7 +226,7 @@ pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_get(configu
     }
 }
 
-pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_patch(configuration: &configuration::Configuration, uuid: &str, body: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<crate::models::ListEdgeFunctionsInstancesResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchError>> {
+pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_patch(configuration: &configuration::Configuration, uuid: &str, body: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<crate::models::EdgeFunctionsInstanceResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -261,7 +262,7 @@ pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_patch(confi
     }
 }
 
-pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_put(configuration: &configuration::Configuration, uuid: &str, body: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<crate::models::ListEdgeFunctionsInstancesResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutError>> {
+pub async fn edge_firewall_edge_firewall_id_functions_instances_uuid_put(configuration: &configuration::Configuration, uuid: &str, body: crate::models::CreateEdgeFunctionsInstancesRequest) -> Result<crate::models::EdgeFunctionsInstanceResponse, Error<EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
