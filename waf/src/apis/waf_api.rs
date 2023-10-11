@@ -178,7 +178,7 @@ pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_i
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/waf/{wafId}/domains", local_var_configuration.base_path, wafId=waf_id);
+    let local_var_uri_str = format!("{}/waf/{waf_id}/domains", local_var_configuration.base_path, waf_id=waf_id);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = name {
@@ -211,12 +211,12 @@ pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_i
     }
 }
 
-pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id: i64, hour_range: i64, domains_ids: &str, network_list_id: Option<i64>) -> Result<crate::models::WafEvents200, Error<GetWafEventsError>> {
+pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id: i64, hour_range: i64, domains_ids: &str, network_list_id: Option<i64>, sort: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<crate::models::WafEvents200, Error<GetWafEventsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/waf/{wafId}/waf_events", local_var_configuration.base_path, wafId=waf_id);
+    let local_var_uri_str = format!("{}/waf/{waf_id}/waf_events", local_var_configuration.base_path, waf_id=waf_id);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     local_var_req_builder = local_var_req_builder.query(&[("hour_range", &hour_range.to_string())]);
@@ -224,6 +224,15 @@ pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id
         local_var_req_builder = local_var_req_builder.query(&[("network_list_id", &local_var_str.to_string())]);
     }
     local_var_req_builder = local_var_req_builder.query(&[("domains_ids", &domains_ids.to_string())]);
+    if let Some(ref local_var_str) = sort {
+        local_var_req_builder = local_var_req_builder.query(&[("sort", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }

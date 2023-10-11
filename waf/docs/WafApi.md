@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_new_waf_ruleset**](WafApi.md#create_new_waf_ruleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account.
 [**delete_waf_ruleset**](WafApi.md#delete_waf_ruleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
-[**get_waf_domains**](WafApi.md#get_waf_domains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
-[**get_waf_events**](WafApi.md#get_waf_events) | **GET** /waf/{wafId}/waf_events | Find WAF log events
+[**get_waf_domains**](WafApi.md#get_waf_domains) | **GET** /waf/{waf_id}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
+[**get_waf_events**](WafApi.md#get_waf_events) | **GET** /waf/{waf_id}/waf_events | Find WAF log events
 [**get_waf_ruleset**](WafApi.md#get_waf_ruleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
 [**list_all_waf**](WafApi.md#list_all_waf) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account
 [**list_all_waf_rulesets**](WafApi.md#list_all_waf_rulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
@@ -102,7 +102,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_waf_events
 
-> crate::models::WafEvents200 get_waf_events(waf_id, hour_range, domains_ids, network_list_id)
+> crate::models::WafEvents200 get_waf_events(waf_id, hour_range, domains_ids, network_list_id, sort, page, page_size)
 Find WAF log events
 
 ### Parameters
@@ -114,6 +114,9 @@ Name | Type | Description  | Required | Notes
 **hour_range** | **i64** | Last log hours since now (it must be a integer number ranging between 1 and 72) | [required] |
 **domains_ids** | **String** | Multiple domain's id (they must be separated by comma like 1233,1234) | [required] |
 **network_list_id** | Option<**i64**> | Id of a network list |  |
+**sort** | Option<**String**> |  |  |[default to asc]
+**page** | Option<**i64**> |  |  |[default to 1]
+**page_size** | Option<**i64**> |  |  |[default to 10]
 
 ### Return type
 

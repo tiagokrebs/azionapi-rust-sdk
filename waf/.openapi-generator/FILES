@@ -6,8 +6,10 @@ docs/CreateNewWafRulesetRequest.md
 docs/Links.md
 docs/SingleWaf.md
 docs/WafApi.md
+docs/WafDomainList200.md
 docs/WafDomains200.md
 docs/WafEvents200.md
+docs/WafEvents200ResultsInner.md
 docs/WafEvents400.md
 docs/WafEvents401.md
 docs/WafEvents404.md
@@ -23,8 +25,10 @@ src/models/create_new_waf_ruleset_request.rs
 src/models/links.rs
 src/models/mod.rs
 src/models/single_waf.rs
+src/models/waf_domain_list200.rs
 src/models/waf_domains200.rs
 src/models/waf_events200.rs
+src/models/waf_events200_results_inner.rs
 src/models/waf_events400.rs
 src/models/waf_events401.rs
 src/models/waf_events404.rs
