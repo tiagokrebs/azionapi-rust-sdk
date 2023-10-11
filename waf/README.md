@@ -27,8 +27,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *WafApi* | [**create_new_waf_ruleset**](docs/WafApi.md#create_new_waf_ruleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account.
 *WafApi* | [**delete_waf_ruleset**](docs/WafApi.md#delete_waf_ruleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
-*WafApi* | [**get_waf_domains**](docs/WafApi.md#get_waf_domains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
-*WafApi* | [**get_waf_events**](docs/WafApi.md#get_waf_events) | **GET** /waf/{wafId}/waf_events | Find WAF log events
+*WafApi* | [**get_waf_domains**](docs/WafApi.md#get_waf_domains) | **GET** /waf/{waf_id}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
+*WafApi* | [**get_waf_events**](docs/WafApi.md#get_waf_events) | **GET** /waf/{waf_id}/waf_events | Find WAF log events
 *WafApi* | [**get_waf_ruleset**](docs/WafApi.md#get_waf_ruleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
 *WafApi* | [**list_all_waf**](docs/WafApi.md#list_all_waf) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account
 *WafApi* | [**list_all_waf_rulesets**](docs/WafApi.md#list_all_waf_rulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
@@ -40,8 +40,10 @@ Class | Method | HTTP request | Description
  - [CreateNewWafRulesetRequest](docs/CreateNewWafRulesetRequest.md)
  - [Links](docs/Links.md)
  - [SingleWaf](docs/SingleWaf.md)
+ - [WafDomainList200](docs/WafDomainList200.md)
  - [WafDomains200](docs/WafDomains200.md)
  - [WafEvents200](docs/WafEvents200.md)
+ - [WafEvents200ResultsInner](docs/WafEvents200ResultsInner.md)
  - [WafEvents400](docs/WafEvents400.md)
  - [WafEvents401](docs/WafEvents401.md)
  - [WafEvents404](docs/WafEvents404.md)
