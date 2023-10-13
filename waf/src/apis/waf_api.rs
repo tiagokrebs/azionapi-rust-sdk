@@ -46,6 +46,7 @@ pub enum DeleteWafRulesetError {
 #[serde(untagged)]
 pub enum GetWafDomainsError {
     Status400(crate::models::WafEvents400),
+    Status403(),
     Status404(crate::models::WafEvents404),
     UnknownValue(serde_json::Value),
 }
@@ -56,6 +57,7 @@ pub enum GetWafDomainsError {
 pub enum GetWafEventsError {
     Status400(crate::models::WafEvents400),
     Status401(crate::models::WafEvents401),
+    Status403(),
     Status404(crate::models::WafEvents404),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -66,6 +68,7 @@ pub enum GetWafEventsError {
 #[serde(untagged)]
 pub enum GetWafRulesetError {
     Status400(crate::models::WafEvents400),
+    Status403(),
     Status404(crate::models::WafEvents404),
     UnknownValue(serde_json::Value),
 }
@@ -75,6 +78,7 @@ pub enum GetWafRulesetError {
 #[serde(untagged)]
 pub enum ListAllWafError {
     Status400(crate::models::WafEvents400),
+    Status403(),
     Status404(crate::models::WafEvents404),
     UnknownValue(serde_json::Value),
 }
@@ -84,6 +88,7 @@ pub enum ListAllWafError {
 #[serde(untagged)]
 pub enum ListAllWafRulesetsError {
     Status400(crate::models::WafEvents400),
+    Status403(),
     Status404(crate::models::WafEvents404),
     UnknownValue(serde_json::Value),
 }
@@ -173,7 +178,7 @@ pub async fn delete_waf_ruleset(configuration: &configuration::Configuration, wa
     }
 }
 
-pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_id: i64, name: Option<&str>) -> Result<crate::models::WafDomains200, Error<GetWafDomainsError>> {
+pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_id: i64, name: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<crate::models::WafDomains200, Error<GetWafDomainsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -183,6 +188,12 @@ pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_i
 
     if let Some(ref local_var_str) = name {
         local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -211,7 +222,7 @@ pub async fn get_waf_domains(configuration: &configuration::Configuration, waf_i
     }
 }
 
-pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id: i64, hour_range: i64, domains_ids: &str, network_list_id: Option<i64>, sort: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<crate::models::WafEvents200, Error<GetWafEventsError>> {
+pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id: i64, hour_range: i64, domains_ids: Vec<i64>, network_list_id: Option<i64>, sort: Option<&str>) -> Result<crate::models::WafEvents200, Error<GetWafEventsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -223,15 +234,12 @@ pub async fn get_waf_events(configuration: &configuration::Configuration, waf_id
     if let Some(ref local_var_str) = network_list_id {
         local_var_req_builder = local_var_req_builder.query(&[("network_list_id", &local_var_str.to_string())]);
     }
-    local_var_req_builder = local_var_req_builder.query(&[("domains_ids", &domains_ids.to_string())]);
+    local_var_req_builder = match "multi" {
+        "multi" => local_var_req_builder.query(&domains_ids.into_iter().map(|p| ("domains_ids".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+        _ => local_var_req_builder.query(&[("domains_ids", &domains_ids.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+    };
     if let Some(ref local_var_str) = sort {
         local_var_req_builder = local_var_req_builder.query(&[("sort", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = page {
-        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = page_size {
-        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());

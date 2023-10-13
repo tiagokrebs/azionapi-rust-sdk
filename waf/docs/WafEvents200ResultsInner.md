@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country_count** | Option<**i64**> |  | [optional]
-**top_10_countries** | Option<**Vec<String>**> |  | [optional]
-**top_10_ips** | Option<**Vec<String>**> |  | [optional]
+**top_10_countries** | Option<[**Vec<crate::models::WafEvents200ResultsInnerTop10CountriesInner>**](WAFEvents200_results_inner_top_10_countries_inner.md)> |  | [optional]
+**top_10_ips** | Option<[**Vec<crate::models::WafEvents200ResultsInnerTop10CountriesInner>**](WAFEvents200_results_inner_top_10_countries_inner.md)> |  | [optional]
 **hit_count** | Option<**i64**> |  | [optional]
 **rule_id** | Option<**i64**> |  | [optional]
 **ip_count** | Option<**i64**> |  | [optional]

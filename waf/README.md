@@ -44,6 +44,7 @@ Class | Method | HTTP request | Description
  - [WafDomains200](docs/WafDomains200.md)
  - [WafEvents200](docs/WafEvents200.md)
  - [WafEvents200ResultsInner](docs/WafEvents200ResultsInner.md)
+ - [WafEvents200ResultsInnerTop10CountriesInner](docs/WafEvents200ResultsInnerTop10CountriesInner.md)
  - [WafEvents400](docs/WafEvents400.md)
  - [WafEvents401](docs/WafEvents401.md)
  - [WafEvents404](docs/WafEvents404.md)

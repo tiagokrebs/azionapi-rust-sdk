@@ -12,6 +12,8 @@ pub mod waf_events200;
 pub use self::waf_events200::WafEvents200;
 pub mod waf_events200_results_inner;
 pub use self::waf_events200_results_inner::WafEvents200ResultsInner;
+pub mod waf_events200_results_inner_top_10_countries_inner;
+pub use self::waf_events200_results_inner_top_10_countries_inner::WafEvents200ResultsInnerTop10CountriesInner;
 pub mod waf_events400;
 pub use self::waf_events400::WafEvents400;
 pub mod waf_events401;
