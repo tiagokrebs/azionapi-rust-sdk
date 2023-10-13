@@ -136,7 +136,7 @@ pub enum EdgeFirewallUuidPutError {
 }
 
 
-pub async fn edge_firewall_edge_firewall_id_rules_engine_get(configuration: &configuration::Configuration, edge_firewall_id: i64) -> Result<crate::models::RuleSetResponseAll, Error<EdgeFirewallEdgeFirewallIdRulesEngineGetError>> {
+pub async fn edge_firewall_edge_firewall_id_rules_engine_get(configuration: &configuration::Configuration, edge_firewall_id: i64, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>, order_by: Option<&str>) -> Result<crate::models::RuleSetResponseAll, Error<EdgeFirewallEdgeFirewallIdRulesEngineGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -144,6 +144,18 @@ pub async fn edge_firewall_edge_firewall_id_rules_engine_get(configuration: &con
     let local_var_uri_str = format!("{}/edge_firewall/{edge_firewall_id}/rules_engine", local_var_configuration.base_path, edge_firewall_id=edge_firewall_id);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = sort {
+        local_var_req_builder = local_var_req_builder.query(&[("sort", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = order_by {
+        local_var_req_builder = local_var_req_builder.query(&[("order_by", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }

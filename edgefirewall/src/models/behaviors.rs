@@ -15,15 +15,15 @@
 pub struct Behaviors {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<Name>,
-    #[serde(rename = "target", skip_serializing_if = "Option::is_none")]
-    pub target: Option<String>,
+    #[serde(rename = "argument", skip_serializing_if = "Option::is_none")]
+    pub argument: Option<Box<crate::models::BehaviorsArgument>>,
 }
 
 impl Behaviors {
     pub fn new() -> Behaviors {
         Behaviors {
             name: None,
-            target: None,
+            argument: None,
         }
     }
 }

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## edge_firewall_edge_firewall_id_rules_engine_get
 
-> crate::models::RuleSetResponseAll edge_firewall_edge_firewall_id_rules_engine_get(edge_firewall_id)
+> crate::models::RuleSetResponseAll edge_firewall_edge_firewall_id_rules_engine_get(edge_firewall_id, page, page_size, sort, order_by)
 List all rule sets.
 
 ### Parameters
@@ -30,6 +30,10 @@ List all rule sets.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **edge_firewall_id** | **i64** |  | [required] |
+**page** | Option<**i64**> |  |  |
+**page_size** | Option<**i64**> |  |  |
+**sort** | Option<**String**> |  |  |
+**order_by** | Option<**String**> |  |  |
 
 ### Return type
 
