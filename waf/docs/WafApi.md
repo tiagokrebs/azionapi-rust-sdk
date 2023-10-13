@@ -73,7 +73,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_waf_domains
 
-> crate::models::WafDomains200 get_waf_domains(waf_id, name)
+> crate::models::WafDomains200 get_waf_domains(waf_id, name, page, page_size)
 List all domains attached to a Web Application Firewall (WAF) in an account.
 
 ### Parameters
@@ -83,6 +83,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **waf_id** | **i64** | ID of WAF to return | [required] |
 **name** | Option<**String**> | searches WAF for name |  |
+**page** | Option<**i64**> | Identifies which page should be returned, if the return is paginated. |  |[default to 1]
+**page_size** | Option<**i64**> | Identifies how many items should be returned per page. |  |[default to 10]
 
 ### Return type
 
@@ -102,7 +104,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_waf_events
 
-> crate::models::WafEvents200 get_waf_events(waf_id, hour_range, domains_ids, network_list_id, sort, page, page_size)
+> crate::models::WafEvents200 get_waf_events(waf_id, hour_range, domains_ids, network_list_id, sort)
 Find WAF log events
 
 ### Parameters
@@ -112,11 +114,9 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **waf_id** | **i64** | ID of WAF to return | [required] |
 **hour_range** | **i64** | Last log hours since now (it must be a integer number ranging between 1 and 72) | [required] |
-**domains_ids** | **String** | Multiple domain's id (they must be separated by comma like 1233,1234) | [required] |
+**domains_ids** | [**Vec<i64>**](i64.md) | Multiple domain's id (they must be separated by comma like 1233,1234) | [required] |
 **network_list_id** | Option<**i64**> | Id of a network list |  |
 **sort** | Option<**String**> |  |  |[default to asc]
-**page** | Option<**i64**> |  |  |[default to 1]
-**page_size** | Option<**i64**> |  |  |[default to 10]
 
 ### Return type
 

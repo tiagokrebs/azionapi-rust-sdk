@@ -16,9 +16,9 @@ pub struct WafEvents200ResultsInner {
     #[serde(rename = "country_count", skip_serializing_if = "Option::is_none")]
     pub country_count: Option<i64>,
     #[serde(rename = "top_10_countries", skip_serializing_if = "Option::is_none")]
-    pub top_10_countries: Option<Vec<String>>,
+    pub top_10_countries: Option<Vec<crate::models::WafEvents200ResultsInnerTop10CountriesInner>>,
     #[serde(rename = "top_10_ips", skip_serializing_if = "Option::is_none")]
-    pub top_10_ips: Option<Vec<String>>,
+    pub top_10_ips: Option<Vec<crate::models::WafEvents200ResultsInnerTop10CountriesInner>>,
     #[serde(rename = "hit_count", skip_serializing_if = "Option::is_none")]
     pub hit_count: Option<i64>,
     #[serde(rename = "rule_id", skip_serializing_if = "Option::is_none")]
