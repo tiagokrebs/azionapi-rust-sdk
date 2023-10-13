@@ -42,11 +42,13 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Behaviors](docs/Behaviors.md)
+ - [BehaviorsArgument](docs/BehaviorsArgument.md)
  - [Conditionals](docs/Conditionals.md)
  - [CreateEdgeFirewallRequest](docs/CreateEdgeFirewallRequest.md)
  - [CreateRuleSetRequest](docs/CreateRuleSetRequest.md)
  - [EdgeFirewall](docs/EdgeFirewall.md)
  - [EdgeFirewallResponse](docs/EdgeFirewallResponse.md)
+ - [GenericBehaviorDetails](docs/GenericBehaviorDetails.md)
  - [Links](docs/Links.md)
  - [ListEdgeFirewallResponse](docs/ListEdgeFirewallResponse.md)
  - [RuleSetResponse](docs/RuleSetResponse.md)
@@ -54,6 +56,8 @@ Class | Method | HTTP request | Description
  - [RuleSetResult](docs/RuleSetResult.md)
  - [RuleSetResultAll](docs/RuleSetResultAll.md)
  - [RuleSetResultResults](docs/RuleSetResultResults.md)
+ - [SetRateLimitDetails](docs/SetRateLimitDetails.md)
+ - [SetWafRuleSetDetails](docs/SetWafRuleSetDetails.md)
  - [SslVerificationStatusArguments](docs/SslVerificationStatusArguments.md)
  - [SslVerificationStatusCriteria](docs/SslVerificationStatusCriteria.md)
  - [SslVerificationStatusOperators](docs/SslVerificationStatusOperators.md)
