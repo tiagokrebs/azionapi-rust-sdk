@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Behaviors {
+pub struct NullArgumentBehavior {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<Name>,
-    #[serde(rename = "argument", skip_serializing_if = "Option::is_none")]
-    pub argument: Option<Box<crate::models::SetCustomResponseArgument>>,
+    #[serde(rename = "argument", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub argument: Option<Option<i32>>,
 }
 
-impl Behaviors {
-    pub fn new() -> Behaviors {
-        Behaviors {
+impl NullArgumentBehavior {
+    pub fn new() -> NullArgumentBehavior {
+        NullArgumentBehavior {
             name: None,
             argument: None,
         }
@@ -31,13 +31,15 @@ impl Behaviors {
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Name {
-    #[serde(rename = "set_custom_response")]
-    SetCustomResponse,
+    #[serde(rename = "deny")]
+    Deny,
+    #[serde(rename = "drop")]
+    Drop,
 }
 
 impl Default for Name {
     fn default() -> Name {
-        Self::SetCustomResponse
+        Self::Deny
     }
 }
 

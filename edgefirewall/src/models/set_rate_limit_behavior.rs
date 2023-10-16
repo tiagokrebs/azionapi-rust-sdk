@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Behaviors {
+pub struct SetRateLimitBehavior {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<Name>,
     #[serde(rename = "argument", skip_serializing_if = "Option::is_none")]
-    pub argument: Option<Box<crate::models::SetCustomResponseArgument>>,
+    pub argument: Option<Box<crate::models::SetRateLimitBehaviorArgument>>,
 }
 
-impl Behaviors {
-    pub fn new() -> Behaviors {
-        Behaviors {
+impl SetRateLimitBehavior {
+    pub fn new() -> SetRateLimitBehavior {
+        SetRateLimitBehavior {
             name: None,
             argument: None,
         }
@@ -31,13 +31,13 @@ impl Behaviors {
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Name {
-    #[serde(rename = "set_custom_response")]
-    SetCustomResponse,
+    #[serde(rename = "set_rate_limit")]
+    SetRateLimit,
 }
 
 impl Default for Name {
     fn default() -> Name {
-        Self::SetCustomResponse
+        Self::SetRateLimit
     }
 }
 
