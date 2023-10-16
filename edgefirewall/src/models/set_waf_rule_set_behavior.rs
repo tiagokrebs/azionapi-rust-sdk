@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Behaviors {
+pub struct SetWafRuleSetBehavior {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<Name>,
     #[serde(rename = "argument", skip_serializing_if = "Option::is_none")]
-    pub argument: Option<Box<crate::models::SetCustomResponseArgument>>,
+    pub argument: Option<Box<crate::models::SetWafRuleSetBehaviorArgument>>,
 }
 
-impl Behaviors {
-    pub fn new() -> Behaviors {
-        Behaviors {
+impl SetWafRuleSetBehavior {
+    pub fn new() -> SetWafRuleSetBehavior {
+        SetWafRuleSetBehavior {
             name: None,
             argument: None,
         }
@@ -31,13 +31,13 @@ impl Behaviors {
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Name {
-    #[serde(rename = "set_custom_response")]
-    SetCustomResponse,
+    #[serde(rename = "set_waf_ruleset")]
+    SetWafRuleset,
 }
 
 impl Default for Name {
     fn default() -> Name {
-        Self::SetCustomResponse
+        Self::SetWafRuleset
     }
 }
 

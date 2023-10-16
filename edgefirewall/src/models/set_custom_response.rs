@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Behaviors {
+pub struct SetCustomResponse {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<Name>,
     #[serde(rename = "argument", skip_serializing_if = "Option::is_none")]
     pub argument: Option<Box<crate::models::SetCustomResponseArgument>>,
 }
 
-impl Behaviors {
-    pub fn new() -> Behaviors {
-        Behaviors {
+impl SetCustomResponse {
+    pub fn new() -> SetCustomResponse {
+        SetCustomResponse {
             name: None,
             argument: None,
         }
