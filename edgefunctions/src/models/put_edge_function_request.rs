@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PutEdgeFunctionRequest {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -22,7 +22,7 @@ pub struct PutEdgeFunctionRequest {
     #[serde(rename = "active", skip_serializing_if = "Option::is_none")]
     pub active: Option<bool>,
     #[serde(rename = "initiator_type", skip_serializing_if = "Option::is_none")]
-    pub initiator_type: Option<String>,
+    pub initiator_type: Option<InitiatorType>,
     #[serde(rename = "language", skip_serializing_if = "Option::is_none")]
     pub language: Option<String>,
     #[serde(rename = "is_proprietary_code", skip_serializing_if = "Option::is_none")]
@@ -43,4 +43,18 @@ impl PutEdgeFunctionRequest {
     }
 }
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum InitiatorType {
+    #[serde(rename = "edge_application")]
+    Application,
+    #[serde(rename = "edge_firewall")]
+    Firewall,
+}
+
+impl Default for InitiatorType {
+    fn default() -> InitiatorType {
+        Self::Application
+    }
+}
 

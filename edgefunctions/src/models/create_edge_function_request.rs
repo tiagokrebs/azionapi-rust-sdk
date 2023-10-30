@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateEdgeFunctionRequest {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -21,6 +21,8 @@ pub struct CreateEdgeFunctionRequest {
     pub code: Option<String>,
     #[serde(rename = "json_args", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub json_args: Option<Option<serde_json::Value>>,
+    #[serde(rename = "initiator_type", skip_serializing_if = "Option::is_none")]
+    pub initiator_type: Option<InitiatorType>,
     #[serde(rename = "active", skip_serializing_if = "Option::is_none")]
     pub active: Option<bool>,
     #[serde(rename = "is_proprietary_code", skip_serializing_if = "Option::is_none")]
@@ -34,10 +36,25 @@ impl CreateEdgeFunctionRequest {
             language: None,
             code: None,
             json_args: None,
+            initiator_type: None,
             active: None,
             is_proprietary_code: None,
         }
     }
 }
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum InitiatorType {
+    #[serde(rename = "edge_application")]
+    Application,
+    #[serde(rename = "edge_firewall")]
+    Firewall,
+}
+
+impl Default for InitiatorType {
+    fn default() -> InitiatorType {
+        Self::Application
+    }
+}
 
