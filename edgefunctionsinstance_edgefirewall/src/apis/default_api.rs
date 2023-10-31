@@ -20,6 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteError {
     Status400(),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -29,6 +30,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDelet
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetError {
     Status400(),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -38,6 +40,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetEr
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchError {
     Status400(),
+    Status403(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -48,6 +51,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutError {
     Status400(),
+    Status403(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -58,6 +62,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutEr
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesGetError {
     Status400(),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -67,6 +72,7 @@ pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesGetError {
 #[serde(untagged)]
 pub enum EdgeFirewallEdgeFirewallIdFunctionsInstancesPostError {
     Status400(),
+    Status403(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
