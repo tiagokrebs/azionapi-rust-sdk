@@ -84,6 +84,7 @@ pub enum EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum EdgeFirewallGetError {
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -93,6 +94,7 @@ pub enum EdgeFirewallGetError {
 #[serde(untagged)]
 pub enum EdgeFirewallPostError {
     Status400(),
+    Status403(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
@@ -102,6 +104,7 @@ pub enum EdgeFirewallPostError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidDeleteError {
     Status400(),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -111,6 +114,7 @@ pub enum EdgeFirewallUuidDeleteError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidGetError {
     Status400(),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -120,6 +124,7 @@ pub enum EdgeFirewallUuidGetError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidPatchError {
     Status400(),
+    Status403(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -130,6 +135,7 @@ pub enum EdgeFirewallUuidPatchError {
 #[serde(untagged)]
 pub enum EdgeFirewallUuidPutError {
     Status400(),
+    Status403(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),

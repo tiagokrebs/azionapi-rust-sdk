@@ -20,6 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum NetworkListsGetError {
     Status400(crate::models::BadRequestResponse),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -29,6 +30,7 @@ pub enum NetworkListsGetError {
 #[serde(untagged)]
 pub enum NetworkListsPostError {
     Status400(crate::models::BadRequestResponse),
+    Status403(),
     Status404(),
     Status500(crate::models::ErrorModel),
     UnknownValue(serde_json::Value),
@@ -51,6 +53,7 @@ pub enum NetworkListsUuidDeleteError {
 #[serde(untagged)]
 pub enum NetworkListsUuidGetError {
     Status400(crate::models::BadRequestResponse),
+    Status403(),
     Status404(),
     UnknownValue(serde_json::Value),
 }
@@ -60,6 +63,7 @@ pub enum NetworkListsUuidGetError {
 #[serde(untagged)]
 pub enum NetworkListsUuidPutError {
     Status400(crate::models::BadRequestResponse),
+    Status403(),
     Status404(),
     Status500(crate::models::ErrorModel),
     UnknownValue(serde_json::Value),

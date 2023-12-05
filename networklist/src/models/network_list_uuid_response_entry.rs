@@ -11,7 +11,7 @@
 
 
 
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct NetworkListUuidResponseEntry {
     #[serde(rename = "last_editor", skip_serializing_if = "Option::is_none")]
     pub last_editor: Option<String>,
