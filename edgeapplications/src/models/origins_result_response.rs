@@ -45,6 +45,10 @@ pub struct OriginsResultResponse {
     pub hmac_access_key: String,
     #[serde(rename = "hmac_secret_key")]
     pub hmac_secret_key: String,
+    #[serde(rename = "bucket", skip_serializing_if = "Option::is_none")]
+    pub bucket: Option<String>,
+    #[serde(rename = "prefix", skip_serializing_if = "Option::is_none")]
+    pub prefix: Option<String>,
 }
 
 impl OriginsResultResponse {
@@ -66,6 +70,8 @@ impl OriginsResultResponse {
             hmac_region_name,
             hmac_access_key,
             hmac_secret_key,
+            bucket: None,
+            prefix: None,
         }
     }
 }
