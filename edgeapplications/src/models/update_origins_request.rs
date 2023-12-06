@@ -33,6 +33,10 @@ pub struct UpdateOriginsRequest {
     pub hmac_access_key: Option<String>,
     #[serde(rename = "hmac_secret_key", skip_serializing_if = "Option::is_none")]
     pub hmac_secret_key: Option<String>,
+    #[serde(rename = "bucket", skip_serializing_if = "Option::is_none")]
+    pub bucket: Option<String>,
+    #[serde(rename = "prefix", skip_serializing_if = "Option::is_none")]
+    pub prefix: Option<String>,
 }
 
 impl UpdateOriginsRequest {
@@ -48,6 +52,8 @@ impl UpdateOriginsRequest {
             hmac_region_name: None,
             hmac_access_key: None,
             hmac_secret_key: None,
+            bucket: None,
+            prefix: None,
         }
     }
 }

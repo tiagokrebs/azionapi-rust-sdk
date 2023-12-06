@@ -27,8 +27,6 @@ pub struct ApplicationPutRequest {
     pub active: Option<bool>,
     #[serde(rename = "application_acceleration", skip_serializing_if = "Option::is_none")]
     pub application_acceleration: Option<bool>,
-    #[serde(rename = "caching", skip_serializing_if = "Option::is_none")]
-    pub caching: Option<bool>,
     #[serde(rename = "device_detection", skip_serializing_if = "Option::is_none")]
     pub device_detection: Option<bool>,
     #[serde(rename = "edge_firewall", skip_serializing_if = "Option::is_none")]
@@ -65,7 +63,6 @@ impl ApplicationPutRequest {
             minimum_tls_version: None,
             active: None,
             application_acceleration: None,
-            caching: None,
             device_detection: None,
             edge_firewall: None,
             edge_functions: None,
