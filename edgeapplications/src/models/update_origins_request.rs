@@ -17,12 +17,12 @@ pub struct UpdateOriginsRequest {
     pub name: String,
     #[serde(rename = "origin_type", skip_serializing_if = "Option::is_none")]
     pub origin_type: Option<String>,
-    #[serde(rename = "addresses")]
-    pub addresses: Vec<crate::models::CreateOriginsRequestAddresses>,
+    #[serde(rename = "addresses", skip_serializing_if = "Option::is_none")]
+    pub addresses: Option<Vec<crate::models::CreateOriginsRequestAddresses>>,
     #[serde(rename = "origin_protocol_policy", skip_serializing_if = "Option::is_none")]
     pub origin_protocol_policy: Option<String>,
-    #[serde(rename = "host_header")]
-    pub host_header: String,
+    #[serde(rename = "host_header", skip_serializing_if = "Option::is_none")]
+    pub host_header: Option<String>,
     #[serde(rename = "origin_path", skip_serializing_if = "Option::is_none")]
     pub origin_path: Option<String>,
     #[serde(rename = "hmac_authentication", skip_serializing_if = "Option::is_none")]
@@ -40,13 +40,13 @@ pub struct UpdateOriginsRequest {
 }
 
 impl UpdateOriginsRequest {
-    pub fn new(name: String, addresses: Vec<crate::models::CreateOriginsRequestAddresses>, host_header: String) -> UpdateOriginsRequest {
+    pub fn new(name: String) -> UpdateOriginsRequest {
         UpdateOriginsRequest {
             name,
             origin_type: None,
-            addresses,
+            addresses: None,
             origin_protocol_policy: None,
-            host_header,
+            host_header: None,
             origin_path: None,
             hmac_authentication: None,
             hmac_region_name: None,
