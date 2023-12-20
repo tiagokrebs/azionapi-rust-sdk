@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**origin_id** | **i64** |  | 
-**origin_key** | **String** |  | 
+**origin_id** | Option<**i64**> |  | [optional]
+**origin_key** | Option<**String**> |  | [optional]
 **name** | **String** |  | 
-**origin_type** | **String** |  | 
-**addresses** | [**Vec<crate::models::OriginsResultResponseAddresses>**](OriginsResultResponse_addresses.md) |  | 
-**origin_protocol_policy** | **String** |  | 
-**is_origin_redirection_enabled** | **bool** |  | 
-**host_header** | **String** |  | 
-**method** | **String** |  | 
-**origin_path** | **String** |  | 
-**connection_timeout** | **i64** |  | 
-**timeout_between_bytes** | **i64** |  | 
-**hmac_authentication** | **bool** |  | 
-**hmac_region_name** | **String** |  | 
-**hmac_access_key** | **String** |  | 
-**hmac_secret_key** | **String** |  | 
+**origin_type** | Option<**String**> |  | [optional]
+**addresses** | Option<[**Vec<crate::models::OriginsResultResponseAddresses>**](OriginsResultResponse_addresses.md)> |  | [optional]
+**origin_protocol_policy** | Option<**String**> |  | [optional]
+**is_origin_redirection_enabled** | Option<**bool**> |  | [optional]
+**host_header** | Option<**String**> |  | [optional]
+**method** | Option<**String**> |  | [optional]
+**origin_path** | Option<**String**> |  | [optional]
+**connection_timeout** | Option<**i64**> |  | [optional]
+**timeout_between_bytes** | Option<**i64**> |  | [optional]
+**hmac_authentication** | Option<**bool**> |  | [optional]
+**hmac_region_name** | Option<**String**> |  | [optional]
+**hmac_access_key** | Option<**String**> |  | [optional]
+**hmac_secret_key** | Option<**String**> |  | [optional]
 **bucket** | Option<**String**> |  | [optional]
 **prefix** | Option<**String**> |  | [optional]
 
