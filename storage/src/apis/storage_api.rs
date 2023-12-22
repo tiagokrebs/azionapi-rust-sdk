@@ -249,7 +249,7 @@ pub async fn storage_api_buckets_list(configuration: &configuration::Configurati
 }
 
 /// Create a new object key in the bucket.
-pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
+pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -259,6 +259,9 @@ pub async fn storage_api_buckets_objects_create(configuration: &configuration::C
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(local_var_param_value) = content_type {
+        local_var_req_builder = local_var_req_builder.header("Content-Type", local_var_param_value.to_string());
     }
     if let Some(ref local_var_apikey) = local_var_configuration.api_key {
         let local_var_key = local_var_apikey.key.clone();
@@ -400,7 +403,7 @@ pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration:
 }
 
 /// Update the object key from bucket.
-pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
+pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -410,6 +413,9 @@ pub async fn storage_api_buckets_objects_update(configuration: &configuration::C
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(local_var_param_value) = content_type {
+        local_var_req_builder = local_var_req_builder.header("Content-Type", local_var_param_value.to_string());
     }
     if let Some(ref local_var_apikey) = local_var_configuration.api_key {
         let local_var_key = local_var_apikey.key.clone();
