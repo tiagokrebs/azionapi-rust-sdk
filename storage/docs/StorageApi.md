@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_create
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, request_body)
+> crate::models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, body)
 Create new object key
 
 Create a new object key in the bucket.
@@ -121,7 +121,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **bucket_name** | **String** |  | [required] |
 **object_key** | **String** |  | [required] |
-**request_body** | Option<[**::std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  |  |
+**body** | Option<**std::path::PathBuf**> |  |  |
 
 ### Return type
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_update
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, request_body)
+> crate::models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, body)
 Update the object key
 
 Update the object key from bucket.
@@ -247,7 +247,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **bucket_name** | **String** |  | [required] |
 **object_key** | **String** |  | [required] |
-**request_body** | Option<[**::std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  |  |
+**body** | Option<**std::path::PathBuf**> |  |  |
 
 ### Return type
 

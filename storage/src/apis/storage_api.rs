@@ -249,7 +249,7 @@ pub async fn storage_api_buckets_list(configuration: &configuration::Configurati
 }
 
 /// Create a new object key in the bucket.
-pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, request_body: Option<::std::collections::HashMap<String, serde_json::Value>>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
+pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -268,7 +268,7 @@ pub async fn storage_api_buckets_objects_create(configuration: &configuration::C
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&request_body);
+    local_var_req_builder = local_var_req_builder.json(&body);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -400,7 +400,7 @@ pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration:
 }
 
 /// Update the object key from bucket.
-pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, request_body: Option<::std::collections::HashMap<String, serde_json::Value>>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
+pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -419,7 +419,7 @@ pub async fn storage_api_buckets_objects_update(configuration: &configuration::C
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
-    local_var_req_builder = local_var_req_builder.json(&request_body);
+    local_var_req_builder = local_var_req_builder.json(&body);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
