@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_create
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, body)
+> crate::models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, content_type, body)
 Create new object key
 
 Create a new object key in the bucket.
@@ -121,6 +121,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **bucket_name** | **String** |  | [required] |
 **object_key** | **String** |  | [required] |
+**content_type** | Option<**String**> | The content type of the file (Example: text/plain). |  |
 **body** | Option<**std::path::PathBuf**> |  |  |
 
 ### Return type
@@ -235,7 +236,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_update
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, body)
+> crate::models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, content_type, body)
 Update the object key
 
 Update the object key from bucket.
@@ -247,6 +248,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **bucket_name** | **String** |  | [required] |
 **object_key** | **String** |  | [required] |
+**content_type** | Option<**String**> | The content type of the file (Example: text/plain). |  |
 **body** | Option<**std::path::PathBuf**> |  |  |
 
 ### Return type
