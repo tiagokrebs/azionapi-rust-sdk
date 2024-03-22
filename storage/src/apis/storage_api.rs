@@ -11,7 +11,7 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -134,7 +134,7 @@ pub enum StorageApiBucketsPartialUpdateError {
 
 
 /// 
-pub async fn storage_api_buckets_create(configuration: &configuration::Configuration, bucket_create: crate::models::BucketCreate) -> Result<crate::models::ResponseBucket, Error<StorageApiBucketsCreateError>> {
+pub async fn storage_api_buckets_create(configuration: &configuration::Configuration, bucket_create: models::BucketCreate) -> Result<models::ResponseBucket, Error<StorageApiBucketsCreateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -171,7 +171,7 @@ pub async fn storage_api_buckets_create(configuration: &configuration::Configura
 }
 
 /// 
-pub async fn storage_api_buckets_destroy(configuration: &configuration::Configuration, name: &str) -> Result<crate::models::SuccessBucketOperation, Error<StorageApiBucketsDestroyError>> {
+pub async fn storage_api_buckets_destroy(configuration: &configuration::Configuration, name: &str) -> Result<models::SuccessBucketOperation, Error<StorageApiBucketsDestroyError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -207,7 +207,7 @@ pub async fn storage_api_buckets_destroy(configuration: &configuration::Configur
 }
 
 /// 
-pub async fn storage_api_buckets_list(configuration: &configuration::Configuration, page: Option<i32>, page_size: Option<i32>) -> Result<crate::models::PaginatedBucketList, Error<StorageApiBucketsListError>> {
+pub async fn storage_api_buckets_list(configuration: &configuration::Configuration, page: Option<i32>, page_size: Option<i32>) -> Result<models::PaginatedBucketList, Error<StorageApiBucketsListError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -249,7 +249,7 @@ pub async fn storage_api_buckets_list(configuration: &configuration::Configurati
 }
 
 /// Create a new object key in the bucket.
-pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
+pub async fn storage_api_buckets_objects_create(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<models::SuccessObjectOperation, Error<StorageApiBucketsObjectsCreateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -289,7 +289,7 @@ pub async fn storage_api_buckets_objects_create(configuration: &configuration::C
 }
 
 /// Delete an object key from bucket
-pub async fn storage_api_buckets_objects_destroy(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsDestroyError>> {
+pub async fn storage_api_buckets_objects_destroy(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str) -> Result<models::SuccessObjectOperation, Error<StorageApiBucketsObjectsDestroyError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -325,7 +325,7 @@ pub async fn storage_api_buckets_objects_destroy(configuration: &configuration::
 }
 
 /// 
-pub async fn storage_api_buckets_objects_list(configuration: &configuration::Configuration, bucket_name: &str, page: Option<i32>, page_size: Option<i32>) -> Result<crate::models::PaginatedBucketObjectList, Error<StorageApiBucketsObjectsListError>> {
+pub async fn storage_api_buckets_objects_list(configuration: &configuration::Configuration, bucket_name: &str, page: Option<i32>, page_size: Option<i32>) -> Result<models::PaginatedBucketObjectList, Error<StorageApiBucketsObjectsListError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -403,7 +403,7 @@ pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration:
 }
 
 /// Update the object key from bucket.
-pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<crate::models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
+pub async fn storage_api_buckets_objects_update(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str, content_type: Option<&str>, body: Option<std::path::PathBuf>) -> Result<models::SuccessObjectOperation, Error<StorageApiBucketsObjectsUpdateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -443,7 +443,7 @@ pub async fn storage_api_buckets_objects_update(configuration: &configuration::C
 }
 
 /// 
-pub async fn storage_api_buckets_partial_update(configuration: &configuration::Configuration, name: &str) -> Result<crate::models::ResponseBucket, Error<StorageApiBucketsPartialUpdateError>> {
+pub async fn storage_api_buckets_partial_update(configuration: &configuration::Configuration, name: &str) -> Result<models::ResponseBucket, Error<StorageApiBucketsPartialUpdateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

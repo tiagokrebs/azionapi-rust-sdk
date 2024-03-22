@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## storage_api_buckets_create
 
-> crate::models::ResponseBucket storage_api_buckets_create(bucket_create)
+> models::ResponseBucket storage_api_buckets_create(bucket_create)
 Create a new bucket
 
 
@@ -32,7 +32,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ResponseBucket**](ResponseBucket.md)
+[**models::ResponseBucket**](ResponseBucket.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_destroy
 
-> crate::models::SuccessBucketOperation storage_api_buckets_destroy(name)
+> models::SuccessBucketOperation storage_api_buckets_destroy(name)
 Delete a bucket
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SuccessBucketOperation**](SuccessBucketOperation.md)
+[**models::SuccessBucketOperation**](SuccessBucketOperation.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_list
 
-> crate::models::PaginatedBucketList storage_api_buckets_list(page, page_size)
+> models::PaginatedBucketList storage_api_buckets_list(page, page_size)
 List buckets
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PaginatedBucketList**](PaginatedBucketList.md)
+[**models::PaginatedBucketList**](PaginatedBucketList.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_create
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, content_type, body)
+> models::SuccessObjectOperation storage_api_buckets_objects_create(bucket_name, object_key, content_type, body)
 Create new object key
 
 Create a new object key in the bucket.
@@ -126,7 +126,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SuccessObjectOperation**](SuccessObjectOperation.md)
+[**models::SuccessObjectOperation**](SuccessObjectOperation.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_destroy
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_destroy(bucket_name, object_key)
+> models::SuccessObjectOperation storage_api_buckets_objects_destroy(bucket_name, object_key)
 Delete object key
 
 Delete an object key from bucket
@@ -157,7 +157,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SuccessObjectOperation**](SuccessObjectOperation.md)
+[**models::SuccessObjectOperation**](SuccessObjectOperation.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_list
 
-> crate::models::PaginatedBucketObjectList storage_api_buckets_objects_list(bucket_name, page, page_size)
+> models::PaginatedBucketObjectList storage_api_buckets_objects_list(bucket_name, page, page_size)
 List buckets objects
 
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PaginatedBucketObjectList**](PaginatedBucketObjectList.md)
+[**models::PaginatedBucketObjectList**](PaginatedBucketObjectList.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_update
 
-> crate::models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, content_type, body)
+> models::SuccessObjectOperation storage_api_buckets_objects_update(bucket_name, object_key, content_type, body)
 Update the object key
 
 Update the object key from bucket.
@@ -253,7 +253,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SuccessObjectOperation**](SuccessObjectOperation.md)
+[**models::SuccessObjectOperation**](SuccessObjectOperation.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_partial_update
 
-> crate::models::ResponseBucket storage_api_buckets_partial_update(name)
+> models::ResponseBucket storage_api_buckets_partial_update(name)
 Update bucket info
 
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ResponseBucket**](ResponseBucket.md)
+[**models::ResponseBucket**](ResponseBucket.md)
 
 ### Authorization
 
