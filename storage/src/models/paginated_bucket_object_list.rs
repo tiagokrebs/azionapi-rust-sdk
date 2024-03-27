@@ -18,6 +18,8 @@ pub struct PaginatedBucketObjectList {
     pub next: Option<Option<String>>,
     #[serde(rename = "previous", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub previous: Option<Option<String>>,
+    #[serde(rename = "continuation_token", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub continuation_token: Option<Option<String>>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
     pub results: Option<Vec<models::BucketObject>>,
 }
@@ -28,6 +30,7 @@ impl PaginatedBucketObjectList {
             count: None,
             next: None,
             previous: None,
+            continuation_token: None,
             results: None,
         }
     }

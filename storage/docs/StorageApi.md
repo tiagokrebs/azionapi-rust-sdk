@@ -173,7 +173,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_list
 
-> models::PaginatedBucketObjectList storage_api_buckets_objects_list(bucket_name, page, page_size)
+> models::PaginatedBucketObjectList storage_api_buckets_objects_list(bucket_name, continuation_token, max_object_count)
 List buckets objects
 
 
@@ -184,8 +184,8 @@ List buckets objects
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **bucket_name** | **String** |  | [required] |
-**page** | Option<**i32**> | A page number within the paginated result set. |  |
-**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**continuation_token** | Option<**String**> | Token for next page. |  |
+**max_object_count** | Option<**i32**> | Number of results to return per page. |  |
 
 ### Return type
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_objects_retrieve
 
-> std::path::PathBuf storage_api_buckets_objects_retrieve(bucket_name, object_key)
+> storage_api_buckets_objects_retrieve(bucket_name, object_key)
 Download object
 
 Download the object key from bucket.
@@ -220,7 +220,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**std::path::PathBuf**](std::path::PathBuf.md)
+ (empty response body)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream
+- **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Required | Notes
 
 ## storage_api_buckets_partial_update
 
-> models::ResponseBucket storage_api_buckets_partial_update(name)
+> models::ResponseBucket storage_api_buckets_partial_update(name, bucket_update)
 Update bucket info
 
 
@@ -280,6 +280,7 @@ Update bucket info
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
+**bucket_update** | Option<[**BucketUpdate**](BucketUpdate.md)> |  |  |
 
 ### Return type
 
@@ -291,7 +292,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
