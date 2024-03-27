@@ -5,6 +5,7 @@ README.md
 docs/Bucket.md
 docs/BucketCreate.md
 docs/BucketObject.md
+docs/BucketUpdate.md
 docs/EdgeAccessEnum.md
 docs/ObjectResponseData.md
 docs/PaginatedBucketList.md
@@ -22,6 +23,7 @@ src/lib.rs
 src/models/bucket.rs
 src/models/bucket_create.rs
 src/models/bucket_object.rs
+src/models/bucket_update.rs
 src/models/edge_access_enum.rs
 src/models/mod.rs
 src/models/object_response_data.rs

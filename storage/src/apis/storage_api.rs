@@ -325,7 +325,7 @@ pub async fn storage_api_buckets_objects_destroy(configuration: &configuration::
 }
 
 /// 
-pub async fn storage_api_buckets_objects_list(configuration: &configuration::Configuration, bucket_name: &str, page: Option<i32>, page_size: Option<i32>) -> Result<models::PaginatedBucketObjectList, Error<StorageApiBucketsObjectsListError>> {
+pub async fn storage_api_buckets_objects_list(configuration: &configuration::Configuration, bucket_name: &str, continuation_token: Option<&str>, max_object_count: Option<i32>) -> Result<models::PaginatedBucketObjectList, Error<StorageApiBucketsObjectsListError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -333,11 +333,11 @@ pub async fn storage_api_buckets_objects_list(configuration: &configuration::Con
     let local_var_uri_str = format!("{}/v4/storage/buckets/{bucket_name}/objects", local_var_configuration.base_path, bucket_name=crate::apis::urlencode(bucket_name));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = page {
-        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = continuation_token {
+        local_var_req_builder = local_var_req_builder.query(&[("continuation_token", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = page_size {
-        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = max_object_count {
+        local_var_req_builder = local_var_req_builder.query(&[("max_object_count", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -367,7 +367,7 @@ pub async fn storage_api_buckets_objects_list(configuration: &configuration::Con
 }
 
 /// Download the object key from bucket.
-pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str) -> Result<std::path::PathBuf, Error<StorageApiBucketsObjectsRetrieveError>> {
+pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration::Configuration, bucket_name: &str, object_key: &str) -> Result<(), Error<StorageApiBucketsObjectsRetrieveError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -394,7 +394,7 @@ pub async fn storage_api_buckets_objects_retrieve(configuration: &configuration:
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
         let local_var_entity: Option<StorageApiBucketsObjectsRetrieveError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -443,7 +443,7 @@ pub async fn storage_api_buckets_objects_update(configuration: &configuration::C
 }
 
 /// 
-pub async fn storage_api_buckets_partial_update(configuration: &configuration::Configuration, name: &str) -> Result<models::ResponseBucket, Error<StorageApiBucketsPartialUpdateError>> {
+pub async fn storage_api_buckets_partial_update(configuration: &configuration::Configuration, name: &str, bucket_update: Option<models::BucketUpdate>) -> Result<models::ResponseBucket, Error<StorageApiBucketsPartialUpdateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -462,6 +462,7 @@ pub async fn storage_api_buckets_partial_update(configuration: &configuration::C
         };
         local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
     };
+    local_var_req_builder = local_var_req_builder.json(&bucket_update);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;

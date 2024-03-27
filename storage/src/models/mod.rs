@@ -4,6 +4,8 @@ pub mod bucket_create;
 pub use self::bucket_create::BucketCreate;
 pub mod bucket_object;
 pub use self::bucket_object::BucketObject;
+pub mod bucket_update;
+pub use self::bucket_update::BucketUpdate;
 pub mod edge_access_enum;
 pub use self::edge_access_enum::EdgeAccessEnum;
 pub mod object_response_data;
