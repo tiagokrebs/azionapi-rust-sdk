@@ -1,14 +1,14 @@
-# CreateDomainRequest
+# DomainData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
-**cnames** | **Vec<String>** |  | 
+**name** | Option<**String**> |  | [optional]
+**cnames** | Option<**Vec<String>**> |  | [optional]
 **cname_access_only** | Option<**bool**> |  | [optional]
 **is_active** | Option<**bool**> |  | [optional]
-**edge_application_id** | **i64** |  | 
+**edge_application_id** | Option<**i64**> |  | [optional]
 **digital_certificate_id** | Option<**i64**> |  | [optional]
 **environment** | Option<**String**> |  | [optional]
 **is_mtls_enabled** | Option<**bool**> |  | [optional]
