@@ -11,7 +11,7 @@
 use crate::models;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct UpdateDomainRequest {
+pub struct DomainEntity {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "cnames", skip_serializing_if = "Option::is_none")]
@@ -34,11 +34,15 @@ pub struct UpdateDomainRequest {
     pub mtls_verification: Option<MtlsVerification>,
     #[serde(rename = "crl_list", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub crl_list: Option<Option<Vec<i64>>>,
+    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<i64>,
+    #[serde(rename = "domain_name", skip_serializing_if = "Option::is_none")]
+    pub domain_name: Option<String>,
 }
 
-impl UpdateDomainRequest {
-    pub fn new() -> UpdateDomainRequest {
-        UpdateDomainRequest {
+impl DomainEntity {
+    pub fn new() -> DomainEntity {
+        DomainEntity {
             name: None,
             cnames: None,
             cname_access_only: None,
@@ -50,6 +54,8 @@ impl UpdateDomainRequest {
             mtls_trusted_ca_certificate_id: None,
             mtls_verification: None,
             crl_list: None,
+            id: None,
+            domain_name: None,
         }
     }
 }

@@ -11,7 +11,7 @@
 use crate::models;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct UpdateDomainRequest {
+pub struct DomainData {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "cnames", skip_serializing_if = "Option::is_none")]
@@ -36,9 +36,9 @@ pub struct UpdateDomainRequest {
     pub crl_list: Option<Option<Vec<i64>>>,
 }
 
-impl UpdateDomainRequest {
-    pub fn new() -> UpdateDomainRequest {
-        UpdateDomainRequest {
+impl DomainData {
+    pub fn new() -> DomainData {
+        DomainData {
             name: None,
             cnames: None,
             cname_access_only: None,

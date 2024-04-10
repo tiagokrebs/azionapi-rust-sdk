@@ -11,7 +11,7 @@
 
 use reqwest;
 
-use crate::apis::ResponseContent;
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -22,6 +22,7 @@ pub enum CreateDomainError {
     Status400(),
     Status403(),
     Status404(),
+    Status409(),
     Status422(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -57,6 +58,7 @@ pub enum GetDomainError {
 pub enum GetDomainsError {
     Status400(),
     Status403(),
+    Status404(),
     Status422(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -69,6 +71,7 @@ pub enum PutDomainError {
     Status400(),
     Status403(),
     Status404(),
+    Status405(),
     Status422(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -81,6 +84,7 @@ pub enum UpdateDomainError {
     Status400(),
     Status403(),
     Status404(),
+    Status405(),
     Status422(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -88,7 +92,7 @@ pub enum UpdateDomainError {
 
 
 /// It enables you to include a new domain into an account.
-pub async fn create_domain(configuration: &configuration::Configuration, accept: Option<&str>, content_type: Option<&str>, create_domain_request: Option<crate::models::CreateDomainRequest>) -> Result<crate::models::DomainResponseWithResult, Error<CreateDomainError>> {
+pub async fn create_domain(configuration: &configuration::Configuration, accept: Option<&str>, content_type: Option<&str>, create_domain_request: Option<models::CreateDomainRequest>) -> Result<models::DomainResponseWithResult, Error<CreateDomainError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -170,7 +174,7 @@ pub async fn del_domain(configuration: &configuration::Configuration, id: &str, 
 }
 
 /// It returns details of a domain.
-pub async fn get_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>) -> Result<crate::models::DomainResponseWithResult, Error<GetDomainError>> {
+pub async fn get_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>) -> Result<models::DomainResponseWithResult, Error<GetDomainError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -209,7 +213,7 @@ pub async fn get_domain(configuration: &configuration::Configuration, id: &str, 
 }
 
 /// It returns the list of domains of an account.
-pub async fn get_domains(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>, order_by: Option<&str>, accept: Option<&str>) -> Result<crate::models::DomainResponseWithResults, Error<GetDomainsError>> {
+pub async fn get_domains(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>, order_by: Option<&str>, accept: Option<&str>) -> Result<models::DomainResponseWithResults, Error<GetDomainsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -260,7 +264,7 @@ pub async fn get_domains(configuration: &configuration::Configuration, page: Opt
 }
 
 /// It overwrites all fields of a domain, while preserving the id. Optional fields not filled in will be replaced by the default values.  To update only some fields in a domain, consider using the PATCH method instead of PUT.
-pub async fn put_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, put_domain_request: Option<crate::models::PutDomainRequest>) -> Result<crate::models::DomainResponseWithResult, Error<PutDomainError>> {
+pub async fn put_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, put_domain_request: Option<models::PutDomainRequest>) -> Result<models::DomainResponseWithResult, Error<PutDomainError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -303,7 +307,7 @@ pub async fn put_domain(configuration: &configuration::Configuration, id: &str, 
 }
 
 /// It updates one or more fields in a Domain, preserving the value of the fields not informed.
-pub async fn update_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, update_domain_request: Option<crate::models::UpdateDomainRequest>) -> Result<crate::models::DomainResponseWithResult, Error<UpdateDomainError>> {
+pub async fn update_domain(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, update_domain_request: Option<models::UpdateDomainRequest>) -> Result<models::DomainResponseWithResult, Error<UpdateDomainError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## create_domain
 
-> crate::models::DomainResponseWithResult create_domain(accept, content_type, create_domain_request)
+> models::DomainResponseWithResult create_domain(accept, content_type, create_domain_request)
 /domains
 
 It enables you to include a new domain into an account.
@@ -31,7 +31,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DomainResponseWithResult**](DomainResponseWithResult.md)
+[**models::DomainResponseWithResult**](DomainResponseWithResult.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_domain
 
-> crate::models::DomainResponseWithResult get_domain(id, accept)
+> models::DomainResponseWithResult get_domain(id, accept)
 /domains/:id
 
 It returns details of a domain.
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DomainResponseWithResult**](DomainResponseWithResult.md)
+[**models::DomainResponseWithResult**](DomainResponseWithResult.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_domains
 
-> crate::models::DomainResponseWithResults get_domains(page, page_size, sort, order_by, accept)
+> models::DomainResponseWithResults get_domains(page, page_size, sort, order_by, accept)
 /domains
 
 It returns the list of domains of an account.
@@ -127,7 +127,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DomainResponseWithResults**](DomainResponseWithResults.md)
+[**models::DomainResponseWithResults**](DomainResponseWithResults.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_domain
 
-> crate::models::DomainResponseWithResult put_domain(id, accept, content_type, put_domain_request)
+> models::DomainResponseWithResult put_domain(id, accept, content_type, put_domain_request)
 /domains:/:id
 
 It overwrites all fields of a domain, while preserving the id. Optional fields not filled in will be replaced by the default values.  To update only some fields in a domain, consider using the PATCH method instead of PUT.
@@ -160,7 +160,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DomainResponseWithResult**](DomainResponseWithResult.md)
+[**models::DomainResponseWithResult**](DomainResponseWithResult.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Required | Notes
 
 ## update_domain
 
-> crate::models::DomainResponseWithResult update_domain(id, accept, content_type, update_domain_request)
+> models::DomainResponseWithResult update_domain(id, accept, content_type, update_domain_request)
 /domains/:id
 
 It updates one or more fields in a Domain, preserving the value of the fields not informed.
@@ -193,7 +193,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DomainResponseWithResult**](DomainResponseWithResult.md)
+[**models::DomainResponseWithResult**](DomainResponseWithResult.md)
 
 ### Authorization
 
