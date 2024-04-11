@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **environment** | Option<**String**> |  | [optional]
 **is_mtls_enabled** | Option<**bool**> |  | [optional]
 **mtls_trusted_ca_certificate_id** | Option<**i64**> |  | [optional]
+**edge_firewall_id** | Option<**i64**> |  | [optional]
 **mtls_verification** | Option<**String**> |  | [optional]
 **crl_list** | Option<**Vec<i64>**> |  | [optional]
 
