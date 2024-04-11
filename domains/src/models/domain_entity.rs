@@ -30,6 +30,8 @@ pub struct DomainEntity {
     pub is_mtls_enabled: Option<bool>,
     #[serde(rename = "mtls_trusted_ca_certificate_id", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub mtls_trusted_ca_certificate_id: Option<Option<i64>>,
+    #[serde(rename = "edge_firewall_id", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub edge_firewall_id: Option<Option<i64>>,
     #[serde(rename = "mtls_verification", skip_serializing_if = "Option::is_none")]
     pub mtls_verification: Option<MtlsVerification>,
     #[serde(rename = "crl_list", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -52,6 +54,7 @@ impl DomainEntity {
             environment: None,
             is_mtls_enabled: None,
             mtls_trusted_ca_certificate_id: None,
+            edge_firewall_id: None,
             mtls_verification: None,
             crl_list: None,
             id: None,
