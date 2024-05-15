@@ -4,6 +4,7 @@ Cargo.toml
 README.md
 docs/CreateDomainRequest.md
 docs/DomainData.md
+docs/DomainDataDigitalCertificateId.md
 docs/DomainEntity.md
 docs/DomainLinks.md
 docs/DomainResponseWithResult.md
@@ -18,6 +19,7 @@ src/apis/mod.rs
 src/lib.rs
 src/models/create_domain_request.rs
 src/models/domain_data.rs
+src/models/domain_data_digital_certificate_id.rs
 src/models/domain_entity.rs
 src/models/domain_links.rs
 src/models/domain_response_with_result.rs

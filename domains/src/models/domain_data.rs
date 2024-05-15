@@ -22,8 +22,8 @@ pub struct DomainData {
     pub is_active: Option<bool>,
     #[serde(rename = "edge_application_id", skip_serializing_if = "Option::is_none")]
     pub edge_application_id: Option<i64>,
-    #[serde(rename = "digital_certificate_id", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub digital_certificate_id: Option<Option<i64>>,
+    #[serde(rename = "digital_certificate_id", skip_serializing_if = "Option::is_none")]
+    pub digital_certificate_id: Option<Box<models::DomainDataDigitalCertificateId>>,
     #[serde(rename = "environment", skip_serializing_if = "Option::is_none")]
     pub environment: Option<Environment>,
     #[serde(rename = "is_mtls_enabled", skip_serializing_if = "Option::is_none")]
