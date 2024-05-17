@@ -2,8 +2,6 @@ pub mod create_domain_request;
 pub use self::create_domain_request::CreateDomainRequest;
 pub mod domain_data;
 pub use self::domain_data::DomainData;
-pub mod domain_data_digital_certificate_id;
-pub use self::domain_data_digital_certificate_id::DomainDataDigitalCertificateId;
 pub mod domain_entity;
 pub use self::domain_entity::DomainEntity;
 pub mod domain_links;

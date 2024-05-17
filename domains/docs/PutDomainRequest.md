@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **cname_access_only** | Option<**bool**> |  | [optional]
 **is_active** | Option<**bool**> |  | [optional]
 **edge_application_id** | **i64** |  | 
-**digital_certificate_id** | Option<[**models::DomainDataDigitalCertificateId**](DomainData_digital_certificate_id.md)> |  | [optional]
+**digital_certificate_id** | Option<**String**> |  | [optional]
 **environment** | Option<**String**> |  | [optional]
 **is_mtls_enabled** | Option<**bool**> |  | [optional]
 **mtls_trusted_ca_certificate_id** | Option<**i64**> |  | [optional]

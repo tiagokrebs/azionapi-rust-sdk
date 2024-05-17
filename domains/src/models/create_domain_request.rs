@@ -23,7 +23,7 @@ pub struct CreateDomainRequest {
     #[serde(rename = "edge_application_id")]
     pub edge_application_id: i64,
     #[serde(rename = "digital_certificate_id", skip_serializing_if = "Option::is_none")]
-    pub digital_certificate_id: Option<Box<models::DomainDataDigitalCertificateId>>,
+    pub digital_certificate_id: Option<String>,
     #[serde(rename = "environment", skip_serializing_if = "Option::is_none")]
     pub environment: Option<Environment>,
     #[serde(rename = "is_mtls_enabled", skip_serializing_if = "Option::is_none")]
