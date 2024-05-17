@@ -4,7 +4,9 @@ Cargo.toml
 README.md
 docs/CreateDomainRequest.md
 docs/DomainData.md
+docs/DomainDataResponse.md
 docs/DomainEntity.md
+docs/DomainEntityResponse.md
 docs/DomainLinks.md
 docs/DomainResponseWithResult.md
 docs/DomainResponseWithResults.md
@@ -18,7 +20,9 @@ src/apis/mod.rs
 src/lib.rs
 src/models/create_domain_request.rs
 src/models/domain_data.rs
+src/models/domain_data_response.rs
 src/models/domain_entity.rs
+src/models/domain_entity_response.rs
 src/models/domain_links.rs
 src/models/domain_response_with_result.rs
 src/models/domain_response_with_results.rs

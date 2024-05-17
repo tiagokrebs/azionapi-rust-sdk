@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | Option<**i64**> |  | [optional]
 **links** | Option<[**models::DomainLinks**](DomainLinks.md)> |  | [optional]
-**results** | [**models::DomainEntity**](DomainEntity.md) |  | 
+**results** | [**models::DomainEntityResponse**](DomainEntityResponse.md) |  | 
 **total_pages** | Option<**i64**> |  | [optional]
 **schema_version** | **i64** |  | 
 
