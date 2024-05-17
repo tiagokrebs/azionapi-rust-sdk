@@ -21,11 +21,11 @@ pub struct DomainResponseWithResults {
     #[serde(rename = "links")]
     pub links: Box<models::DomainLinks>,
     #[serde(rename = "results")]
-    pub results: Vec<models::DomainEntity>,
+    pub results: Vec<models::DomainEntityResponse>,
 }
 
 impl DomainResponseWithResults {
-    pub fn new(count: i64, total_pages: i64, schema_version: i64, links: models::DomainLinks, results: Vec<models::DomainEntity>) -> DomainResponseWithResults {
+    pub fn new(count: i64, total_pages: i64, schema_version: i64, links: models::DomainLinks, results: Vec<models::DomainEntityResponse>) -> DomainResponseWithResults {
         DomainResponseWithResults {
             count,
             total_pages,
