@@ -10,7 +10,11 @@ docs/EdgeAccessEnum.md
 docs/ObjectResponseData.md
 docs/PaginatedBucketList.md
 docs/PaginatedBucketObjectList.md
+docs/PaginatedS3CredentialList.md
 docs/ResponseBucket.md
+docs/ResponseS3Credential.md
+docs/S3Credential.md
+docs/S3CredentialCreate.md
 docs/StateEnum.md
 docs/StorageApi.md
 docs/SuccessBucketOperation.md
@@ -29,7 +33,11 @@ src/models/mod.rs
 src/models/object_response_data.rs
 src/models/paginated_bucket_list.rs
 src/models/paginated_bucket_object_list.rs
+src/models/paginated_s3_credential_list.rs
 src/models/response_bucket.rs
+src/models/response_s3_credential.rs
+src/models/s3_credential.rs
+src/models/s3_credential_create.rs
 src/models/state_enum.rs
 src/models/success_bucket_operation.rs
 src/models/success_object_operation.rs

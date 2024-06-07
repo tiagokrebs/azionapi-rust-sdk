@@ -10,7 +10,7 @@
 
 
 use reqwest;
-
+use serde::{Deserialize, Serialize};
 use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
@@ -123,6 +123,58 @@ pub enum StorageApiBucketsObjectsUpdateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum StorageApiBucketsPartialUpdateError {
+    Status400(),
+    Status404(),
+    Status406(),
+    Status429(),
+    Status401(),
+    Status403(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`storage_api_s3_credentials_by_access_key`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StorageApiS3CredentialsByAccessKeyError {
+    Status400(),
+    Status404(),
+    Status406(),
+    Status429(),
+    Status401(),
+    Status403(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`storage_api_s3_credentials_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StorageApiS3CredentialsCreateError {
+    Status400(),
+    Status404(),
+    Status406(),
+    Status429(),
+    Status401(),
+    Status403(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`storage_api_s3_credentials_delete`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StorageApiS3CredentialsDeleteError {
+    Status400(),
+    Status404(),
+    Status406(),
+    Status429(),
+    Status401(),
+    Status403(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`storage_api_s3_credentials_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StorageApiS3CredentialsListError {
     Status400(),
     Status404(),
     Status406(),
@@ -474,6 +526,163 @@ pub async fn storage_api_buckets_partial_update(configuration: &configuration::C
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<StorageApiBucketsPartialUpdateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// 
+pub async fn storage_api_s3_credentials_by_access_key(configuration: &configuration::Configuration, s3_credential_access_key: &str) -> Result<models::ResponseS3Credential, Error<StorageApiS3CredentialsByAccessKeyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v4/storage/s3-credentials/{s3_credential_access_key}", local_var_configuration.base_path, s3_credential_access_key=crate::apis::urlencode(s3_credential_access_key));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StorageApiS3CredentialsByAccessKeyError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// 
+pub async fn storage_api_s3_credentials_create(configuration: &configuration::Configuration, s3_credential_create: models::S3CredentialCreate) -> Result<models::ResponseS3Credential, Error<StorageApiS3CredentialsCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v4/storage/s3-credentials", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
+    };
+    local_var_req_builder = local_var_req_builder.json(&s3_credential_create);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StorageApiS3CredentialsCreateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// 
+pub async fn storage_api_s3_credentials_delete(configuration: &configuration::Configuration, s3_credential_access_key: &str) -> Result<models::ResponseS3Credential, Error<StorageApiS3CredentialsDeleteError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v4/storage/s3-credentials/{s3_credential_access_key}", local_var_configuration.base_path, s3_credential_access_key=crate::apis::urlencode(s3_credential_access_key));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StorageApiS3CredentialsDeleteError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// 
+pub async fn storage_api_s3_credentials_list(configuration: &configuration::Configuration, key: Option<&str>, last_modified: Option<&str>, size: Option<i32>, continuation_token: Option<&str>) -> Result<models::PaginatedS3CredentialList, Error<StorageApiS3CredentialsListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v4/storage/s3-credentials", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = key {
+        local_var_req_builder = local_var_req_builder.query(&[("key", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = last_modified {
+        local_var_req_builder = local_var_req_builder.query(&[("last_modified", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = size {
+        local_var_req_builder = local_var_req_builder.query(&[("size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = continuation_token {
+        local_var_req_builder = local_var_req_builder.query(&[("continuation_token", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_apikey) = local_var_configuration.api_key {
+        let local_var_key = local_var_apikey.key.clone();
+        let local_var_value = match local_var_apikey.prefix {
+            Some(ref local_var_prefix) => format!("{} {}", local_var_prefix, local_var_key),
+            None => local_var_key,
+        };
+        local_var_req_builder = local_var_req_builder.header("Authorization", local_var_value);
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StorageApiS3CredentialsListError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
