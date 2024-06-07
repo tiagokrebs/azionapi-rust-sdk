@@ -13,6 +13,10 @@ Method | HTTP request | Description
 [**storage_api_buckets_objects_retrieve**](StorageApi.md#storage_api_buckets_objects_retrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object
 [**storage_api_buckets_objects_update**](StorageApi.md#storage_api_buckets_objects_update) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key
 [**storage_api_buckets_partial_update**](StorageApi.md#storage_api_buckets_partial_update) | **PATCH** /v4/storage/buckets/{name} | Update bucket info
+[**storage_api_s3_credentials_by_access_key**](StorageApi.md#storage_api_s3_credentials_by_access_key) | **GET** /v4/storage/s3-credentials/{s3_credential_access_key} | get by s3 credentials by access key
+[**storage_api_s3_credentials_create**](StorageApi.md#storage_api_s3_credentials_create) | **POST** /v4/storage/s3-credentials | create s3 credentials
+[**storage_api_s3_credentials_delete**](StorageApi.md#storage_api_s3_credentials_delete) | **DELETE** /v4/storage/s3-credentials/{s3_credential_access_key} | delete by s3 credentials
+[**storage_api_s3_credentials_list**](StorageApi.md#storage_api_s3_credentials_list) | **GET** /v4/storage/s3-credentials | List s3 credentials
 
 
 
@@ -229,7 +233,7 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
+- **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream, multipart/form-data, application/x-www-form-urlencoded
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -293,6 +297,129 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## storage_api_s3_credentials_by_access_key
+
+> models::ResponseS3Credential storage_api_s3_credentials_by_access_key(s3_credential_access_key)
+get by s3 credentials by access key
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**s3_credential_access_key** | **String** |  | [required] |
+
+### Return type
+
+[**models::ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## storage_api_s3_credentials_create
+
+> models::ResponseS3Credential storage_api_s3_credentials_create(s3_credential_create)
+create s3 credentials
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**s3_credential_create** | [**S3CredentialCreate**](S3CredentialCreate.md) |  | [required] |
+
+### Return type
+
+[**models::ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## storage_api_s3_credentials_delete
+
+> models::ResponseS3Credential storage_api_s3_credentials_delete(s3_credential_access_key)
+delete by s3 credentials
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**s3_credential_access_key** | **String** |  | [required] |
+
+### Return type
+
+[**models::ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## storage_api_s3_credentials_list
+
+> models::PaginatedS3CredentialList storage_api_s3_credentials_list(key, last_modified, size, continuation_token)
+List s3 credentials
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**key** | Option<**String**> | Object key. Used to identify the object for requests. Sent in POST requests as a path variable. |  |
+**last_modified** | Option<**String**> | Timestamp of the last modification to the object. |  |
+**size** | Option<**i32**> | Size of file in bytes. |  |
+**continuation_token** | Option<**String**> | Hash that can be added to the continuation_token query to skip list to the next page. |  |
+
+### Return type
+
+[**models::PaginatedS3CredentialList**](PaginatedS3CredentialList.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

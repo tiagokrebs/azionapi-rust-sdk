@@ -12,7 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PaginatedBucketList {
+pub struct PaginatedS3CredentialList {
     #[serde(rename = "count", skip_serializing_if = "Option::is_none")]
     pub count: Option<i32>,
     #[serde(rename = "next", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
@@ -20,12 +20,12 @@ pub struct PaginatedBucketList {
     #[serde(rename = "previous", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub previous: Option<Option<String>>,
     #[serde(rename = "results", skip_serializing_if = "Option::is_none")]
-    pub results: Option<Vec<models::Bucket>>,
+    pub results: Option<Vec<models::S3Credential>>,
 }
 
-impl PaginatedBucketList {
-    pub fn new() -> PaginatedBucketList {
-        PaginatedBucketList {
+impl PaginatedS3CredentialList {
+    pub fn new() -> PaginatedS3CredentialList {
+        PaginatedS3CredentialList {
             count: None,
             next: None,
             previous: None,
