@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -131,7 +131,7 @@ pub async fn edge_applications_edge_application_id_functions_instances_functions
     }
 }
 
-pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_get(configuration: &configuration::Configuration, edge_application_id: i64, functions_instances_id: i64, accept: Option<&str>) -> Result<crate::models::ApplicationInstancesGetOneResponse, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetError>> {
+pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_get(configuration: &configuration::Configuration, edge_application_id: i64, functions_instances_id: i64, accept: Option<&str>) -> Result<models::ApplicationInstancesGetOneResponse, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -169,7 +169,7 @@ pub async fn edge_applications_edge_application_id_functions_instances_functions
     }
 }
 
-pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_patch(configuration: &configuration::Configuration, edge_application_id: &str, functions_instances_id: &str, accept: Option<&str>, content_type: Option<&str>, application_update_instance_request: Option<crate::models::ApplicationUpdateInstanceRequest>) -> Result<crate::models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchError>> {
+pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_patch(configuration: &configuration::Configuration, edge_application_id: &str, functions_instances_id: &str, accept: Option<&str>, content_type: Option<&str>, application_update_instance_request: Option<models::ApplicationUpdateInstanceRequest>) -> Result<models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -211,7 +211,7 @@ pub async fn edge_applications_edge_application_id_functions_instances_functions
     }
 }
 
-pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_put(configuration: &configuration::Configuration, edge_application_id: &str, functions_instances_id: &str, accept: Option<&str>, content_type: Option<&str>, application_put_instance_request: Option<crate::models::ApplicationPutInstanceRequest>) -> Result<crate::models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutError>> {
+pub async fn edge_applications_edge_application_id_functions_instances_functions_instances_id_put(configuration: &configuration::Configuration, edge_application_id: &str, functions_instances_id: &str, accept: Option<&str>, content_type: Option<&str>, application_put_instance_request: Option<models::ApplicationPutInstanceRequest>) -> Result<models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -253,7 +253,7 @@ pub async fn edge_applications_edge_application_id_functions_instances_functions
     }
 }
 
-pub async fn edge_applications_edge_application_id_functions_instances_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::ApplicationInstancesGetResponse, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetError>> {
+pub async fn edge_applications_edge_application_id_functions_instances_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::ApplicationInstancesGetResponse, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -306,7 +306,7 @@ pub async fn edge_applications_edge_application_id_functions_instances_get(confi
     }
 }
 
-pub async fn edge_applications_edge_application_id_functions_instances_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, application_create_instance_request: Option<crate::models::ApplicationCreateInstanceRequest>) -> Result<crate::models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostError>> {
+pub async fn edge_applications_edge_application_id_functions_instances_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, application_create_instance_request: Option<models::ApplicationCreateInstanceRequest>) -> Result<models::ApplicationInstanceResults, Error<EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

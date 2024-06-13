@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **count** | **i64** |  | 
 **total_pages** | **i64** |  | 
 **schema_version** | **i64** |  | 
-**links** | [**crate::models::ApplicationLinks**](ApplicationLinks.md) |  | 
-**results** | [**Vec<crate::models::ApplicationsResults>**](ApplicationsResults.md) |  | 
+**links** | [**models::ApplicationLinks**](ApplicationLinks.md) |  | 
+**results** | [**Vec<models::ApplicationsResults>**](ApplicationsResults.md) |  | 
 **next** | Option<**String**> |  | [optional]
 **previous** | Option<**String**> |  | [optional]
 

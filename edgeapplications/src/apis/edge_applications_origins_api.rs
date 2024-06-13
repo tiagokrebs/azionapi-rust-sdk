@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -88,7 +88,7 @@ pub enum EdgeApplicationsEdgeApplicationIdOriginsPostError {
 }
 
 
-pub async fn edge_applications_edge_application_id_origins_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::OriginsResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsGetError>> {
+pub async fn edge_applications_edge_application_id_origins_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::OriginsResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -179,7 +179,7 @@ pub async fn edge_applications_edge_application_id_origins_origin_key_delete(con
     }
 }
 
-pub async fn edge_applications_edge_application_id_origins_origin_key_get(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>) -> Result<crate::models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetError>> {
+pub async fn edge_applications_edge_application_id_origins_origin_key_get(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>) -> Result<models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -217,7 +217,7 @@ pub async fn edge_applications_edge_application_id_origins_origin_key_get(config
     }
 }
 
-pub async fn edge_applications_edge_application_id_origins_origin_key_patch(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>, content_type: Option<&str>, patch_origins_request: Option<crate::models::PatchOriginsRequest>) -> Result<crate::models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchError>> {
+pub async fn edge_applications_edge_application_id_origins_origin_key_patch(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>, content_type: Option<&str>, patch_origins_request: Option<models::PatchOriginsRequest>) -> Result<models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -259,7 +259,7 @@ pub async fn edge_applications_edge_application_id_origins_origin_key_patch(conf
     }
 }
 
-pub async fn edge_applications_edge_application_id_origins_origin_key_put(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>, content_type: Option<&str>, update_origins_request: Option<crate::models::UpdateOriginsRequest>) -> Result<crate::models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutError>> {
+pub async fn edge_applications_edge_application_id_origins_origin_key_put(configuration: &configuration::Configuration, edge_application_id: i64, origin_key: &str, accept: Option<&str>, content_type: Option<&str>, update_origins_request: Option<models::UpdateOriginsRequest>) -> Result<models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -301,7 +301,7 @@ pub async fn edge_applications_edge_application_id_origins_origin_key_put(config
     }
 }
 
-pub async fn edge_applications_edge_application_id_origins_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, create_origins_request: Option<crate::models::CreateOriginsRequest>) -> Result<crate::models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsPostError>> {
+pub async fn edge_applications_edge_application_id_origins_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, create_origins_request: Option<models::CreateOriginsRequest>) -> Result<models::OriginsIdResponse, Error<EdgeApplicationsEdgeApplicationIdOriginsPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

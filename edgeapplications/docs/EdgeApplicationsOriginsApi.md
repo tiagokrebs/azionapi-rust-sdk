@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## edge_applications_edge_application_id_origins_get
 
-> crate::models::OriginsResponse edge_applications_edge_application_id_origins_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
+> models::OriginsResponse edge_applications_edge_application_id_origins_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
 /edge_applications/{edge_application_id}/origins
 
 ### Parameters
@@ -33,7 +33,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OriginsResponse**](OriginsResponse.md)
+[**models::OriginsResponse**](OriginsResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_origins_origin_key_get
 
-> crate::models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_get(edge_application_id, origin_key, accept)
+> models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_get(edge_application_id, origin_key, accept)
 /edge_applications/{edge_application_id}/origins/{origin_key}
 
 ### Parameters
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OriginsIdResponse**](OriginsIdResponse.md)
+[**models::OriginsIdResponse**](OriginsIdResponse.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_origins_origin_key_patch
 
-> crate::models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_patch(edge_application_id, origin_key, accept, content_type, patch_origins_request)
+> models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_patch(edge_application_id, origin_key, accept, content_type, patch_origins_request)
 /edge_applications/:edge_application_id:/origins/:origin_id:
 
 ### Parameters
@@ -125,7 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OriginsIdResponse**](OriginsIdResponse.md)
+[**models::OriginsIdResponse**](OriginsIdResponse.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_origins_origin_key_put
 
-> crate::models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_put(edge_application_id, origin_key, accept, content_type, update_origins_request)
+> models::OriginsIdResponse edge_applications_edge_application_id_origins_origin_key_put(edge_application_id, origin_key, accept, content_type, update_origins_request)
 /edge_applications/{edge_application_id}/origins/{origin_id}
 
 ### Parameters
@@ -157,7 +157,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OriginsIdResponse**](OriginsIdResponse.md)
+[**models::OriginsIdResponse**](OriginsIdResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_origins_post
 
-> crate::models::OriginsIdResponse edge_applications_edge_application_id_origins_post(edge_application_id, accept, content_type, create_origins_request)
+> models::OriginsIdResponse edge_applications_edge_application_id_origins_post(edge_application_id, accept, content_type, create_origins_request)
 /edge_applications/{edge_application_id}/origins
 
 ### Parameters
@@ -188,7 +188,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OriginsIdResponse**](OriginsIdResponse.md)
+[**models::OriginsIdResponse**](OriginsIdResponse.md)
 
 ### Authorization
 

@@ -46,7 +46,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_functions_instances_functions_instances_id_get
 
-> crate::models::ApplicationInstancesGetOneResponse edge_applications_edge_application_id_functions_instances_functions_instances_id_get(edge_application_id, functions_instances_id, accept)
+> models::ApplicationInstancesGetOneResponse edge_applications_edge_application_id_functions_instances_functions_instances_id_get(edge_application_id, functions_instances_id, accept)
 /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
 
 ### Parameters
@@ -60,7 +60,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationInstancesGetOneResponse**](ApplicationInstancesGetOneResponse.md)
+[**models::ApplicationInstancesGetOneResponse**](ApplicationInstancesGetOneResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_functions_instances_functions_instances_id_patch
 
-> crate::models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_functions_instances_id_patch(edge_application_id, functions_instances_id, accept, content_type, application_update_instance_request)
+> models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_functions_instances_id_patch(edge_application_id, functions_instances_id, accept, content_type, application_update_instance_request)
 /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
 
 ### Parameters
@@ -92,7 +92,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
+[**models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_functions_instances_functions_instances_id_put
 
-> crate::models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_functions_instances_id_put(edge_application_id, functions_instances_id, accept, content_type, application_put_instance_request)
+> models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_functions_instances_id_put(edge_application_id, functions_instances_id, accept, content_type, application_put_instance_request)
 /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
 
 ### Parameters
@@ -124,7 +124,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
+[**models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_functions_instances_get
 
-> crate::models::ApplicationInstancesGetResponse edge_applications_edge_application_id_functions_instances_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
+> models::ApplicationInstancesGetResponse edge_applications_edge_application_id_functions_instances_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
 /edge_applications/:edge_application_id:/functions_instances
 
 ### Parameters
@@ -158,7 +158,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationInstancesGetResponse**](ApplicationInstancesGetResponse.md)
+[**models::ApplicationInstancesGetResponse**](ApplicationInstancesGetResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_functions_instances_post
 
-> crate::models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_post(edge_application_id, accept, content_type, application_create_instance_request)
+> models::ApplicationInstanceResults edge_applications_edge_application_id_functions_instances_post(edge_application_id, accept, content_type, application_create_instance_request)
 edge_application/:edge_application_id:/functions_instances
 
 ### Parameters
@@ -189,7 +189,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
+[**models::ApplicationInstanceResults**](ApplicationInstanceResults.md)
 
 ### Authorization
 

@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -127,7 +127,7 @@ pub async fn edge_applications_edge_application_id_device_groups_device_group_id
     }
 }
 
-pub async fn edge_applications_edge_application_id_device_groups_device_group_id_get(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>) -> Result<crate::models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetError>> {
+pub async fn edge_applications_edge_application_id_device_groups_device_group_id_get(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>) -> Result<models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -165,7 +165,7 @@ pub async fn edge_applications_edge_application_id_device_groups_device_group_id
     }
 }
 
-pub async fn edge_applications_edge_application_id_device_groups_device_group_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>, content_type: Option<&str>, patch_device_groups_request: Option<crate::models::PatchDeviceGroupsRequest>) -> Result<crate::models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchError>> {
+pub async fn edge_applications_edge_application_id_device_groups_device_group_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>, content_type: Option<&str>, patch_device_groups_request: Option<models::PatchDeviceGroupsRequest>) -> Result<models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -207,7 +207,7 @@ pub async fn edge_applications_edge_application_id_device_groups_device_group_id
     }
 }
 
-pub async fn edge_applications_edge_application_id_device_groups_device_group_id_put(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>, content_type: Option<&str>, update_device_groups_request: Option<crate::models::UpdateDeviceGroupsRequest>) -> Result<crate::models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutError>> {
+pub async fn edge_applications_edge_application_id_device_groups_device_group_id_put(configuration: &configuration::Configuration, edge_application_id: i64, device_group_id: i64, accept: Option<&str>, content_type: Option<&str>, update_device_groups_request: Option<models::UpdateDeviceGroupsRequest>) -> Result<models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -249,7 +249,7 @@ pub async fn edge_applications_edge_application_id_device_groups_device_group_id
     }
 }
 
-pub async fn edge_applications_edge_application_id_device_groups_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::DeviceGroupsResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsGetError>> {
+pub async fn edge_applications_edge_application_id_device_groups_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::DeviceGroupsResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -302,7 +302,7 @@ pub async fn edge_applications_edge_application_id_device_groups_get(configurati
     }
 }
 
-pub async fn edge_applications_edge_application_id_device_groups_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, create_device_groups_request: Option<crate::models::CreateDeviceGroupsRequest>) -> Result<crate::models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsPostError>> {
+pub async fn edge_applications_edge_application_id_device_groups_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, create_device_groups_request: Option<models::CreateDeviceGroupsRequest>) -> Result<models::DeviceGroupsIdResponse, Error<EdgeApplicationsEdgeApplicationIdDeviceGroupsPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

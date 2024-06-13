@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -91,7 +91,7 @@ pub enum EdgeApplicationsPostError {
 }
 
 
-pub async fn edge_applications_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::GetApplicationsResponse, Error<EdgeApplicationsGetError>> {
+pub async fn edge_applications_get(configuration: &configuration::Configuration, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::GetApplicationsResponse, Error<EdgeApplicationsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -182,7 +182,7 @@ pub async fn edge_applications_id_delete(configuration: &configuration::Configur
     }
 }
 
-pub async fn edge_applications_id_get(configuration: &configuration::Configuration, id: &str, accept: Option<&str>) -> Result<crate::models::GetApplicationResponse, Error<EdgeApplicationsIdGetError>> {
+pub async fn edge_applications_id_get(configuration: &configuration::Configuration, id: &str, accept: Option<&str>) -> Result<models::GetApplicationResponse, Error<EdgeApplicationsIdGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -220,7 +220,7 @@ pub async fn edge_applications_id_get(configuration: &configuration::Configurati
     }
 }
 
-pub async fn edge_applications_id_patch(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, application_update_request: Option<crate::models::ApplicationUpdateRequest>) -> Result<crate::models::ApplicationUpdateResponse, Error<EdgeApplicationsIdPatchError>> {
+pub async fn edge_applications_id_patch(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, application_update_request: Option<models::ApplicationUpdateRequest>) -> Result<models::ApplicationUpdateResponse, Error<EdgeApplicationsIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -262,7 +262,7 @@ pub async fn edge_applications_id_patch(configuration: &configuration::Configura
     }
 }
 
-pub async fn edge_applications_id_put(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, application_put_request: Option<crate::models::ApplicationPutRequest>) -> Result<crate::models::ApplicationPutResult, Error<EdgeApplicationsIdPutError>> {
+pub async fn edge_applications_id_put(configuration: &configuration::Configuration, id: &str, accept: Option<&str>, content_type: Option<&str>, application_put_request: Option<models::ApplicationPutRequest>) -> Result<models::ApplicationPutResult, Error<EdgeApplicationsIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -304,7 +304,7 @@ pub async fn edge_applications_id_put(configuration: &configuration::Configurati
     }
 }
 
-pub async fn edge_applications_post(configuration: &configuration::Configuration, accept: Option<&str>, content_type: Option<&str>, create_application_request: Option<crate::models::CreateApplicationRequest>) -> Result<crate::models::CreateApplicationResult, Error<EdgeApplicationsPostError>> {
+pub async fn edge_applications_post(configuration: &configuration::Configuration, accept: Option<&str>, content_type: Option<&str>, create_application_request: Option<models::CreateApplicationRequest>) -> Result<models::CreateApplicationResult, Error<EdgeApplicationsPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
