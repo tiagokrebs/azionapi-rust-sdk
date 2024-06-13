@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -129,7 +129,7 @@ pub async fn edge_applications_edge_application_id_cache_settings_cache_settings
     }
 }
 
-pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_get(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>) -> Result<crate::models::ApplicationCacheGetOneResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGetError>> {
+pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_get(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>) -> Result<models::ApplicationCacheGetOneResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -167,7 +167,7 @@ pub async fn edge_applications_edge_application_id_cache_settings_cache_settings
     }
 }
 
-pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>, application_cache_patch_request: Option<crate::models::ApplicationCachePatchRequest>) -> Result<crate::models::ApplicationCachePatchResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchError>> {
+pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>, application_cache_patch_request: Option<models::ApplicationCachePatchRequest>) -> Result<models::ApplicationCachePatchResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -206,7 +206,7 @@ pub async fn edge_applications_edge_application_id_cache_settings_cache_settings
     }
 }
 
-pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_put(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>, content_type: Option<&str>, application_cache_put_request: Option<crate::models::ApplicationCachePutRequest>) -> Result<crate::models::ApplicationCachePutResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPutError>> {
+pub async fn edge_applications_edge_application_id_cache_settings_cache_settings_id_put(configuration: &configuration::Configuration, edge_application_id: i64, cache_settings_id: i64, accept: Option<&str>, content_type: Option<&str>, application_cache_put_request: Option<models::ApplicationCachePutRequest>) -> Result<models::ApplicationCachePutResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -248,7 +248,7 @@ pub async fn edge_applications_edge_application_id_cache_settings_cache_settings
     }
 }
 
-pub async fn edge_applications_edge_application_id_cache_settings_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::ApplicationCacheGetResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsGetError>> {
+pub async fn edge_applications_edge_application_id_cache_settings_get(configuration: &configuration::Configuration, edge_application_id: i64, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::ApplicationCacheGetResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -301,7 +301,7 @@ pub async fn edge_applications_edge_application_id_cache_settings_get(configurat
     }
 }
 
-pub async fn edge_applications_edge_application_id_cache_settings_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, application_cache_create_request: Option<crate::models::ApplicationCacheCreateRequest>) -> Result<crate::models::ApplicationCacheCreateResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsPostError>> {
+pub async fn edge_applications_edge_application_id_cache_settings_post(configuration: &configuration::Configuration, edge_application_id: i64, accept: Option<&str>, content_type: Option<&str>, application_cache_create_request: Option<models::ApplicationCacheCreateRequest>) -> Result<models::ApplicationCacheCreateResponse, Error<EdgeApplicationsEdgeApplicationIdCacheSettingsPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

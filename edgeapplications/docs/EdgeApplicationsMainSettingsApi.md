@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## edge_applications_get
 
-> crate::models::GetApplicationsResponse edge_applications_get(page, page_size, filter, order_by, sort, accept)
+> models::GetApplicationsResponse edge_applications_get(page, page_size, filter, order_by, sort, accept)
 /edge_applications
 
 ### Parameters
@@ -32,7 +32,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GetApplicationsResponse**](GetApplicationsResponse.md)
+[**models::GetApplicationsResponse**](GetApplicationsResponse.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_id_get
 
-> crate::models::GetApplicationResponse edge_applications_id_get(id, accept)
+> models::GetApplicationResponse edge_applications_id_get(id, accept)
 /edge_applications/:id
 
 ### Parameters
@@ -90,7 +90,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GetApplicationResponse**](GetApplicationResponse.md)
+[**models::GetApplicationResponse**](GetApplicationResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_id_patch
 
-> crate::models::ApplicationUpdateResponse edge_applications_id_patch(id, accept, content_type, application_update_request)
+> models::ApplicationUpdateResponse edge_applications_id_patch(id, accept, content_type, application_update_request)
 /edge_applications/:id
 
 ### Parameters
@@ -121,7 +121,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationUpdateResponse**](ApplicationUpdateResponse.md)
+[**models::ApplicationUpdateResponse**](ApplicationUpdateResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_id_put
 
-> crate::models::ApplicationPutResult edge_applications_id_put(id, accept, content_type, application_put_request)
+> models::ApplicationPutResult edge_applications_id_put(id, accept, content_type, application_put_request)
 /edge_applications/:id
 
 ### Parameters
@@ -152,7 +152,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationPutResult**](ApplicationPutResult.md)
+[**models::ApplicationPutResult**](ApplicationPutResult.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_post
 
-> crate::models::CreateApplicationResult edge_applications_post(accept, content_type, create_application_request)
+> models::CreateApplicationResult edge_applications_post(accept, content_type, create_application_request)
 /edge_applications
 
 ### Parameters
@@ -182,7 +182,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::CreateApplicationResult**](CreateApplicationResult.md)
+[**models::CreateApplicationResult**](CreateApplicationResult.md)
 
 ### Authorization
 

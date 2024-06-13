@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **origin_type** | Option<**String**> |  | [optional]
-**addresses** | Option<[**Vec<crate::models::CreateOriginsRequestAddresses>**](CreateOriginsRequest_addresses.md)> |  | [optional]
+**addresses** | Option<[**Vec<models::CreateOriginsRequestAddresses>**](CreateOriginsRequest_addresses.md)> |  | [optional]
 **origin_protocol_policy** | Option<**String**> |  | [optional]
 **host_header** | Option<**String**> |  | [optional]
 **origin_path** | Option<**String**> |  | [optional]

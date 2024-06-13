@@ -45,7 +45,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_device_groups_device_group_id_get
 
-> crate::models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_get(edge_application_id, device_group_id, accept)
+> models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_get(edge_application_id, device_group_id, accept)
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
 ### Parameters
@@ -59,7 +59,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
+[**models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_device_groups_device_group_id_patch
 
-> crate::models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_patch(edge_application_id, device_group_id, accept, content_type, patch_device_groups_request)
+> models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_patch(edge_application_id, device_group_id, accept, content_type, patch_device_groups_request)
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
 ### Parameters
@@ -91,7 +91,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
+[**models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_device_groups_device_group_id_put
 
-> crate::models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_put(edge_application_id, device_group_id, accept, content_type, update_device_groups_request)
+> models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_device_group_id_put(edge_application_id, device_group_id, accept, content_type, update_device_groups_request)
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
 ### Parameters
@@ -123,7 +123,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
+[**models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_device_groups_get
 
-> crate::models::DeviceGroupsResponse edge_applications_edge_application_id_device_groups_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
+> models::DeviceGroupsResponse edge_applications_edge_application_id_device_groups_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
 /edge_applications/{edge_application_id}/device_groups
 
 ### Parameters
@@ -157,7 +157,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeviceGroupsResponse**](DeviceGroupsResponse.md)
+[**models::DeviceGroupsResponse**](DeviceGroupsResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_device_groups_post
 
-> crate::models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_post(edge_application_id, accept, content_type, create_device_groups_request)
+> models::DeviceGroupsIdResponse edge_applications_edge_application_id_device_groups_post(edge_application_id, accept, content_type, create_device_groups_request)
 /edge_applications/{edge_application_id}/device_groups
 
 ### Parameters
@@ -188,7 +188,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
+[**models::DeviceGroupsIdResponse**](DeviceGroupsIdResponse.md)
 
 ### Authorization
 

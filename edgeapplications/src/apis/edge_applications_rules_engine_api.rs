@@ -10,8 +10,8 @@
 
 
 use reqwest;
-
-use crate::apis::ResponseContent;
+use serde::{Deserialize, Serialize};
+use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
@@ -88,7 +88,7 @@ pub enum EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutError {
 }
 
 
-pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_get(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<crate::models::RulesEngineResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetError>> {
+pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_get(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, page: Option<i64>, page_size: Option<i64>, filter: Option<&str>, order_by: Option<&str>, sort: Option<&str>, accept: Option<&str>) -> Result<models::RulesEngineResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -142,7 +142,7 @@ pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_get(
 }
 
 /// Check below the list of behaviors that can be applied:  | Name                                | Behavior               | | ----------------------------------- | ---------------------- | | Add Request Cookie                  | add_request_cookie     | | Add Request Header                  | add_request_header     | | Add Response Cookie                 | set_cookie             | | Add Response Header                 | add_response_header    | | Bypass Cache                        | bypass_cache_phase     | | Capture Match Groups                | capture_match_groups   | | Deliver                             | deliver                | | Deny (403 Forbidden)                | deny                   | | Enable Gzip                         | enable_gzip            | | Filter Request Cookie               | filter_request_cookie  | | Filter Request Header               | filter_request_header  | | Filter Response Cookie              | filter_response_cookie | | Filter Response Header              | filter_response_header | | Finish Request Phase                | finish_request_phase   | | Forward Cookies                     | forward_cookies        | | Optimize Images                     | optimize_images        | | Redirect HTTP to HTTPS              | redirect_http_to_https | | Redirect To (301 Moved Permanently) | redirect_to_301        | | Redirect To (302 Found)             | redirect_to_302        | | Rewrite Request                     | rewrite_request        | | Run Function                        | run_function           | | Set Cache Policy                    | set_cache_policy       | | Set Origin                          | set_origin             |
-pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_post(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, accept: Option<&str>, content_type: Option<&str>, create_rules_engine_request: Option<crate::models::CreateRulesEngineRequest>) -> Result<crate::models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostError>> {
+pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_post(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, accept: Option<&str>, content_type: Option<&str>, create_rules_engine_request: Option<models::CreateRulesEngineRequest>) -> Result<models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -222,7 +222,7 @@ pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule
     }
 }
 
-pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_get(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>) -> Result<crate::models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetError>> {
+pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_get(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>) -> Result<models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -260,7 +260,7 @@ pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule
     }
 }
 
-pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>, content_type: Option<&str>, patch_rules_engine_request: Option<crate::models::PatchRulesEngineRequest>) -> Result<crate::models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchError>> {
+pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_patch(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>, content_type: Option<&str>, patch_rules_engine_request: Option<models::PatchRulesEngineRequest>) -> Result<models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -302,7 +302,7 @@ pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule
     }
 }
 
-pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_put(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>, content_type: Option<&str>, update_rules_engine_request: Option<crate::models::UpdateRulesEngineRequest>) -> Result<crate::models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutError>> {
+pub async fn edge_applications_edge_application_id_rules_engine_phase_rules_rule_id_put(configuration: &configuration::Configuration, edge_application_id: i64, phase: &str, rule_id: i64, accept: Option<&str>, content_type: Option<&str>, update_rules_engine_request: Option<models::UpdateRulesEngineRequest>) -> Result<models::RulesEngineIdResponse, Error<EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

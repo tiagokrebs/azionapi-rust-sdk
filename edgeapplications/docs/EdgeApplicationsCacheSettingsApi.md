@@ -46,7 +46,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_cache_settings_cache_settings_id_get
 
-> crate::models::ApplicationCacheGetOneResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_get(edge_application_id, cache_settings_id, accept)
+> models::ApplicationCacheGetOneResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_get(edge_application_id, cache_settings_id, accept)
 /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
 ### Parameters
@@ -60,7 +60,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationCacheGetOneResponse**](ApplicationCacheGetOneResponse.md)
+[**models::ApplicationCacheGetOneResponse**](ApplicationCacheGetOneResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_cache_settings_cache_settings_id_patch
 
-> crate::models::ApplicationCachePatchResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_patch(edge_application_id, cache_settings_id, accept, application_cache_patch_request)
+> models::ApplicationCachePatchResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_patch(edge_application_id, cache_settings_id, accept, application_cache_patch_request)
 /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
 ### Parameters
@@ -91,7 +91,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationCachePatchResponse**](ApplicationCachePatchResponse.md)
+[**models::ApplicationCachePatchResponse**](ApplicationCachePatchResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_cache_settings_cache_settings_id_put
 
-> crate::models::ApplicationCachePutResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_put(edge_application_id, cache_settings_id, accept, content_type, application_cache_put_request)
+> models::ApplicationCachePutResponse edge_applications_edge_application_id_cache_settings_cache_settings_id_put(edge_application_id, cache_settings_id, accept, content_type, application_cache_put_request)
 /edge_applications/:edge_application_id:/cache_settings/ca
 
 ### Parameters
@@ -123,7 +123,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationCachePutResponse**](ApplicationCachePutResponse.md)
+[**models::ApplicationCachePutResponse**](ApplicationCachePutResponse.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_cache_settings_get
 
-> crate::models::ApplicationCacheGetResponse edge_applications_edge_application_id_cache_settings_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
+> models::ApplicationCacheGetResponse edge_applications_edge_application_id_cache_settings_get(edge_application_id, page, page_size, filter, order_by, sort, accept)
 /edge_applications/{edge_application_id}/cache_settings
 
 ### Parameters
@@ -157,7 +157,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationCacheGetResponse**](ApplicationCacheGetResponse.md)
+[**models::ApplicationCacheGetResponse**](ApplicationCacheGetResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Required | Notes
 
 ## edge_applications_edge_application_id_cache_settings_post
 
-> crate::models::ApplicationCacheCreateResponse edge_applications_edge_application_id_cache_settings_post(edge_application_id, accept, content_type, application_cache_create_request)
+> models::ApplicationCacheCreateResponse edge_applications_edge_application_id_cache_settings_post(edge_application_id, accept, content_type, application_cache_create_request)
 /edge_applications/:edge_application_id:/cache_settings
 
 ### Parameters
@@ -188,7 +188,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApplicationCacheCreateResponse**](ApplicationCacheCreateResponse.md)
+[**models::ApplicationCacheCreateResponse**](ApplicationCacheCreateResponse.md)
 
 ### Authorization
 

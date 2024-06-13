@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **origin_key** | Option<**String**> |  | [optional]
 **name** | **String** |  | 
 **origin_type** | Option<**String**> |  | [optional]
-**addresses** | Option<[**Vec<crate::models::OriginsResultResponseAddresses>**](OriginsResultResponse_addresses.md)> |  | [optional]
+**addresses** | Option<[**Vec<models::OriginsResultResponseAddresses>**](OriginsResultResponse_addresses.md)> |  | [optional]
 **origin_protocol_policy** | Option<**String**> |  | [optional]
 **is_origin_redirection_enabled** | Option<**bool**> |  | [optional]
 **host_header** | Option<**String**> |  | [optional]

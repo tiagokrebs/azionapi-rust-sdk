@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **description** | Option<**String**> |  | [optional]
 **phase** | **String** |  | 
-**behaviors** | Option<[**Vec<crate::models::RulesEngineBehaviorEntry>**](RulesEngineBehaviorEntry.md)> |  | [optional]
-**criteria** | [**Vec<Vec<crate::models::RulesEngineCriteria>>**](array.md) |  | 
+**behaviors** | Option<[**Vec<models::RulesEngineBehaviorEntry>**](RulesEngineBehaviorEntry.md)> |  | [optional]
+**criteria** | [**Vec<Vec<models::RulesEngineCriteria>>**](Vec.md) |  | 
 **is_active** | **bool** |  | 
 **order** | **i64** |  | 
 
