@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **load_balancer** | **bool** |  | 
 **raw_logs** | **bool** |  | 
 **web_application_firewall** | **bool** |  | 
+**websocket** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

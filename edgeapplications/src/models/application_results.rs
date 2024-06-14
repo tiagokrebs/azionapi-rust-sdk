@@ -53,6 +53,8 @@ pub struct ApplicationResults {
     pub raw_logs: bool,
     #[serde(rename = "web_application_firewall")]
     pub web_application_firewall: bool,
+    #[serde(rename = "websocket", skip_serializing_if = "Option::is_none")]
+    pub websocket: Option<bool>,
 }
 
 impl ApplicationResults {
@@ -78,6 +80,7 @@ impl ApplicationResults {
             load_balancer,
             raw_logs,
             web_application_firewall,
+            websocket: None,
         }
     }
 }
