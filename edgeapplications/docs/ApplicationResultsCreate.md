@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **raw_logs** | **bool** |  | 
 **web_application_firewall** | **bool** |  | 
 **l2_caching** | Option<**bool**> |  | [optional]
+**websocket** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

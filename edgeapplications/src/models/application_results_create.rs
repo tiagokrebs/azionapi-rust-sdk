@@ -53,6 +53,8 @@ pub struct ApplicationResultsCreate {
     pub web_application_firewall: bool,
     #[serde(rename = "l2_caching", skip_serializing_if = "Option::is_none")]
     pub l2_caching: Option<bool>,
+    #[serde(rename = "websocket", skip_serializing_if = "Option::is_none")]
+    pub websocket: Option<bool>,
 }
 
 impl ApplicationResultsCreate {
@@ -78,6 +80,7 @@ impl ApplicationResultsCreate {
             raw_logs,
             web_application_firewall,
             l2_caching: None,
+            websocket: None,
         }
     }
 }
