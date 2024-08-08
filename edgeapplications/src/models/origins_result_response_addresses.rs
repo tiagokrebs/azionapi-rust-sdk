@@ -16,7 +16,7 @@ pub struct OriginsResultResponseAddresses {
     #[serde(rename = "address")]
     pub address: String,
     #[serde(rename = "weight", deserialize_with = "Option::deserialize")]
-    pub weight: Option<String>,
+    pub weight: Option<i64>,
     #[serde(rename = "server_role")]
     pub server_role: String,
     #[serde(rename = "is_active")]
@@ -24,7 +24,7 @@ pub struct OriginsResultResponseAddresses {
 }
 
 impl OriginsResultResponseAddresses {
-    pub fn new(address: String, weight: Option<String>, server_role: String, is_active: bool) -> OriginsResultResponseAddresses {
+    pub fn new(address: String, weight: Option<i64>, server_role: String, is_active: bool) -> OriginsResultResponseAddresses {
         OriginsResultResponseAddresses {
             address,
             weight,
