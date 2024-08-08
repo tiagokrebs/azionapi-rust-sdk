@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** |  | 
-**weight** | Option<**String**> |  | 
+**weight** | Option<**i64**> |  | 
 **server_role** | **String** |  | 
 **is_active** | **bool** |  | 
 
