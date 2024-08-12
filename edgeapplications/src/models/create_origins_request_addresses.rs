@@ -17,8 +17,8 @@ pub struct CreateOriginsRequestAddresses {
     pub address: String,
     #[serde(rename = "is_active", skip_serializing_if = "Option::is_none")]
     pub is_active: Option<bool>,
-    #[serde(rename = "weight", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub weight: Option<Option<i64>>,
+    #[serde(rename = "weight", skip_serializing_if = "Option::is_none")]
+    pub weight: Option<i64>,
     #[serde(rename = "server_role", skip_serializing_if = "Option::is_none")]
     pub server_role: Option<String>,
 }
